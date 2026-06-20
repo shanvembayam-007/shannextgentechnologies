@@ -1,0 +1,4140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShanNextGen Technologies | Smart IT Solutions Kerala, India</title>
+    <meta
+      name="description"
+      content="ShanNextGen Technologies - Leading IT company in Kerala offering custom software development, mobile apps, ERP, CRM, cloud solutions, and digital transformation services across India."
+    />
+    <meta
+      name="keywords"
+      content="Website Development Kerala, Mobile App Development Kerala, ERP Software Kerala, CRM Software India, Cloud Services Kerala, Custom Software Development India, IT Consulting Kerala"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #050507;
+        color: #f4f4f5;
+        overflow-x: hidden;
+      }
+
+      #hero-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+      #bg-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* ── Logo Styles ── */
+      .logo-icon-wrap {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.12),
+          rgba(34, 211, 238, 0.08)
+        );
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 14px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+      }
+      .logo-icon-wrap:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.2),
+          rgba(34, 211, 238, 0.12)
+        );
+        border-color: rgba(59, 130, 246, 0.4);
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+      }
+
+      /* Navbar Logo Image */
+      .logo-icon-wrap img {
+        height: 40px; /* Increased from 40px to 50px */
+        width: 40px; /* Increased from 40px to 50px */
+        object-fit: cover;
+        display: block;
+      }
+
+      /* .logo-brand {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .logo-brand-text .brand-shan {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #f4f4f5;
+        letter-spacing: -0.025em;
+      }
+      .logo-brand-text .brand-nextgen {
+        font-weight: 700;
+        font-size: 1.2rem;
+        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.025em;
+      }
+
+     .brand-technologies {
+  font-size: 13px;
+  font-weight: 400;
+  color: #a1a1aa;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+  align-items: center
+} */
+
+      .logo-brand {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .logo-brand-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1;
+      }
+      .logo-brand-text .brand-top {
+        display: flex;
+        align-items: baseline;
+        gap: 0;
+      }
+      .logo-brand-text .brand-shan {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #f4f4f5;
+        letter-spacing: -0.025em;
+      }
+      .logo-brand-text .brand-nextgen {
+        font-weight: 700;
+        font-size: 1.2rem;
+        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.025em;
+      }
+      .brand-technologies {
+        font-size: 13px;
+        font-weight: 400;
+        color: #a1a1aa;
+        letter-spacing: 0.08em;
+        margin-top: 2px;
+        line-height: 1.4;
+      }
+
+      /* Footer logo */
+      .footer-logo-icon {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.12),
+          rgba(34, 211, 238, 0.08)
+        );
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 12px;
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+      .footer-logo-icon:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.2),
+          rgba(34, 211, 238, 0.12)
+        );
+        border-color: rgba(59, 130, 246, 0.4);
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+      }
+      .footer-logo-icon img {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+      }
+
+      .tilt-card {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+      }
+      .tilt-card .tilt-inner {
+        transition: transform 0.1s ease-out;
+        transform-style: preserve-3d;
+      }
+      .tilt-card .tilt-shine {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(59, 130, 246, 0.15),
+          transparent 60%
+        );
+      }
+      .tilt-card:hover .tilt-shine {
+        opacity: 1;
+      }
+      .tilt-card .tilt-content {
+        transform: translateZ(30px);
+      }
+
+      @keyframes float3d {
+        0%,
+        100% {
+          transform: translateY(0) rotateX(0) rotateY(0);
+        }
+        25% {
+          transform: translateY(-15px) rotateX(2deg) rotateY(2deg);
+        }
+        50% {
+          transform: translateY(-8px) rotateX(-1deg) rotateY(-1deg);
+        }
+        75% {
+          transform: translateY(-20px) rotateX(1deg) rotateY(2deg);
+        }
+      }
+      .float-3d {
+        animation: float3d 6s ease-in-out infinite;
+      }
+
+      @keyframes glowPulse {
+        0%,
+        100% {
+          box-shadow:
+            0 0 20px rgba(59, 130, 246, 0.1),
+            0 0 60px rgba(59, 130, 246, 0.05);
+        }
+        50% {
+          box-shadow:
+            0 0 40px rgba(59, 130, 246, 0.2),
+            0 0 80px rgba(59, 130, 246, 0.1);
+        }
+      }
+      .glow-pulse {
+        animation: glowPulse 3s ease-in-out infinite;
+      }
+
+      @keyframes spin3d {
+        from {
+          transform: rotateX(70deg) rotateZ(0deg);
+        }
+        to {
+          transform: rotateX(70deg) rotateZ(360deg);
+        }
+      }
+      .spin-ring {
+        animation: spin3d 20s linear infinite;
+      }
+
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          #3b82f6 0%,
+          #60a5fa 30%,
+          #22d3ee 60%,
+          #3b82f6 100%
+        );
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 4s ease-in-out infinite;
+      }
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      @keyframes morphBlob {
+        0%,
+        100% {
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        25% {
+          border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        }
+        50% {
+          border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+        }
+        75% {
+          border-radius: 60% 30% 60% 40% / 60% 40% 30% 70%;
+        }
+      }
+      .morph-blob {
+        animation: morphBlob 8s ease-in-out infinite;
+      }
+
+      .service-3d {
+        transform-style: preserve-3d;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .service-3d:hover {
+        transform: translateY(-12px) rotateX(5deg) rotateY(-2deg);
+        box-shadow:
+          0 30px 60px rgba(59, 130, 246, 0.1),
+          0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+      .service-3d .service-icon-3d {
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .service-3d:hover .service-icon-3d {
+        transform: translateZ(40px) scale(1.1);
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+      }
+
+      .portfolio-3d {
+        transform-style: preserve-3d;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .portfolio-3d:hover {
+        transform: rotateY(-8deg) rotateX(4deg) scale(1.03);
+        box-shadow:
+          20px 20px 60px rgba(0, 0, 0, 0.5),
+          -5px -5px 20px rgba(59, 130, 246, 0.1);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(60px) rotateX(10deg);
+      }
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-80px) rotateY(10deg);
+      }
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(80px) rotateY(-10deg);
+      }
+      .magnetic-btn {
+        transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(59, 130, 246, 0.3),
+          transparent
+        );
+      }
+
+      .toast-3d {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: rgba(24, 24, 27, 0.95);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 16px;
+        padding: 16px 24px;
+        z-index: 100;
+        transform: translateY(100px) rotateX(10deg);
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+      .toast-3d.show {
+        transform: translateY(0) rotateX(0deg);
+        opacity: 1;
+      }
+
+      .nav-3d {
+        transition: all 0.3s ease;
+      }
+      .nav-3d.scrolled {
+        background: rgba(5, 5, 7, 0.9) !important;
+        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+      }
+      .counter-value {
+        font-variant-numeric: tabular-nums;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050507;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #3b82f6, #18181b);
+        border-radius: 3px;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes scrollDot {
+        0%,
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        50% {
+          opacity: 0.3;
+          transform: translateY(8px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+    <nav
+      id="navbar"
+      class="nav-3d fixed top-0 left-0 right-0 z-50"
+      style="backdrop-filter: blur(20px); background: rgba(5, 5, 7, 0.6)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <a href="#" class="logo-brand group">
+          <div class="logo-icon-wrap">
+            <img
+              src="https://z-cdn-media.chatglm.cn/files/813ecd16-93f3-422f-9257-126d0c4b5601.png?auth_key=1881201546-4f70b5275369432992b938e88d089daa-0-fe30012e69aab0792b6ecc960dad44f2"
+              alt="ShanNextGen"
+            />
+          </div>
+
+          <div class="logo-brand-text">
+            <div class="brand-top">
+              <span class="brand-shan">Shan</span>
+              <span class="brand-nextgen">NextGen</span>
+            </div>
+            <span class="brand-technologies">Technologies</span>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="#home"
+            class="nav-link text-sm text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="nav-link text-sm text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+            >Services</a
+          >
+          <a
+            href="#industries"
+            class="nav-link text-sm text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+            >Industries</a
+          >
+          <a
+            href="#solutions"
+            class="nav-link text-sm text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+            >Solutions</a
+          >
+          <a
+            href="#portfolio"
+            class="nav-link text-sm text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+            >Portfolio</a
+          >
+          <a
+            href="#about"
+            class="nav-link text-sm text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="nav-link text-sm text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-3">
+          <a
+            href="#contact"
+            class="magnetic-btn hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-sm font-semibold px-6 py-2.5 rounded-full hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all duration-300"
+          >
+            <span
+              class="iconify"
+              data-icon="lucide:rocket"
+              data-width="14"
+            ></span>
+            Get Free Consultation
+          </a>
+          <button
+            id="mobileMenuBtn"
+            class="md:hidden text-zinc-400 hover:text-blue-400 transition-colors p-2"
+          >
+            <span
+              class="iconify"
+              data-icon="lucide:menu"
+              data-width="22"
+            ></span>
+          </button>
+        </div>
+      </div>
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden border-t border-zinc-800/50"
+        style="background: rgba(5, 5, 7, 0.95); backdrop-filter: blur(20px)"
+      >
+        <div class="px-6 py-4 flex flex-col gap-3">
+          <a
+            href="#home"
+            class="text-sm text-zinc-400 hover:text-blue-400 py-2 mobile-nav-link"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="text-sm text-zinc-400 hover:text-blue-400 py-2 mobile-nav-link"
+            >Services</a
+          >
+          <a
+            href="#industries"
+            class="text-sm text-zinc-400 hover:text-blue-400 py-2 mobile-nav-link"
+            >Industries</a
+          >
+          <a
+            href="#solutions"
+            class="text-sm text-zinc-400 hover:text-blue-400 py-2 mobile-nav-link"
+            >Solutions</a
+          >
+          <a
+            href="#portfolio"
+            class="text-sm text-zinc-400 hover:text-blue-400 py-2 mobile-nav-link"
+            >Portfolio</a
+          >
+          <a
+            href="#about"
+            class="text-sm text-zinc-400 hover:text-blue-400 py-2 mobile-nav-link"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="text-sm text-zinc-400 hover:text-blue-400 py-2 mobile-nav-link"
+            >Contact</a
+          >
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-sm font-semibold px-6 py-2.5 rounded-full mt-2"
+            >Get Free Consultation</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      <canvas id="hero-canvas"></canvas>
+      <div
+        class="absolute inset-0 flex items-center justify-center pointer-events-none"
+        style="perspective: 800px"
+      >
+        <div
+          class="spin-ring w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full border border-blue-500/10 absolute"
+        ></div>
+        <div
+          class="spin-ring w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full border border-cyan-400/5 absolute"
+          style="animation-duration: 15s; animation-direction: reverse"
+        ></div>
+      </div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-blue-500/5 morph-blob blur-3xl pointer-events-none"
+      ></div>
+
+      <div
+        class="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20 md:pt-40 md:pb-32 text-center"
+      >
+        <div
+          class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-8"
+          style="animation: fadeInUp 0.8s ease-out 0.2s both"
+        >
+          <span
+            class="w-2 h-2 rounded-full bg-blue-500"
+            style="animation: glowPulse 2s infinite"
+          ></span>
+          <span
+            class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+            >Trusted IT Partner in Kerala</span
+          >
+        </div>
+        <h1
+          class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight mb-8"
+          style="animation: fadeInUp 0.8s ease-out 0.4s both"
+        >
+          Empowering Businesses<br />with
+          <span class="gradient-text">Smart IT Solutions</span>
+        </h1>
+        <p
+          class="text-base md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed"
+          style="animation: fadeInUp 0.8s ease-out 0.6s both"
+        >
+          We help businesses across Kerala and India grow through innovative
+          software solutions, mobile applications, websites, cloud technologies,
+          and digital transformation services.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          style="animation: fadeInUp 0.8s ease-out 0.8s both"
+        >
+          <a
+            href="#contact"
+            class="magnetic-btn group inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-sm font-bold px-8 py-4 rounded-full hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] transition-all duration-300 relative overflow-hidden"
+          >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></span>
+            <span class="relative flex items-center gap-2"
+              ><span
+                class="iconify"
+                data-icon="lucide:message-circle"
+                data-width="16"
+              ></span
+              >Get Free Consultation</span
+            >
+          </a>
+          <a
+            href="#contact"
+            class="magnetic-btn inline-flex items-center gap-2 border border-zinc-700 text-zinc-300 text-sm font-medium px-8 py-4 rounded-full hover:border-blue-500/50 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)] transition-all duration-300"
+          >
+            <span
+              class="iconify"
+              data-icon="lucide:file-text"
+              data-width="16"
+            ></span
+            >Request a Quote
+          </a>
+        </div>
+        <div
+          class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
+          style="animation: fadeInUp 0.8s ease-out 1s both"
+        >
+          <div class="text-center">
+            <div
+              class="text-3xl md:text-4xl font-bold gradient-text counter-value"
+              data-target="50"
+            >
+              0
+            </div>
+            <div class="text-xs text-zinc-500 mt-2 uppercase tracking-wider">
+              Projects Delivered
+            </div>
+          </div>
+          <div class="text-center">
+            <div
+              class="text-3xl md:text-4xl font-bold gradient-text counter-value"
+              data-target="40"
+            >
+              0
+            </div>
+            <div class="text-xs text-zinc-500 mt-2 uppercase tracking-wider">
+              Happy Clients
+            </div>
+          </div>
+          <div class="text-center">
+            <div
+              class="text-3xl md:text-4xl font-bold gradient-text counter-value"
+              data-target="6"
+            >
+              0
+            </div>
+            <div class="text-xs text-zinc-500 mt-2 uppercase tracking-wider">
+              Industries Served
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold gradient-text">24/7</div>
+            <div class="text-xs text-zinc-500 mt-2 uppercase tracking-wider">
+              Technical Support
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
+        style="animation: float3d 3s ease-in-out infinite"
+      >
+        <div
+          class="w-6 h-10 rounded-full border-2 border-zinc-700 flex justify-center pt-2"
+        >
+          <div
+            class="w-1 h-2.5 bg-blue-500 rounded-full"
+            style="animation: scrollDot 1.5s ease-in-out infinite"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════ WHY CHOOSE US ═══════════════════ -->
+    <section class="py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+          >
+            <span
+              class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+              >Why Choose Us</span
+            >
+          </div>
+          <h2
+            class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1]"
+          >
+            Trusted Technology <span class="gradient-text">Partner</span>
+          </h2>
+          <p class="text-zinc-500 mt-5 max-w-xl mx-auto text-lg">
+            We combine deep technical expertise with a genuine commitment to
+            your business success.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-blue-500/30 transition-all duration-500 relative overflow-hidden h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:code-2"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-2">
+                  Custom Software Development
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Tailored solutions built specifically for your business
+                  processes and goals.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-blue-500/30 transition-all duration-500 relative overflow-hidden h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:smartphone"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-2">
+                  Mobile App Development
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Android, iOS, and cross-platform apps for startups and
+                  enterprises.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-blue-500/30 transition-all duration-500 relative overflow-hidden h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:globe"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-2">
+                  Website Design & Development
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Performance-driven websites designed for visibility and
+                  conversion.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-blue-500/30 transition-all duration-500 relative overflow-hidden h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:database"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-2">
+                  ERP & CRM Solutions
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Integrated systems for managing operations and customer
+                  relationships.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-blue-500/30 transition-all duration-500 relative overflow-hidden h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:cloud"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-2">
+                  Cloud Integration Services
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Secure cloud infrastructure, migration, and hosting solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-blue-500/30 transition-all duration-500 relative overflow-hidden h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:refresh-cw"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-2">
+                  Digital Transformation Consulting
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Strategic guidance to modernize and digitize your business
+                  operations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-blue-500/30 transition-all duration-500 relative overflow-hidden h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:headphones"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-2">
+                  Ongoing Technical Support
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Reliable 24/7 support to ensure your systems run smoothly
+                  always.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 hover:border-blue-500/30 transition-all duration-500 relative overflow-hidden h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-shadow duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:indian-rupee"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-2">
+                  Affordable Pricing
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Cost-effective solutions without compromising on quality or
+                  performance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════ SERVICES ═══════════════════ -->
+    <section id="services" class="py-24 md:py-32 relative">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
+      ></div>
+      <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="text-center mb-20 reveal">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+          >
+            <span
+              class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+              >Our Services</span
+            >
+          </div>
+          <h2
+            class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1]"
+          >
+            Comprehensive <span class="gradient-text">IT Services</span>
+          </h2>
+          <p class="text-zinc-500 mt-5 max-w-xl mx-auto text-lg">
+            End-to-end technology solutions designed to accelerate your business
+            growth.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/5 to-transparent rounded-bl-full"
+            ></div>
+            <div
+              class="service-icon-3d w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center mb-6"
+            >
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:layout"
+                data-width="26"
+              ></span>
+            </div>
+            <h3 class="text-xl font-bold text-zinc-100 tracking-tight mb-3">
+              Website Development
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+              Professional business websites, eCommerce stores, portals, and web
+              applications designed for performance and search engine
+              visibility.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 text-blue-400 text-sm font-semibold hover:gap-3 transition-all duration-300"
+              ><span>Learn More</span
+              ><span
+                class="iconify"
+                data-icon="lucide:arrow-right"
+                data-width="14"
+              ></span
+            ></a>
+            <div
+              class="mt-4 pt-3 border-t border-zinc-800/50 text-[11px] text-zinc-600 leading-relaxed"
+            >
+              Website Development Kerala · Web Design Kerala · Business Website
+              Development
+            </div>
+          </div>
+          <div
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/5 to-transparent rounded-bl-full"
+            ></div>
+            <div
+              class="service-icon-3d w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center mb-6"
+            >
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:smartphone"
+                data-width="26"
+              ></span>
+            </div>
+            <h3 class="text-xl font-bold text-zinc-100 tracking-tight mb-3">
+              Mobile App Development
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+              Android, iOS, and cross-platform mobile applications for startups,
+              enterprises, and service businesses.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 text-blue-400 text-sm font-semibold hover:gap-3 transition-all duration-300"
+              ><span>Learn More</span
+              ><span
+                class="iconify"
+                data-icon="lucide:arrow-right"
+                data-width="14"
+              ></span
+            ></a>
+            <div
+              class="mt-4 pt-3 border-t border-zinc-800/50 text-[11px] text-zinc-600 leading-relaxed"
+            >
+              Mobile App Development Kerala · Android App Development India
+            </div>
+          </div>
+          <div
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/5 to-transparent rounded-bl-full"
+            ></div>
+            <div
+              class="service-icon-3d w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center mb-6"
+            >
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:code-2"
+                data-width="26"
+              ></span>
+            </div>
+            <h3 class="text-xl font-bold text-zinc-100 tracking-tight mb-3">
+              Custom Software Development
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+              Tailored software solutions that streamline operations, improve
+              efficiency, and support business growth.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 text-blue-400 text-sm font-semibold hover:gap-3 transition-all duration-300"
+              ><span>Learn More</span
+              ><span
+                class="iconify"
+                data-icon="lucide:arrow-right"
+                data-width="14"
+              ></span
+            ></a>
+            <div
+              class="mt-4 pt-3 border-t border-zinc-800/50 text-[11px] text-zinc-600 leading-relaxed"
+            >
+              Custom Software Development Kerala · Enterprise Software Solutions
+            </div>
+          </div>
+          <div
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/5 to-transparent rounded-bl-full"
+            ></div>
+            <div
+              class="service-icon-3d w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center mb-6"
+            >
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:boxes"
+                data-width="26"
+              ></span>
+            </div>
+            <h3 class="text-xl font-bold text-zinc-100 tracking-tight mb-3">
+              ERP Solutions
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+              Manage inventory, accounting, sales, HR, and operations through
+              integrated ERP systems.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 text-blue-400 text-sm font-semibold hover:gap-3 transition-all duration-300"
+              ><span>Learn More</span
+              ><span
+                class="iconify"
+                data-icon="lucide:arrow-right"
+                data-width="14"
+              ></span
+            ></a>
+            <div
+              class="mt-4 pt-3 border-t border-zinc-800/50 text-[11px] text-zinc-600 leading-relaxed"
+            >
+              ERP Software Kerala · Business Management Software
+            </div>
+          </div>
+          <div
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/5 to-transparent rounded-bl-full"
+            ></div>
+            <div
+              class="service-icon-3d w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center mb-6"
+            >
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:users"
+                data-width="26"
+              ></span>
+            </div>
+            <h3 class="text-xl font-bold text-zinc-100 tracking-tight mb-3">
+              CRM Solutions
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+              Build stronger customer relationships with powerful CRM solutions
+              tailored to your business.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 text-blue-400 text-sm font-semibold hover:gap-3 transition-all duration-300"
+              ><span>Learn More</span
+              ><span
+                class="iconify"
+                data-icon="lucide:arrow-right"
+                data-width="14"
+              ></span
+            ></a>
+            <div
+              class="mt-4 pt-3 border-t border-zinc-800/50 text-[11px] text-zinc-600 leading-relaxed"
+            >
+              CRM Software India · Customer Management Systems
+            </div>
+          </div>
+          <div
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/5 to-transparent rounded-bl-full"
+            ></div>
+            <div
+              class="service-icon-3d w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center mb-6"
+            >
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:cloud"
+                data-width="26"
+              ></span>
+            </div>
+            <h3 class="text-xl font-bold text-zinc-100 tracking-tight mb-3">
+              Cloud Solutions
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-5">
+              Secure cloud infrastructure, migration, hosting, backup, and
+              disaster recovery services.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 text-blue-400 text-sm font-semibold hover:gap-3 transition-all duration-300"
+              ><span>Learn More</span
+              ><span
+                class="iconify"
+                data-icon="lucide:arrow-right"
+                data-width="14"
+              ></span
+            ></a>
+            <div
+              class="mt-4 pt-3 border-t border-zinc-800/50 text-[11px] text-zinc-600 leading-relaxed"
+            >
+              Cloud Services Kerala · Cloud Computing Solutions India
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════ INDUSTRIES ═══════════════════ -->
+    <section id="industries" class="py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+          >
+            <span
+              class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+              >Industries</span
+            >
+          </div>
+          <h2
+            class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1]"
+          >
+            Industries <span class="gradient-text">We Serve</span>
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/40 border border-zinc-800/50 hover:border-blue-500/20 transition-all duration-500 h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:shopping-bag"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-1">
+                  Retail Businesses
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Inventory management, billing, ERP systems
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/40 border border-zinc-800/50 hover:border-blue-500/20 transition-all duration-500 h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:utensils"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-1">
+                  Restaurants & Food
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Order management, delivery tracking, loyalty solutions
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/40 border border-zinc-800/50 hover:border-blue-500/20 transition-all duration-500 h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:heart-pulse"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-1">Healthcare</h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Hospital management, appointment booking
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/40 border border-zinc-800/50 hover:border-blue-500/20 transition-all duration-500 h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:graduation-cap"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-1">Education</h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Student management, e-learning platforms
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/40 border border-zinc-800/50 hover:border-blue-500/20 transition-all duration-500 h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:building-2"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-1">
+                  Real Estate
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Property management software and CRM
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/40 border border-zinc-800/50 hover:border-blue-500/20 transition-all duration-500 h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:truck"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-1">Logistics</h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Fleet management and tracking systems
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card reveal sm:col-span-2 lg:col-span-2">
+            <div
+              class="tilt-inner group p-7 rounded-2xl bg-zinc-900/40 border border-zinc-800/50 hover:border-blue-500/20 transition-all duration-500 h-full"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-2xl"></div>
+              <div class="tilt-content relative z-10">
+                <div
+                  class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:landmark"
+                    data-width="22"
+                  ></span>
+                </div>
+                <h3 class="text-sm font-bold text-zinc-100 mb-1">
+                  Government & Public Sector
+                </h3>
+                <p class="text-xs text-zinc-500 leading-relaxed">
+                  Workflow automation and reporting systems for government
+                  bodies and public sector organizations
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════ FEATURED SOLUTIONS ═══════════════════ -->
+    <section id="solutions" class="py-24 md:py-32 relative">
+      <div
+        class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
+      ></div>
+      <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="text-center mb-20 reveal">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+          >
+            <span
+              class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+              >Featured Solutions</span
+            >
+          </div>
+          <h2
+            class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1]"
+          >
+            Ready-to-Deploy <span class="gradient-text">Solutions</span>
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-left"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div
+              class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/8 to-transparent rounded-bl-full"
+            ></div>
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center mb-6 glow-pulse"
+              >
+                <span
+                  class="iconify text-blue-400"
+                  data-icon="lucide:briefcase"
+                  data-width="26"
+                ></span>
+              </div>
+              <h3 class="text-2xl font-bold text-zinc-100 tracking-tight mb-6">
+                Business Management System
+              </h3>
+              <div class="mb-6">
+                <p
+                  class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-3"
+                >
+                  Complete solution for:
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium"
+                    >Sales</span
+                  ><span
+                    class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium"
+                    >Purchase</span
+                  ><span
+                    class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium"
+                    >Inventory</span
+                  ><span
+                    class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium"
+                    >Accounting</span
+                  ><span
+                    class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium"
+                    >Customer Mgmt</span
+                  >
+                </div>
+              </div>
+              <div class="mb-6">
+                <p
+                  class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-3"
+                >
+                  Ideal for:
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-center gap-2 text-sm text-zinc-400">
+                    <span
+                      class="iconify text-blue-400"
+                      data-icon="lucide:check-circle-2"
+                      data-width="16"
+                    ></span
+                    >Home-based food businesses
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-400">
+                    <span
+                      class="iconify text-blue-400"
+                      data-icon="lucide:check-circle-2"
+                      data-width="16"
+                    ></span
+                    >Restaurants
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-400">
+                    <span
+                      class="iconify text-blue-400"
+                      data-icon="lucide:check-circle-2"
+                      data-width="16"
+                    ></span
+                    >Cloud kitchens
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p
+                  class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-3"
+                >
+                  Features:
+                </p>
+                <ul class="space-y-2">
+                  <li class="flex items-center gap-2 text-sm text-zinc-400">
+                    <span
+                      class="iconify text-cyan-400/70"
+                      data-icon="lucide:zap"
+                      data-width="16"
+                    ></span
+                    >Order Tracking
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-400">
+                    <span
+                      class="iconify text-cyan-400/70"
+                      data-icon="lucide:zap"
+                      data-width="16"
+                    ></span
+                    >Inventory Control
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-400">
+                    <span
+                      class="iconify text-cyan-400/70"
+                      data-icon="lucide:zap"
+                      data-width="16"
+                    ></span
+                    >Delivery Management
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-zinc-400">
+                    <span
+                      class="iconify text-cyan-400/70"
+                      data-icon="lucide:zap"
+                      data-width="16"
+                    ></span
+                    >Customer Database
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-8">
+            <div
+              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div
+                class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/8 to-transparent rounded-bl-full"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center mb-6 glow-pulse"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:bike"
+                    data-width="26"
+                  ></span>
+                </div>
+                <h3
+                  class="text-2xl font-bold text-zinc-100 tracking-tight mb-5"
+                >
+                  Food Delivery Management
+                </h3>
+                <div class="mb-5">
+                  <p
+                    class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-3"
+                  >
+                    Designed for:
+                  </p>
+                  <ul class="space-y-2">
+                    <li class="flex items-center gap-2 text-sm text-zinc-400">
+                      <span
+                        class="iconify text-blue-400"
+                        data-icon="lucide:check-circle-2"
+                        data-width="16"
+                      ></span
+                      >Home-based food businesses
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-zinc-400">
+                      <span
+                        class="iconify text-blue-400"
+                        data-icon="lucide:check-circle-2"
+                        data-width="16"
+                      ></span
+                      >Restaurants
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-zinc-400">
+                      <span
+                        class="iconify text-blue-400"
+                        data-icon="lucide:check-circle-2"
+                        data-width="16"
+                      ></span
+                      >Cloud kitchens
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-3"
+                  >
+                    Features:
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium"
+                      >Order Tracking</span
+                    ><span
+                      class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium"
+                      >Inventory Control</span
+                    ><span
+                      class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium"
+                      >Delivery Mgmt</span
+                    ><span
+                      class="px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300 font-medium"
+                      >Customer DB</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div
+                class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/8 to-transparent rounded-bl-full"
+              ></div>
+              <div class="relative z-10">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center mb-6 glow-pulse"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:zap"
+                    data-width="26"
+                  ></span>
+                </div>
+                <h3
+                  class="text-2xl font-bold text-zinc-100 tracking-tight mb-5"
+                >
+                  Utility Management Solutions
+                </h3>
+                <div>
+                  <p
+                    class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-3"
+                  >
+                    Designed for:
+                  </p>
+                  <ul class="space-y-2">
+                    <li class="flex items-center gap-2 text-sm text-zinc-400">
+                      <span
+                        class="iconify text-blue-400"
+                        data-icon="lucide:check-circle-2"
+                        data-width="16"
+                      ></span
+                      >Street Light Monitoring
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-zinc-400">
+                      <span
+                        class="iconify text-blue-400"
+                        data-icon="lucide:check-circle-2"
+                        data-width="16"
+                      ></span
+                      >Complaint Management
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-zinc-400">
+                      <span
+                        class="iconify text-blue-400"
+                        data-icon="lucide:check-circle-2"
+                        data-width="16"
+                      ></span
+                      >Asset Tracking
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-zinc-400">
+                      <span
+                        class="iconify text-blue-400"
+                        data-icon="lucide:check-circle-2"
+                        data-width="16"
+                      ></span
+                      >Field Staff Monitoring
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════ PORTFOLIO — CUSTOM APP MOCKUPS ═══════════════════ -->
+    <section id="portfolio" class="py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+          >
+            <span
+              class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+              >Portfolio</span
+            >
+          </div>
+          <h2
+            class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1]"
+          >
+            Recent <span class="gradient-text">Projects</span>
+          </h2>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          style="perspective: 1000px"
+        >
+          <!-- 1. Smart Ledger Application -->
+          <div
+            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal"
+          >
+            <div class="relative aspect-[4/5] overflow-hidden">
+              <div class="app-mockup">
+                <!-- Header -->
+                <div class="app-header">
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <div
+                      style="
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 6px;
+                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                      >
+                        <path d="M2 7h10M7 2v10" />
+                      </svg>
+                    </div>
+                    <span
+                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
+                      >Smart Ledger</span
+                    >
+                  </div>
+                  <div style="display: flex; gap: 4px">
+                    <div
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: #22c55e;
+                      "
+                    ></div>
+                    <div
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: #f59e0b;
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <!-- Body -->
+                <div class="app-body">
+                  <!-- Summary Cards -->
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 8px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <div class="stat-card">
+                      <div
+                        style="
+                          font-size: 8px;
+                          color: #94a3b8;
+                          margin-bottom: 4px;
+                        "
+                      >
+                        INCOME
+                      </div>
+                      <div
+                        style="
+                          font-size: 14px;
+                          font-weight: 700;
+                          color: #22c55e;
+                        "
+                      >
+                        ₹4,52,300
+                      </div>
+                      <div
+                        style="font-size: 7px; color: #22c55e; margin-top: 2px"
+                      >
+                        ▲ 12.5%
+                      </div>
+                    </div>
+                    <div class="stat-card">
+                      <div
+                        style="
+                          font-size: 8px;
+                          color: #94a3b8;
+                          margin-bottom: 4px;
+                        "
+                      >
+                        EXPENSE
+                      </div>
+                      <div
+                        style="
+                          font-size: 14px;
+                          font-weight: 700;
+                          color: #ef4444;
+                        "
+                      >
+                        ₹2,18,400
+                      </div>
+                      <div
+                        style="font-size: 7px; color: #ef4444; margin-top: 2px"
+                      >
+                        ▼ 3.2%
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Chart -->
+                  <div
+                    style="
+                      background: rgba(59, 130, 246, 0.06);
+                      border: 1px solid rgba(59, 130, 246, 0.1);
+                      border-radius: 8px;
+                      padding: 10px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <div
+                      style="font-size: 8px; color: #94a3b8; margin-bottom: 8px"
+                    >
+                      MONTHLY OVERVIEW
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: end;
+                        gap: 4px;
+                        height: 60px;
+                      "
+                    >
+                      <div
+                        class="chart-bar"
+                        style="
+                          flex: 1;
+                          background: linear-gradient(to top, #3b82f6, #60a5fa);
+                          border-radius: 3px 3px 0 0;
+                          height: 40%;
+                          animation-delay: 0s;
+                        "
+                      ></div>
+                      <div
+                        class="chart-bar"
+                        style="
+                          flex: 1;
+                          background: linear-gradient(to top, #3b82f6, #60a5fa);
+                          border-radius: 3px 3px 0 0;
+                          height: 65%;
+                          animation-delay: 0.1s;
+                        "
+                      ></div>
+                      <div
+                        class="chart-bar"
+                        style="
+                          flex: 1;
+                          background: linear-gradient(to top, #3b82f6, #60a5fa);
+                          border-radius: 3px 3px 0 0;
+                          height: 45%;
+                          animation-delay: 0.2s;
+                        "
+                      ></div>
+                      <div
+                        class="chart-bar"
+                        style="
+                          flex: 1;
+                          background: linear-gradient(to top, #3b82f6, #60a5fa);
+                          border-radius: 3px 3px 0 0;
+                          height: 80%;
+                          animation-delay: 0.3s;
+                        "
+                      ></div>
+                      <div
+                        class="chart-bar"
+                        style="
+                          flex: 1;
+                          background: linear-gradient(to top, #3b82f6, #22d3ee);
+                          border-radius: 3px 3px 0 0;
+                          height: 55%;
+                          animation-delay: 0.4s;
+                        "
+                      ></div>
+                      <div
+                        class="chart-bar"
+                        style="
+                          flex: 1;
+                          background: linear-gradient(to top, #3b82f6, #60a5fa);
+                          border-radius: 3px 3px 0 0;
+                          height: 70%;
+                          animation-delay: 0.5s;
+                        "
+                      ></div>
+                      <div
+                        class="chart-bar"
+                        style="
+                          flex: 1;
+                          background: rgba(255, 255, 255, 0.06);
+                          border-radius: 3px 3px 0 0;
+                          height: 30%;
+                          animation-delay: 0.6s;
+                        "
+                      ></div>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 4px;
+                      "
+                    >
+                      <span style="font-size: 6px; color: #475569">Jan</span
+                      ><span style="font-size: 6px; color: #475569">Feb</span
+                      ><span style="font-size: 6px; color: #475569">Mar</span
+                      ><span style="font-size: 6px; color: #475569">Apr</span
+                      ><span style="font-size: 6px; color: #475569">May</span
+                      ><span style="font-size: 6px; color: #475569">Jun</span
+                      ><span style="font-size: 6px; color: #475569">Jul</span>
+                    </div>
+                  </div>
+                  <!-- Recent Transactions -->
+                  <div
+                    style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
+                  >
+                    RECENT TRANSACTIONS
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 6px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                    "
+                  >
+                    <div style="display: flex; align-items: center; gap: 6px">
+                      <div
+                        style="
+                          width: 18px;
+                          height: 18px;
+                          border-radius: 50%;
+                          background: rgba(34, 197, 94, 0.15);
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                        "
+                      >
+                        <span style="font-size: 8px; color: #22c55e">↑</span>
+                      </div>
+                      <div>
+                        <div style="font-size: 9px; color: #e2e8f0">
+                          Client Payment
+                        </div>
+                        <div style="font-size: 7px; color: #64748b">Today</div>
+                      </div>
+                    </div>
+                    <span
+                      style="font-size: 9px; font-weight: 600; color: #22c55e"
+                      >+₹45,000</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 6px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                    "
+                  >
+                    <div style="display: flex; align-items: center; gap: 6px">
+                      <div
+                        style="
+                          width: 18px;
+                          height: 18px;
+                          border-radius: 50%;
+                          background: rgba(239, 68, 68, 0.15);
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                        "
+                      >
+                        <span style="font-size: 8px; color: #ef4444">↓</span>
+                      </div>
+                      <div>
+                        <div style="font-size: 9px; color: #e2e8f0">
+                          Office Rent
+                        </div>
+                        <div style="font-size: 7px; color: #64748b">
+                          Yesterday
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      style="font-size: 9px; font-weight: 600; color: #ef4444"
+                      >-₹18,500</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 6px 0;
+                    "
+                  >
+                    <div style="display: flex; align-items: center; gap: 6px">
+                      <div
+                        style="
+                          width: 18px;
+                          height: 18px;
+                          border-radius: 50%;
+                          background: rgba(34, 197, 94, 0.15);
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                        "
+                      >
+                        <span style="font-size: 8px; color: #22c55e">↑</span>
+                      </div>
+                      <div>
+                        <div style="font-size: 9px; color: #e2e8f0">
+                          Invoice #1042
+                        </div>
+                        <div style="font-size: 7px; color: #64748b">
+                          2 days ago
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      style="font-size: 9px; font-weight: 600; color: #22c55e"
+                      >+₹32,000</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
+              ></div>
+              <div class="absolute top-4 left-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
+                  >Finance</span
+                >
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <h3 class="text-lg font-bold text-zinc-100 mb-1">
+                  Smart Ledger Application
+                </h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Income and expense tracking solution for businesses.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Weather Monitoring Application -->
+          <div
+            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal"
+          >
+            <div class="relative aspect-[4/5] overflow-hidden">
+              <div class="app-mockup">
+                <div class="app-header">
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <div
+                      style="
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 6px;
+                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                      >
+                        <circle cx="7" cy="7" r="3" />
+                        <path d="M7 1v2M7 11v2M1 7h2M11 7h2" />
+                      </svg>
+                    </div>
+                    <span
+                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
+                      >Weather Monitor</span
+                    >
+                  </div>
+                  <div style="font-size: 7px; color: #64748b">
+                    📍 Thiruvananthapuram
+                  </div>
+                </div>
+                <div class="app-body">
+                  <!-- Main Weather -->
+                  <div style="text-align: center; padding: 16px 0 12px">
+                    <div style="font-size: 48px; margin-bottom: 4px">⛅</div>
+                    <div
+                      style="font-size: 36px; font-weight: 800; color: #e2e8f0"
+                    >
+                      29°C
+                    </div>
+                    <div style="font-size: 10px; color: #94a3b8">
+                      Partly Cloudy
+                    </div>
+                    <div
+                      style="font-size: 8px; color: #64748b; margin-top: 2px"
+                    >
+                      Feels like 32°C
+                    </div>
+                  </div>
+                  <!-- Stats Row -->
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr 1fr;
+                      gap: 6px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <div class="stat-card" style="text-align: center">
+                      <div style="font-size: 7px; color: #94a3b8">HUMIDITY</div>
+                      <div
+                        style="
+                          font-size: 12px;
+                          font-weight: 700;
+                          color: #3b82f6;
+                        "
+                      >
+                        78%
+                      </div>
+                    </div>
+                    <div class="stat-card" style="text-align: center">
+                      <div style="font-size: 7px; color: #94a3b8">WIND</div>
+                      <div
+                        style="
+                          font-size: 12px;
+                          font-weight: 700;
+                          color: #22d3ee;
+                        "
+                      >
+                        12 km/h
+                      </div>
+                    </div>
+                    <div class="stat-card" style="text-align: center">
+                      <div style="font-size: 7px; color: #94a3b8">RAIN</div>
+                      <div
+                        style="
+                          font-size: 12px;
+                          font-weight: 700;
+                          color: #60a5fa;
+                        "
+                      >
+                        65%
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Hourly Forecast -->
+                  <div
+                    style="
+                      background: rgba(59, 130, 246, 0.06);
+                      border: 1px solid rgba(59, 130, 246, 0.1);
+                      border-radius: 8px;
+                      padding: 10px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <div
+                      style="font-size: 8px; color: #94a3b8; margin-bottom: 8px"
+                    >
+                      HOURLY FORECAST
+                    </div>
+                    <div style="display: flex; justify-content: space-between">
+                      <div style="text-align: center">
+                        <div style="font-size: 7px; color: #64748b">Now</div>
+                        <div style="font-size: 12px">⛅</div>
+                        <div style="font-size: 8px; color: #e2e8f0">29°</div>
+                      </div>
+                      <div style="text-align: center">
+                        <div style="font-size: 7px; color: #64748b">1PM</div>
+                        <div style="font-size: 12px">🌤️</div>
+                        <div style="font-size: 8px; color: #e2e8f0">31°</div>
+                      </div>
+                      <div style="text-align: center">
+                        <div style="font-size: 7px; color: #64748b">2PM</div>
+                        <div style="font-size: 12px">☀️</div>
+                        <div style="font-size: 8px; color: #e2e8f0">32°</div>
+                      </div>
+                      <div style="text-align: center">
+                        <div style="font-size: 7px; color: #64748b">3PM</div>
+                        <div style="font-size: 12px">🌧️</div>
+                        <div style="font-size: 8px; color: #e2e8f0">27°</div>
+                      </div>
+                      <div style="text-align: center">
+                        <div style="font-size: 7px; color: #64748b">4PM</div>
+                        <div style="font-size: 12px">⛈️</div>
+                        <div style="font-size: 8px; color: #e2e8f0">25°</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 5-Day -->
+                  <div
+                    style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
+                  >
+                    5-DAY FORECAST
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 5px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                    "
+                  >
+                    <span style="font-size: 8px; color: #94a3b8">Mon</span
+                    ><span style="font-size: 10px">🌧️</span
+                    ><span style="font-size: 8px; color: #e2e8f0"
+                      >26° / 22°</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 5px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                    "
+                  >
+                    <span style="font-size: 8px; color: #94a3b8">Tue</span
+                    ><span style="font-size: 10px">⛅</span
+                    ><span style="font-size: 8px; color: #e2e8f0"
+                      >30° / 24°</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 5px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                    "
+                  >
+                    <span style="font-size: 8px; color: #94a3b8">Wed</span
+                    ><span style="font-size: 10px">☀️</span
+                    ><span style="font-size: 8px; color: #e2e8f0"
+                      >33° / 25°</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 5px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                    "
+                  >
+                    <span style="font-size: 8px; color: #94a3b8">Thu</span
+                    ><span style="font-size: 10px">🌤️</span
+                    ><span style="font-size: 8px; color: #e2e8f0"
+                      >31° / 23°</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 5px 0;
+                    "
+                  >
+                    <span style="font-size: 8px; color: #94a3b8">Fri</span
+                    ><span style="font-size: 10px">🌧️</span
+                    ><span style="font-size: 8px; color: #e2e8f0"
+                      >28° / 22°</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
+              ></div>
+              <div class="absolute top-4 left-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
+                  >IoT</span
+                >
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <h3 class="text-lg font-bold text-zinc-100 mb-1">
+                  Weather Monitoring App
+                </h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Real-time weather dashboard with location services.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Inventory Management System -->
+          <div
+            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal"
+          >
+            <div class="relative aspect-[4/5] overflow-hidden">
+              <div class="app-mockup">
+                <div class="app-header">
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <div
+                      style="
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 6px;
+                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                      >
+                        <rect x="2" y="2" width="4" height="4" />
+                        <rect x="8" y="2" width="4" height="4" />
+                        <rect x="2" y="8" width="4" height="4" />
+                        <rect x="8" y="8" width="4" height="4" />
+                      </svg>
+                    </div>
+                    <span
+                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
+                      >Inventory Pro</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      background: #22c55e20;
+                      border: 1px solid #22c55e40;
+                      border-radius: 4px;
+                      padding: 1px 6px;
+                      font-size: 7px;
+                      color: #22c55e;
+                    "
+                  >
+                    LIVE
+                  </div>
+                </div>
+                <div class="app-body">
+                  <!-- Stats -->
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 8px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <div class="stat-card">
+                      <div style="font-size: 7px; color: #94a3b8">
+                        TOTAL ITEMS
+                      </div>
+                      <div
+                        style="
+                          font-size: 14px;
+                          font-weight: 700;
+                          color: #3b82f6;
+                        "
+                      >
+                        1,248
+                      </div>
+                    </div>
+                    <div class="stat-card">
+                      <div style="font-size: 7px; color: #94a3b8">
+                        LOW STOCK
+                      </div>
+                      <div
+                        style="
+                          font-size: 14px;
+                          font-weight: 700;
+                          color: #f59e0b;
+                        "
+                      >
+                        23
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Stock Levels Chart -->
+                  <div
+                    style="
+                      background: rgba(59, 130, 246, 0.06);
+                      border: 1px solid rgba(59, 130, 246, 0.1);
+                      border-radius: 8px;
+                      padding: 10px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <div
+                      style="font-size: 8px; color: #94a3b8; margin-bottom: 8px"
+                    >
+                      STOCK LEVELS BY CATEGORY
+                    </div>
+                    <div style="margin-bottom: 6px">
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-between;
+                          font-size: 7px;
+                          color: #94a3b8;
+                          margin-bottom: 2px;
+                        "
+                      >
+                        <span>Electronics</span><span>78%</span>
+                      </div>
+                      <div class="bar-gray" style="position: relative">
+                        <div
+                          class="bar"
+                          style="
+                            width: 78%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                    <div style="margin-bottom: 6px">
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-between;
+                          font-size: 7px;
+                          color: #94a3b8;
+                          margin-bottom: 2px;
+                        "
+                      >
+                        <span>Clothing</span><span>92%</span>
+                      </div>
+                      <div class="bar-gray" style="position: relative">
+                        <div
+                          class="bar"
+                          style="
+                            width: 92%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                    <div style="margin-bottom: 6px">
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-between;
+                          font-size: 7px;
+                          color: #94a3b8;
+                          margin-bottom: 2px;
+                        "
+                      >
+                        <span>Food & Bev</span><span>45%</span>
+                      </div>
+                      <div class="bar-gray" style="position: relative">
+                        <div
+                          class="bar"
+                          style="
+                            width: 45%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background: linear-gradient(
+                              90deg,
+                              #f59e0b,
+                              #fbbf24
+                            );
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-between;
+                          font-size: 7px;
+                          color: #94a3b8;
+                          margin-bottom: 2px;
+                        "
+                      >
+                        <span>Hardware</span><span>63%</span>
+                      </div>
+                      <div class="bar-gray" style="position: relative">
+                        <div
+                          class="bar"
+                          style="
+                            width: 63%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product Table -->
+                  <div
+                    style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
+                  >
+                    RECENT STOCK UPDATES
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 2fr 1fr 1fr;
+                      gap: 4px;
+                      font-size: 7px;
+                      color: #64748b;
+                      padding: 4px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                    "
+                  >
+                    <span>Product</span
+                    ><span style="text-align: right">Qty</span
+                    ><span style="text-align: right">Status</span>
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 2fr 1fr 1fr;
+                      gap: 4px;
+                      font-size: 8px;
+                      padding: 5px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+                    "
+                  >
+                    <span style="color: #e2e8f0">Laptop Dell XPS</span
+                    ><span style="text-align: right; color: #e2e8f0">142</span
+                    ><span style="text-align: right; color: #22c55e"
+                      >In Stock</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 2fr 1fr 1fr;
+                      gap: 4px;
+                      font-size: 8px;
+                      padding: 5px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+                    "
+                  >
+                    <span style="color: #e2e8f0">USB-C Cable</span
+                    ><span style="text-align: right; color: #e2e8f0">8</span
+                    ><span style="text-align: right; color: #f59e0b">Low</span>
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 2fr 1fr 1fr;
+                      gap: 4px;
+                      font-size: 8px;
+                      padding: 5px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+                    "
+                  >
+                    <span style="color: #e2e8f0">Wireless Mouse</span
+                    ><span style="text-align: right; color: #e2e8f0">356</span
+                    ><span style="text-align: right; color: #22c55e"
+                      >In Stock</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 2fr 1fr 1fr;
+                      gap: 4px;
+                      font-size: 8px;
+                      padding: 5px 0;
+                    "
+                  >
+                    <span style="color: #e2e8f0">Monitor 27"</span
+                    ><span style="text-align: right; color: #e2e8f0">0</span
+                    ><span style="text-align: right; color: #ef4444">Out</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
+              ></div>
+              <div class="absolute top-4 left-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
+                  >ERP</span
+                >
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <h3 class="text-lg font-bold text-zinc-100 mb-1">
+                  Inventory Management
+                </h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Stock management and reporting solution.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Complaint Management Portal -->
+          <div
+            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal"
+          >
+            <div class="relative aspect-[4/5] overflow-hidden">
+              <div class="app-mockup">
+                <div class="app-header">
+                  <div style="display: flex; align-items: center; gap: 8px">
+                    <div
+                      style="
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 6px;
+                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                      >
+                        <path d="M3 7h8M3 4h8M3 10h5" />
+                      </svg>
+                    </div>
+                    <span
+                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
+                      >Complaint Portal</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      background: #3b82f620;
+                      border: 1px solid #3b82f640;
+                      border-radius: 4px;
+                      padding: 1px 6px;
+                      font-size: 7px;
+                      color: #60a5fa;
+                    "
+                  >
+                    +3 NEW
+                  </div>
+                </div>
+                <div class="app-body">
+                  <!-- Ticket Stats -->
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr 1fr;
+                      gap: 6px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <div class="stat-card" style="text-align: center">
+                      <div style="font-size: 7px; color: #94a3b8">OPEN</div>
+                      <div
+                        style="
+                          font-size: 14px;
+                          font-weight: 700;
+                          color: #f59e0b;
+                        "
+                      >
+                        12
+                      </div>
+                    </div>
+                    <div class="stat-card" style="text-align: center">
+                      <div style="font-size: 7px; color: #94a3b8">
+                        IN PROGRESS
+                      </div>
+                      <div
+                        style="
+                          font-size: 14px;
+                          font-weight: 700;
+                          color: #3b82f6;
+                        "
+                      >
+                        8
+                      </div>
+                    </div>
+                    <div class="stat-card" style="text-align: center">
+                      <div style="font-size: 7px; color: #94a3b8">RESOLVED</div>
+                      <div
+                        style="
+                          font-size: 14px;
+                          font-weight: 700;
+                          color: #22c55e;
+                        "
+                      >
+                        47
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Donut-like indicator -->
+                  <div
+                    style="
+                      background: rgba(59, 130, 246, 0.06);
+                      border: 1px solid rgba(59, 130, 246, 0.1);
+                      border-radius: 8px;
+                      padding: 10px;
+                      margin-bottom: 12px;
+                      text-align: center;
+                    "
+                  >
+                    <div
+                      style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
+                    >
+                      RESOLUTION RATE
+                    </div>
+                    <div
+                      style="
+                        position: relative;
+                        width: 60px;
+                        height: 60px;
+                        margin: 0 auto;
+                      "
+                    >
+                      <svg width="60" height="60" viewBox="0 0 60 60">
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="24"
+                          fill="none"
+                          stroke="rgba(255,255,255,0.06)"
+                          stroke-width="6"
+                        />
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="24"
+                          fill="none"
+                          stroke="url(#grad1)"
+                          stroke-width="6"
+                          stroke-dasharray="113 151"
+                          stroke-linecap="round"
+                          transform="rotate(-90 30 30)"
+                        />
+                        <defs>
+                          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
+                            <stop offset="0%" style="stop-color: #3b82f6" />
+                            <stop offset="100%" style="stop-color: #22d3ee" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                      <div
+                        style="
+                          position: absolute;
+                          top: 50%;
+                          left: 50%;
+                          transform: translate(-50%, -50%);
+                          font-size: 14px;
+                          font-weight: 700;
+                          color: #e2e8f0;
+                        "
+                      >
+                        70%
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Ticket List -->
+                  <div
+                    style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
+                  >
+                    RECENT TICKETS
+                  </div>
+                  <div
+                    style="
+                      padding: 6px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div style="font-size: 8px; color: #e2e8f0">
+                          #TK-1042 Street Light Out
+                        </div>
+                        <div style="font-size: 7px; color: #64748b">
+                          Ward 12 · 2 hrs ago
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          background: #f59e0b20;
+                          border: 1px solid #f59e0b40;
+                          border-radius: 3px;
+                          padding: 1px 5px;
+                          font-size: 6px;
+                          color: #f59e0b;
+                        "
+                      >
+                        OPEN
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      padding: 6px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div style="font-size: 8px; color: #e2e8f0">
+                          #TK-1041 Water Leakage
+                        </div>
+                        <div style="font-size: 7px; color: #64748b">
+                          Ward 5 · 5 hrs ago
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          background: #3b82f620;
+                          border: 1px solid #3b82f640;
+                          border-radius: 3px;
+                          padding: 1px 5px;
+                          font-size: 6px;
+                          color: #60a5fa;
+                        "
+                      >
+                        PROGRESS
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      padding: 6px 0;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+                    "
+                  >
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div style="font-size: 8px; color: #e2e8f0">
+                          #TK-1040 Road Damage
+                        </div>
+                        <div style="font-size: 7px; color: #64748b">
+                          Ward 3 · 1 day ago
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          background: #22c55e20;
+                          border: 1px solid #22c55e40;
+                          border-radius: 3px;
+                          padding: 1px 5px;
+                          font-size: 6px;
+                          color: #22c55e;
+                        "
+                      >
+                        RESOLVED
+                      </div>
+                    </div>
+                  </div>
+                  <div style="padding: 6px 0">
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                      "
+                    >
+                      <div>
+                        <div style="font-size: 8px; color: #e2e8f0">
+                          #TK-1039 Garbage Overflow
+                        </div>
+                        <div style="font-size: 7px; color: #64748b">
+                          Ward 8 · 2 days ago
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          background: #22c55e20;
+                          border: 1px solid #22c55e40;
+                          border-radius: 3px;
+                          padding: 1px 5px;
+                          font-size: 6px;
+                          color: #22c55e;
+                        "
+                      >
+                        RESOLVED
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
+              ></div>
+              <div class="absolute top-4 left-4">
+                <span
+                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
+                  >Utility</span
+                >
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <h3 class="text-lg font-bold text-zinc-100 mb-1">
+                  Complaint Management
+                </h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Service request and ticketing system.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
+    <section class="py-24 md:py-32 relative">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
+      ></div>
+      <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="text-center mb-20 reveal">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+          >
+            <span
+              class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+              >Testimonials</span
+            >
+          </div>
+          <h2
+            class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1]"
+          >
+            What Our <span class="gradient-text">Clients Say</span>
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div class="flex items-center gap-1 mb-5">
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+            </div>
+            <p class="text-sm text-zinc-300 leading-relaxed mb-6 italic">
+              "ShanNextGen Technologies transformed our manual process into a
+              fully digital system. Their support and expertise exceeded
+              expectations."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center"
+              >
+                <span class="text-blue-400 text-sm font-bold">B</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-zinc-200">
+                  Business Owner
+                </p>
+                <p class="text-xs text-zinc-500">Digital Transformation</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div class="flex items-center gap-1 mb-5">
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+            </div>
+            <p class="text-sm text-zinc-300 leading-relaxed mb-6 italic">
+              "The ERP solution significantly improved our inventory management
+              and reporting accuracy."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center"
+              >
+                <span class="text-blue-400 text-sm font-bold">R</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-zinc-200">Retail Client</p>
+                <p class="text-xs text-zinc-500">ERP Solutions</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal"
+            style="backdrop-filter: blur(10px)"
+          >
+            <div class="flex items-center gap-1 mb-5">
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span
+              ><span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+            </div>
+            <p class="text-sm text-zinc-300 leading-relaxed mb-6 italic">
+              "The ordering and delivery system helped us streamline operations
+              and improve customer satisfaction."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center"
+              >
+                <span class="text-blue-400 text-sm font-bold">O</span>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-zinc-200">
+                  Restaurant Owner
+                </p>
+                <p class="text-xs text-zinc-500">Delivery Management</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════ ABOUT US ═══════════════════ -->
+    <section id="about" class="py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+        >
+          <div class="reveal-left relative">
+            <div
+              class="aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-800/50 relative group"
+              style="perspective: 1000px"
+            >
+              <img
+                src="https://z-cdn-media.chatglm.cn/files/d655eea2-e76b-4ddd-935e-1006cf8b9869.jpeg?auth_key=1881972773-68044d6054ef44089bf24b918dc1dbbe-0-04017483afe08a2809db2bd5b212eeec"
+                alt="ShanNextGenTechnologies Logo"
+                class="w-full h-full object-cover opacity-60 transition-all duration-700 group-hover:scale-105"
+              />
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"
+              ></div>
+            </div>
+
+            <div
+              class="absolute -bottom-6 -right-4 md:right-8 bg-zinc-900/90 border border-blue-500/20 rounded-2xl p-5 shadow-2xl float-3d"
+              style="
+                backdrop-filter: blur(20px);
+                box-shadow: 0 20px 60px rgba(59, 130, 246, 0.1);
+              "
+            >
+              <div class="text-3xl font-bold gradient-text">6+</div>
+              <div class="text-xs text-zinc-400 mt-0.5">
+                Years of<br />Excellence
+              </div>
+            </div>
+            <div
+              class="absolute -top-8 -left-8 w-24 h-24 pointer-events-none"
+              style="perspective: 200px"
+            >
+              <div
+                class="w-full h-full rounded-full border border-blue-500/20 spin-ring"
+              ></div>
+            </div>
+          </div>
+          <div class="reveal-right">
+            <div
+              class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+            >
+              <span
+                class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+                >About Us</span
+              >
+            </div>
+            <h2
+              class="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-100 leading-[1.15] mb-6"
+            >
+              Who <span class="gradient-text">We Are</span>
+            </h2>
+            <p class="text-base text-zinc-400 leading-relaxed mb-4">
+              ShanNextGen Technologies is a Kerala-based IT company dedicated to
+              delivering innovative digital solutions that help businesses grow,
+              automate operations, and achieve their goals.
+            </p>
+            <p class="text-base text-zinc-400 leading-relaxed mb-8">
+              Our expertise spans software development, web development, mobile
+              applications, cloud technologies, ERP systems, CRM solutions, and
+              IT consulting.
+            </p>
+            <div class="space-y-5">
+              <div
+                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50"
+                style="backdrop-filter: blur(10px)"
+              >
+                <div class="flex items-center gap-3 mb-2">
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:target"
+                    data-width="18"
+                  ></span>
+                  <h3 class="text-sm font-bold text-zinc-100">Our Mission</h3>
+                </div>
+                <p class="text-sm text-zinc-400 leading-relaxed">
+                  To empower businesses through reliable, scalable, and
+                  cost-effective technology solutions.
+                </p>
+              </div>
+              <div
+                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50"
+                style="backdrop-filter: blur(10px)"
+              >
+                <div class="flex items-center gap-3 mb-2">
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:eye"
+                    data-width="18"
+                  ></span>
+                  <h3 class="text-sm font-bold text-zinc-100">Our Vision</h3>
+                </div>
+                <p class="text-sm text-zinc-400 leading-relaxed">
+                  To become a trusted technology partner for businesses across
+                  Kerala, India, and beyond.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════ SEO LINKS ═══════════════════ -->
+    <section class="py-16 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-10 reveal">
+          <h2 class="text-xl font-bold text-zinc-300">
+            Our Specialized Services
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-xl"></div>
+              <div class="tilt-content relative z-10">
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:globe"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  Website Development in Kerala
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  Website Development Kerala
+                </p>
+              </div>
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-xl"></div>
+              <div class="tilt-content relative z-10">
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:smartphone"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  Mobile App Development Kerala
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  Mobile App Development Kerala
+                </p>
+              </div>
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-xl"></div>
+              <div class="tilt-content relative z-10">
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:boxes"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  ERP Software Solutions Kerala
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  ERP Software Kerala
+                </p>
+              </div>
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-xl"></div>
+              <div class="tilt-content relative z-10">
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:lightbulb"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  IT Consulting Services Kerala
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  IT Consulting Kerala
+                </p>
+              </div>
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div class="tilt-shine rounded-xl"></div>
+              <div class="tilt-content relative z-10">
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:code-2"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  Custom Software Development India
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  Custom Software Development India
+                </p>
+              </div>
+            </div></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section id="contact" class="py-24 md:py-32 relative">
+      <div
+        class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
+      ></div>
+      <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div class="reveal-left">
+            <div
+              class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+            >
+              <span
+                class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+                >Contact Us</span
+              >
+            </div>
+            <h2
+              class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1] mb-4"
+            >
+              Get In <span class="gradient-text">Touch</span>
+            </h2>
+            <p class="text-zinc-400 text-lg mb-10">
+              Ready to transform your business? Let's start a conversation.
+            </p>
+            <div class="space-y-6">
+              <div
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50"
+                style="backdrop-filter: blur(10px)"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center flex-shrink-0"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:phone"
+                    data-width="20"
+                  ></span>
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1"
+                  >
+                    Phone
+                  </p>
+                  <p class="text-sm text-zinc-200">
+                    +91 9995203714, +91 8075259097
+                  </p>
+                </div>
+              </div>
+              <div
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50"
+                style="backdrop-filter: blur(10px)"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center flex-shrink-0"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:mail"
+                    data-width="20"
+                  ></span>
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1"
+                  >
+                    Email
+                  </p>
+                  <p class="text-sm text-zinc-200">info@shannextgentech.com</p>
+                </div>
+              </div>
+              <div
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50"
+                style="backdrop-filter: blur(10px)"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center flex-shrink-0"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:map-pin"
+                    data-width="20"
+                  ></span>
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1"
+                  >
+                    Location
+                  </p>
+                  <p class="text-sm text-zinc-200">
+                    Thiruvananthapuram, Kerala
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-right">
+            <form
+              id="contactForm"
+              class="p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 relative overflow-hidden"
+              style="backdrop-filter: blur(10px)"
+            >
+              <div
+                class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/5 to-transparent rounded-bl-full pointer-events-none"
+              ></div>
+              <h3 class="text-xl font-bold text-zinc-100 mb-8 relative z-10">
+                Send Us a Message
+              </h3>
+              <div class="space-y-5 relative z-10">
+                <div>
+                  <label
+                    class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                    >Full Name <span class="text-blue-400">*</span></label
+                  ><input
+                    type="text"
+                    name="fullName"
+                    required
+                    placeholder="Your full name"
+                    class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                    >Company Name</label
+                  ><input
+                    type="text"
+                    name="companyName"
+                    placeholder="Your company name"
+                    class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                  />
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label
+                      class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                      >Email <span class="text-blue-400">*</span></label
+                    ><input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="you@example.com"
+                      class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                      >Phone</label
+                    ><input
+                      type="tel"
+                      name="phone"
+                      placeholder="+91 XXXXX XXXXX"
+                      class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                    >Service Required
+                    <span class="text-blue-400">*</span></label
+                  ><select
+                    name="service"
+                    required
+                    class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-400 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 appearance-none"
+                    style="
+                      background-image: url(&quot;data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22m6 9 6 6 6-6%22/%3E%3C/svg%3E&quot;);
+                      background-repeat: no-repeat;
+                      background-position: right 16px center;
+                    "
+                  >
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="website" class="bg-zinc-900">
+                      Website Development
+                    </option>
+                    <option value="mobile" class="bg-zinc-900">
+                      Mobile App Development
+                    </option>
+                    <option value="custom-software" class="bg-zinc-900">
+                      Custom Software Development
+                    </option>
+                    <option value="erp" class="bg-zinc-900">
+                      ERP Solutions
+                    </option>
+                    <option value="crm" class="bg-zinc-900">
+                      CRM Solutions
+                    </option>
+                    <option value="cloud" class="bg-zinc-900">
+                      Cloud Solutions
+                    </option>
+                    <option value="consulting" class="bg-zinc-900">
+                      IT Consulting
+                    </option>
+                    <option value="other" class="bg-zinc-900">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                    >Message <span class="text-blue-400">*</span></label
+                  ><textarea
+                    name="message"
+                    required
+                    rows="4"
+                    placeholder="Tell us about your project or requirements..."
+                    class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 resize-none"
+                  ></textarea>
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="w-full mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-sm font-bold px-8 py-4 rounded-full hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 relative z-10"
+              >
+                <span
+                  class="iconify"
+                  data-icon="lucide:send"
+                  data-width="16"
+                ></span
+                >Send Inquiry
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="border-t border-zinc-800/30 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
+        >
+          <div>
+            <a href="#" class="inline-flex items-center gap-2.5 mb-5">
+              <div class="footer-logo-icon">
+                <img
+                  src="https://z-cdn-media.chatglm.cn/files/813ecd16-93f3-422f-9257-126d0c4b5601.png?auth_key=1881201546-4f70b5275369432992b938e88d089daa-0-fe30012e69aab0792b6ecc960dad44f2"
+                  alt="ShanNextGen"
+                />
+              </div>
+
+              <div class="logo-brand-text">
+                <div class="brand-top">
+                  <span class="brand-shan">Shan</span>
+                  <span class="brand-nextgen">NextGen</span>
+                </div>
+                <span class="brand-technologies">Technologies</span>
+              </div>
+            </a>
+            <p class="text-sm text-zinc-500 leading-relaxed mb-5">
+              Empowering businesses through innovative IT solutions, software
+              development, and digital transformation services.
+            </p>
+            <div class="flex items-center gap-3">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                ><span
+                  class="iconify text-zinc-400"
+                  data-icon="lucide:linkedin"
+                  data-width="16"
+                ></span
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                ><span
+                  class="iconify text-zinc-400"
+                  data-icon="lucide:facebook"
+                  data-width="16"
+                ></span
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                ><span
+                  class="iconify text-zinc-400"
+                  data-icon="lucide:instagram"
+                  data-width="16"
+                ></span
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-zinc-200 mb-5">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#home"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#portfolio"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-zinc-200 mb-5">Services</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Website Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Mobile App Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >ERP Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >CRM Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Cloud Services</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-zinc-200 mb-5">Contact</h4>
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span
+                  class="iconify text-zinc-600"
+                  data-icon="lucide:phone"
+                  data-width="14"
+                ></span
+                ><span class="text-sm text-zinc-500">+91 9995203714</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="iconify text-zinc-600"
+                  data-icon="lucide:mail"
+                  data-width="14"
+                ></span
+                ><span class="text-sm text-zinc-500"
+                  >info@shannextgentech.com</span
+                >
+              </div>
+              <div class="flex items-center gap-2">
+                <span
+                  class="iconify text-zinc-600"
+                  data-icon="lucide:map-pin"
+                  data-width="14"
+                ></span
+                ><span class="text-sm text-zinc-500"
+                  >Thiruvananthapuram, Kerala</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-zinc-800/30 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-xs text-zinc-600">
+            © 2026 ShanNextGen Technologies. All rights reserved.
+          </p>
+          <div class="flex items-center gap-6">
+            <a
+              href="#"
+              class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+              >Privacy Policy</a
+            ><a
+              href="#"
+              class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast-3d">
+      <div class="flex items-center gap-3">
+        <span
+          class="iconify text-emerald-400"
+          data-icon="lucide:check-circle-2"
+          data-width="20"
+        ></span>
+        <div>
+          <p class="text-sm font-semibold text-zinc-200">Message Sent!</p>
+          <p class="text-xs text-zinc-500">We'll get back to you shortly.</p>
+        </div>
+      </div>
+    </div>
+
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-zinc-900/80 border border-zinc-700/50 flex items-center justify-center text-zinc-400 hover:text-blue-400 hover:border-blue-500/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 opacity-0 pointer-events-none z-40"
+      style="backdrop-filter: blur(10px)"
+    >
+      <span
+        class="iconify"
+        data-icon="lucide:chevron-up"
+        data-width="20"
+      ></span>
+    </button>
+
+    <script>
+      (function () {
+        const c = document.getElementById("hero-canvas"),
+          s = new THREE.Scene(),
+          cm = new THREE.PerspectiveCamera(
+            75,
+            innerWidth / innerHeight,
+            0.1,
+            1e3,
+          ),
+          r = new THREE.WebGLRenderer({
+            canvas: c,
+            alpha: true,
+            antialias: true,
+          });
+        r.setSize(innerWidth, innerHeight);
+        r.setPixelRatio(Math.min(devicePixelRatio, 2));
+        const p = 1500,
+          ps = new Float32Array(p * 3),
+          cs = new Float32Array(p * 3);
+        for (let i = 0; i < p; i++) {
+          ps[i * 3] = (Math.random() - 0.5) * 20;
+          ps[i * 3 + 1] = (Math.random() - 0.5) * 20;
+          ps[i * 3 + 2] = (Math.random() - 0.5) * 20;
+          const b = Math.random() > 0.7;
+          cs[i * 3] = b ? 0.231 : 0.4;
+          cs[i * 3 + 1] = b ? 0.51 : 0.4;
+          cs[i * 3 + 2] = b ? 0.965 : 0.45;
+        }
+        const pg = new THREE.BufferGeometry();
+        pg.setAttribute("position", new THREE.BufferAttribute(ps, 3));
+        pg.setAttribute("color", new THREE.BufferAttribute(cs, 3));
+        const pm = new THREE.PointsMaterial({
+          size: 0.04,
+          vertexColors: true,
+          transparent: true,
+          opacity: 0.6,
+          blending: THREE.AdditiveBlending,
+          sizeAttenuation: true,
+        });
+        const pts = new THREE.Points(pg, pm);
+        s.add(pts);
+        const ig = new THREE.IcosahedronGeometry(2.5, 1),
+          im = new THREE.MeshBasicMaterial({
+            color: 0x3b82f6,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.08,
+          }),
+          ic = new THREE.Mesh(ig, im);
+        s.add(ic);
+        const tg = new THREE.TorusGeometry(1.5, 0.02, 16, 100),
+          tm = new THREE.MeshBasicMaterial({
+            color: 0x3b82f6,
+            transparent: true,
+            opacity: 0.15,
+          }),
+          t = new THREE.Mesh(tg, tm);
+        t.rotation.x = Math.PI / 2;
+        s.add(t);
+        const t2g = new THREE.TorusGeometry(3, 0.01, 16, 100),
+          t2m = new THREE.MeshBasicMaterial({
+            color: 0x22d3ee,
+            transparent: true,
+            opacity: 0.06,
+          }),
+          t2 = new THREE.Mesh(t2g, t2m);
+        s.add(t2);
+        cm.position.z = 5;
+        let mx = 0,
+          my = 0;
+        document.addEventListener("mousemove", (e) => {
+          mx = (e.clientX / innerWidth - 0.5) * 2;
+          my = (e.clientY / innerHeight - 0.5) * 2;
+        });
+        function a() {
+          requestAnimationFrame(a);
+          const d = Date.now() * 0.001;
+          pts.rotation.y += 0.0003;
+          pts.rotation.x += 0.0001;
+          ic.rotation.x = d * 0.1;
+          ic.rotation.y = d * 0.15;
+          t.rotation.z = d * 0.2;
+          t2.rotation.z = -d * 0.1;
+          t2.rotation.x = d * 0.05;
+          cm.position.x += (mx * 0.5 - cm.position.x) * 0.02;
+          cm.position.y += (-my * 0.5 - cm.position.y) * 0.02;
+          cm.lookAt(s.position);
+          r.render(s, cm);
+        }
+        a();
+        addEventListener("resize", () => {
+          cm.aspect = innerWidth / innerHeight;
+          cm.updateProjectionMatrix();
+          r.setSize(innerWidth, innerHeight);
+        });
+      })();
+      (function () {
+        const c = document.getElementById("bg-canvas"),
+          s = new THREE.Scene(),
+          cm = new THREE.PerspectiveCamera(
+            75,
+            innerWidth / innerHeight,
+            0.1,
+            1e3,
+          ),
+          r = new THREE.WebGLRenderer({
+            canvas: c,
+            alpha: true,
+            antialias: true,
+          });
+        r.setSize(innerWidth, innerHeight);
+        r.setPixelRatio(Math.min(devicePixelRatio, 2));
+        const p = 300,
+          ps = new Float32Array(p * 3);
+        for (let i = 0; i < p; i++) {
+          ps[i * 3] = (Math.random() - 0.5) * 30;
+          ps[i * 3 + 1] = (Math.random() - 0.5) * 30;
+          ps[i * 3 + 2] = (Math.random() - 0.5) * 30;
+        }
+        const g = new THREE.BufferGeometry();
+        g.setAttribute("position", new THREE.BufferAttribute(ps, 3));
+        const m = new THREE.PointsMaterial({
+          color: 0x3b82f6,
+          size: 0.02,
+          transparent: true,
+          opacity: 0.3,
+          blending: THREE.AdditiveBlending,
+        });
+        const pts = new THREE.Points(g, m);
+        s.add(pts);
+        cm.position.z = 10;
+        function a() {
+          requestAnimationFrame(a);
+          pts.rotation.y += 0.0002;
+          r.render(s, cm);
+        }
+        a();
+        addEventListener("resize", () => {
+          cm.aspect = innerWidth / innerHeight;
+          cm.updateProjectionMatrix();
+          r.setSize(innerWidth, innerHeight);
+        });
+      })();
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray(".reveal").forEach((el, i) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 60, rotateX: 10 },
+          {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+            delay: (i % 4) * 0.1,
+          },
+        );
+      });
+      gsap.utils.toArray(".reveal-left").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, x: -80, rotateY: 10 },
+          {
+            opacity: 1,
+            x: 0,
+            rotateY: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+      });
+      gsap.utils.toArray(".reveal-right").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, x: 80, rotateY: -10 },
+          {
+            opacity: 1,
+            x: 0,
+            rotateY: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+      });
+      document.querySelectorAll(".tilt-card").forEach((c) => {
+        const i = c.querySelector(".tilt-inner");
+        c.addEventListener("mousemove", (e) => {
+          const r = c.getBoundingClientRect(),
+            rx = ((e.clientY - r.top - r.height / 2) / (r.height / 2)) * -8,
+            ry = ((e.clientX - r.left - r.width / 2) / (r.width / 2)) * 8;
+          i.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02,1.02,1.02)`;
+        });
+        c.addEventListener("mouseleave", () => {
+          i.style.transform =
+            "perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)";
+        });
+      });
+      document.querySelectorAll(".magnetic-btn").forEach((b) => {
+        b.addEventListener("mousemove", (e) => {
+          const r = b.getBoundingClientRect();
+          b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.2}px,${(e.clientY - r.top - r.height / 2) * 0.2}px)`;
+        });
+        b.addEventListener("mouseleave", () => {
+          b.style.transform = "translate(0,0)";
+        });
+      });
+      const cts = document.querySelectorAll(".counter-value[data-target]"),
+        co = new IntersectionObserver(
+          (e) => {
+            e.forEach((en) => {
+              if (en.isIntersecting) {
+                const el = en.target,
+                  tg = parseInt(el.getAttribute("data-target"));
+                gsap.to(
+                  { val: 0 },
+                  {
+                    val: tg,
+                    duration: 2,
+                    ease: "power2.out",
+                    onUpdate: function () {
+                      el.textContent = Math.round(this.targets()[0].val) + "+";
+                    },
+                  },
+                );
+                co.unobserve(el);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+      cts.forEach((c) => co.observe(c));
+      const nb = document.getElementById("navbar");
+      addEventListener("scroll", () =>
+        nb.classList.toggle("scrolled", scrollY > 50),
+      );
+      const mm = document.getElementById("mobileMenu"),
+        mb = document.getElementById("mobileMenuBtn");
+      mb.addEventListener("click", () => mm.classList.toggle("hidden"));
+      document
+        .querySelectorAll(".mobile-nav-link")
+        .forEach((l) =>
+          l.addEventListener("click", () => mm.classList.add("hidden")),
+        );
+      const ss = document.querySelectorAll("section[id]");
+      addEventListener("scroll", () => {
+        let cu = "";
+        ss.forEach((s) => {
+          if (scrollY >= s.offsetTop - 100) cu = s.getAttribute("id");
+        });
+        document.querySelectorAll(".nav-link").forEach((l) => {
+          l.classList.toggle(
+            "text-blue-400",
+            l.getAttribute("href") === `#${cu}`,
+          );
+          l.classList.toggle(
+            "text-zinc-400",
+            l.getAttribute("href") !== `#${cu}`,
+          );
+        });
+      });
+      const bt = document.getElementById("backToTop");
+      addEventListener("scroll", () => {
+        bt.style.opacity = scrollY > 500 ? "1" : "0";
+        bt.style.pointerEvents = scrollY > 500 ? "auto" : "none";
+      });
+      bt.addEventListener("click", () =>
+        scrollTo({ top: 0, behavior: "smooth" }),
+      );
+      document.getElementById("contactForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const t = document.getElementById("toast");
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 4e3);
+        e.target.reset();
+      });
+      addEventListener("scroll", () => {
+        const s = pageYOffset,
+          h = document.querySelector("#home .relative.z-10");
+        if (h && s < innerHeight) {
+          h.style.transform = `translateY(${s * 0.15}px)`;
+          h.style.opacity = 1 - s / (innerHeight * 0.8);
+        }
+      });
+    </script>
+  </body>
+</html>
