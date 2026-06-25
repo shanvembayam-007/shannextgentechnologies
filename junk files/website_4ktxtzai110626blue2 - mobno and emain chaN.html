@@ -54,13 +54,6 @@
         z-index: -1;
         pointer-events: none;
       }
-      .floating-shape {
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.15;
-        filter: blur(1px);
-      }
 
       /* ── Logo Styles ── */
       .logo-icon-wrap {
@@ -88,9 +81,10 @@
         box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
       }
 
+      /* Navbar Logo Image */
       .logo-icon-wrap img {
-        height: 40px;
-        width: 40px;
+        height: 40px; /* Increased from 40px to 50px */
+        width: 40px; /* Increased from 40px to 50px */
         object-fit: cover;
         display: block;
       }
@@ -99,17 +93,6 @@
         display: flex;
         align-items: center;
         gap: 5px;
-      }
-      .logo-brand-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        line-height: 1;
-      }
-      .logo-brand-text .brand-top {
-        display: flex;
-        align-items: baseline;
-        gap: 0;
       }
       .logo-brand-text .brand-shan {
         font-weight: 700;
@@ -124,14 +107,6 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         letter-spacing: -0.025em;
-      }
-      .brand-technologies {
-        font-size: 13px;
-        font-weight: 400;
-        color: #a1a1aa;
-        letter-spacing: 0.08em;
-        margin-top: 2px;
-        line-height: 1.4;
       }
 
       /* Footer logo */
@@ -162,8 +137,9 @@
       .footer-logo-icon img {
         height: 40px;
         width: 40px;
-        object-fit: cover;
+        object-fit:cover;
       }
+
       .tilt-card {
         transform-style: preserve-3d;
         perspective: 1000px;
@@ -399,192 +375,9 @@
           transform: translateY(8px);
         }
       }
-
-      /* NEW 3D ANIMATION STYLES */
-      .parallax-layer {
-        transition: transform 0.1s ease-out;
-        will-change: transform;
-      }
-
-      @keyframes orbit3d {
-        from {
-          transform: rotateX(60deg) rotateZ(0deg) translateY(0);
-        }
-        to {
-          transform: rotateX(60deg) rotateZ(360deg) translateY(0);
-        }
-      }
-      .orbit-ring {
-        animation: orbit3d 30s linear infinite;
-        transform-style: preserve-3d;
-      }
-
-      @keyframes floatVertical {
-        0%,
-        100% {
-          transform: translateY(0px) rotateZ(0deg);
-        }
-        50% {
-          transform: translateY(-30px) rotateZ(5deg);
-        }
-      }
-      .float-vertical {
-        animation: floatVertical 4s ease-in-out infinite;
-      }
-
-      @keyframes pulse3d {
-        0%,
-        100% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        40%,
-        60% {
-          opacity: 0.1;
-        }
-        50% {
-          transform: scale(1.1);
-          opacity: 0.3;
-        }
-      }
-      .pulse-3d {
-        animation: pulse3d 1.6s ease-in-out infinite;
-        transform-style: preserve-3d;
-      }
-
-      .scene-3d {
-        perspective: 1500px;
-        transform-style: preserve-3d;
-      }
-      .depth-card {
-        transform-style: preserve-3d;
-        transition:
-          transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-          box-shadow 0.4s ease;
-      }
-      .depth-card:hover {
-        transform: translateY(-10px) rotateX(5deg) rotateY(-5deg) scale(1.02);
-      }
-
-      /* Floating particles */
-      .particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(59, 130, 246, 0.6);
-        border-radius: 50%;
-        pointer-events: none;
-        animation: particleFloat 10s linear infinite;
-      }
-      @keyframes particleFloat {
-        0% {
-          transform: translateY(100vh) rotate(0deg);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-100vh) rotate(720deg);
-          opacity: 0;
-        }
-      }
-
-      /* 3D Geometric shapes */
-      .geo-shape {
-        position: absolute;
-        opacity: 0.1;
-        filter: blur(1px);
-        animation: geoFloat 15s ease-in-out infinite;
-      }
-      @keyframes geoFloat {
-        0%,
-        100% {
-          transform: translateY(0) rotateX(0) rotateY(0);
-        }
-        25% {
-          transform: translateY(-50px) rotateX(90deg) rotateY(45deg);
-        }
-        50% {
-          transform: translateY(-20px) rotateX(180deg) rotateY(90deg);
-        }
-        75% {
-          transform: translateY(-60px) rotateX(270deg) rotateY(135deg);
-        }
-      }
-
-      /* Scroll wave effect */
-      .wave-section {
-        position: relative;
-        overflow: hidden;
-      }
-      .wave-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 300%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(59, 130, 246, 0.03),
-          transparent
-        );
-        animation: waveMove 8s linear infinite;
-      }
-      @keyframes waveMove {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(33.33%);
-        }
-      }
-
-      /* Mouse follower glow */
-      .cursor-glow {
-        position: fixed;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(59, 130, 246, 0.15),
-          transparent 70%
-        );
-        pointer-events: none;
-        z-index: 0;
-        transform: translate(-50%, -50%);
-        transition: opacity 0.3s;
-      }
-
-      /* 3D Grid floor effect */
-      .grid-floor {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%) rotateX(80deg);
-        width: 200%;
-        height: 50vh;
-        background-image:
-          linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-        background-size: 50px 50px;
-        mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
-        -webkit-mask-image: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.3),
-          transparent
-        );
-      }
     </style>
   </head>
   <body>
-    <div class="cursor-glow" id="cursorGlow"></div>
     <canvas id="bg-canvas"></canvas>
 
     <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
@@ -603,13 +396,9 @@
               alt="ShanNextGen"
             />
           </div>
-
           <div class="logo-brand-text">
-            <div class="brand-top">
-              <span class="brand-shan">Shan</span>
-              <span class="brand-nextgen">NextGen</span>
-            </div>
-            <span class="brand-technologies">Technologies</span>
+            <span class="brand-shan">Shan</span
+            ><span class="brand-nextgen">NextGen</span>
           </div>
         </a>
         <div class="hidden md:flex items-center gap-8">
@@ -729,92 +518,16 @@
       class="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <canvas id="hero-canvas"></canvas>
-
-      <!-- 3D Grid Floor -->
-      <div class="grid-floor"></div>
-
-      <!-- Animated floating shapes -->
-      <div class="geo-shape" style="top: 10%; left: 5%; animation-delay: 0s">
-        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-          <polygon
-            points="40,5 75,65 5,65"
-            stroke="#3b82f6"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 20%; right: 10%; animation-delay: 2s">
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-          <rect
-            x="10"
-            y="10"
-            width="40"
-            height="40"
-            stroke="#22d3ee"
-            stroke-width="1"
-            fill="none"
-            transform="rotate(45 30 30)"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 60%; left: 8%; animation-delay: 4s">
-        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-          <circle
-            cx="25"
-            cy="25"
-            r="20"
-            stroke="#3b82f6"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 70%; right: 5%; animation-delay: 1s">
-        <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
-          <polygon
-            points="35,5 65,25 65,55 35,70 5,55 5,25"
-            stroke="#22d3ee"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 40%; left: 3%; animation-delay: 3s">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <polygon
-            points="20,2 38,12 38,28 20,38 2,28 2,12"
-            stroke="#3b82f6"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 85%; left: 15%; animation-delay: 5s">
-        <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
-          <polygon
-            points="27.5,2 52,20 52,45 27.5,55 3,45 3,20"
-            stroke="#60a5fa"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-
       <div
         class="absolute inset-0 flex items-center justify-center pointer-events-none"
         style="perspective: 800px"
       >
         <div
-          class="orbit-ring w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full border border-blue-500/10 absolute"
+          class="spin-ring w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full border border-blue-500/10 absolute"
         ></div>
         <div
-          class="orbit-ring w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full border border-cyan-400/5 absolute"
-          style="animation-duration: 25s; animation-direction: reverse"
-        ></div>
-        <div
-          class="orbit-ring w-[600px] h-[600px] md:w-[900px] md:h-[900px] rounded-full border border-blue-500/5 absolute"
-          style="animation-duration: 40s"
+          class="spin-ring w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full border border-cyan-400/5 absolute"
+          style="animation-duration: 15s; animation-direction: reverse"
         ></div>
       </div>
       <div
@@ -828,14 +541,17 @@
           class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-8"
           style="animation: fadeInUp 0.8s ease-out 0.2s both"
         >
-          <span class="w-2 h-2 rounded-full bg-green-500 pulse-3d"></span>
+          <span
+            class="w-2 h-2 rounded-full bg-blue-500"
+            style="animation: glowPulse 2s infinite"
+          ></span>
           <span
             class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
-            >Trusted IT Partner
-          </span>
+            >Trusted IT Partner in Kerala</span
+          >
         </div>
         <h1
-          class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight mb-8"
+          class="text-4xl md:text-6xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight mb-8"
           style="animation: fadeInUp 0.8s ease-out 0.4s both"
         >
           Empowering Businesses<br />with
@@ -885,7 +601,7 @@
           class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
           style="animation: fadeInUp 0.8s ease-out 1s both"
         >
-          <div class="text-center depth-card p-4 rounded-2xl">
+          <div class="text-center">
             <div
               class="text-3xl md:text-4xl font-bold gradient-text counter-value"
               data-target="50"
@@ -896,7 +612,7 @@
               Projects Delivered
             </div>
           </div>
-          <div class="text-center depth-card p-4 rounded-2xl">
+          <div class="text-center">
             <div
               class="text-3xl md:text-4xl font-bold gradient-text counter-value"
               data-target="40"
@@ -907,7 +623,7 @@
               Happy Clients
             </div>
           </div>
-          <div class="text-center depth-card p-4 rounded-2xl">
+          <div class="text-center">
             <div
               class="text-3xl md:text-4xl font-bold gradient-text counter-value"
               data-target="6"
@@ -918,7 +634,7 @@
               Industries Served
             </div>
           </div>
-          <div class="text-center depth-card p-4 rounded-2xl">
+          <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold gradient-text">24/7</div>
             <div class="text-xs text-zinc-500 mt-2 uppercase tracking-wider">
               Technical Support
@@ -944,7 +660,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ WHY CHOOSE US ═══════════════════ -->
-    <section class="py-24 md:py-32 relative wave-section">
+    <section class="py-24 md:py-32 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-20 reveal">
           <div
@@ -1180,7 +896,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ SERVICES ═══════════════════ -->
-    <section id="services" class="py-24 md:py-32 relative wave-section">
+    <section id="services" class="py-24 md:py-32 relative">
       <div
         class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
       ></div>
@@ -1206,7 +922,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1247,7 +963,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1286,7 +1002,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1325,7 +1041,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1364,7 +1080,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1403,7 +1119,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1448,7 +1164,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ INDUSTRIES ═══════════════════ -->
-    <section id="industries" class="py-24 md:py-32 relative wave-section">
+    <section id="industries" class="py-24 md:py-32 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-20 reveal">
           <div
@@ -1643,7 +1359,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ FEATURED SOLUTIONS ═══════════════════ -->
-    <section id="solutions" class="py-24 md:py-32 relative wave-section">
+    <section id="solutions" class="py-24 md:py-32 relative">
       <div
         class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
       ></div>
@@ -1665,7 +1381,7 @@
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-left depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-left"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1787,7 +1503,7 @@
           </div>
           <div class="space-y-8">
             <div
-              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right depth-card"
+              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right"
               style="backdrop-filter: blur(10px)"
             >
               <div
@@ -1866,7 +1582,7 @@
               </div>
             </div>
             <div
-              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right depth-card"
+              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right"
               style="backdrop-filter: blur(10px)"
             >
               <div
@@ -1937,1280 +1653,236 @@
 
     <div class="section-divider"></div>
 
-    <!-- ═══════════════════ PORTFOLIO ═══════════════════ -->
-    <section id="portfolio" class="py-24 md:py-32 relative wave-section">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-20 reveal">
-          <div
-            class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
-          >
-            <span
-              class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
-              >Portfolio</span
-            >
-          </div>
-          <h2
-            class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1]"
-          >
-            Recent <span class="gradient-text">Projects</span>
-          </h2>
+   <!-- ═══════════════════ PORTFOLIO — CUSTOM APP MOCKUPS ═══════════════════ -->
+<section id="portfolio" class="py-24 md:py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal"><div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"><span class="text-blue-400 text-xs font-semibold uppercase tracking-widest">Portfolio</span></div><h2 class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1]">Recent <span class="gradient-text">Projects</span></h2></div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" style="perspective:1000px;">
+
+            <!-- 1. Smart Ledger Application -->
+            <div class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <div class="app-mockup">
+                        <!-- Header -->
+                        <div class="app-header">
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#3b82f6,#22d3ee);display:flex;align-items:center;justify-content:center;">
+                                    <svg width="14" height="14" fill="none" stroke="white" stroke-width="2"><path d="M2 7h10M7 2v10"/></svg>
+                                </div>
+                                <span style="font-size:11px;font-weight:600;color:#e2e8f0;">Smart Ledger</span>
+                            </div>
+                            <div style="display:flex;gap:4px;">
+                                <div style="width:6px;height:6px;border-radius:50%;background:#22c55e;"></div>
+                                <div style="width:6px;height:6px;border-radius:50%;background:#f59e0b;"></div>
+                            </div>
+                        </div>
+                        <!-- Body -->
+                        <div class="app-body">
+                            <!-- Summary Cards -->
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                                <div class="stat-card">
+                                    <div style="font-size:8px;color:#94a3b8;margin-bottom:4px;">INCOME</div>
+                                    <div style="font-size:14px;font-weight:700;color:#22c55e;">₹4,52,300</div>
+                                    <div style="font-size:7px;color:#22c55e;margin-top:2px;">▲ 12.5%</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div style="font-size:8px;color:#94a3b8;margin-bottom:4px;">EXPENSE</div>
+                                    <div style="font-size:14px;font-weight:700;color:#ef4444;">₹2,18,400</div>
+                                    <div style="font-size:7px;color:#ef4444;margin-top:2px;">▼ 3.2%</div>
+                                </div>
+                            </div>
+                            <!-- Chart -->
+                            <div style="background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.1);border-radius:8px;padding:10px;margin-bottom:12px;">
+                                <div style="font-size:8px;color:#94a3b8;margin-bottom:8px;">MONTHLY OVERVIEW</div>
+                                <div style="display:flex;align-items:end;gap:4px;height:60px;">
+                                    <div class="chart-bar" style="flex:1;background:linear-gradient(to top,#3b82f6,#60a5fa);border-radius:3px 3px 0 0;height:40%;animation-delay:0s;"></div>
+                                    <div class="chart-bar" style="flex:1;background:linear-gradient(to top,#3b82f6,#60a5fa);border-radius:3px 3px 0 0;height:65%;animation-delay:0.1s;"></div>
+                                    <div class="chart-bar" style="flex:1;background:linear-gradient(to top,#3b82f6,#60a5fa);border-radius:3px 3px 0 0;height:45%;animation-delay:0.2s;"></div>
+                                    <div class="chart-bar" style="flex:1;background:linear-gradient(to top,#3b82f6,#60a5fa);border-radius:3px 3px 0 0;height:80%;animation-delay:0.3s;"></div>
+                                    <div class="chart-bar" style="flex:1;background:linear-gradient(to top,#3b82f6,#22d3ee);border-radius:3px 3px 0 0;height:55%;animation-delay:0.4s;"></div>
+                                    <div class="chart-bar" style="flex:1;background:linear-gradient(to top,#3b82f6,#60a5fa);border-radius:3px 3px 0 0;height:70%;animation-delay:0.5s;"></div>
+                                    <div class="chart-bar" style="flex:1;background:rgba(255,255,255,0.06);border-radius:3px 3px 0 0;height:30%;animation-delay:0.6s;"></div>
+                                </div>
+                                <div style="display:flex;justify-content:space-between;margin-top:4px;"><span style="font-size:6px;color:#475569;">Jan</span><span style="font-size:6px;color:#475569;">Feb</span><span style="font-size:6px;color:#475569;">Mar</span><span style="font-size:6px;color:#475569;">Apr</span><span style="font-size:6px;color:#475569;">May</span><span style="font-size:6px;color:#475569;">Jun</span><span style="font-size:6px;color:#475569;">Jul</span></div>
+                            </div>
+                            <!-- Recent Transactions -->
+                            <div style="font-size:8px;color:#94a3b8;margin-bottom:6px;">RECENT TRANSACTIONS</div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+                                <div style="display:flex;align-items:center;gap:6px;"><div style="width:18px;height:18px;border-radius:50%;background:rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;"><span style="font-size:8px;color:#22c55e;">↑</span></div><div><div style="font-size:9px;color:#e2e8f0;">Client Payment</div><div style="font-size:7px;color:#64748b;">Today</div></div></div>
+                                <span style="font-size:9px;font-weight:600;color:#22c55e;">+₹45,000</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+                                <div style="display:flex;align-items:center;gap:6px;"><div style="width:18px;height:18px;border-radius:50%;background:rgba(239,68,68,0.15);display:flex;align-items:center;justify-content:center;"><span style="font-size:8px;color:#ef4444;">↓</span></div><div><div style="font-size:9px;color:#e2e8f0;">Office Rent</div><div style="font-size:7px;color:#64748b;">Yesterday</div></div></div>
+                                <span style="font-size:9px;font-weight:600;color:#ef4444;">-₹18,500</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;">
+                                <div style="display:flex;align-items:center;gap:6px;"><div style="width:18px;height:18px;border-radius:50%;background:rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;"><span style="font-size:8px;color:#22c55e;">↑</span></div><div><div style="font-size:9px;color:#e2e8f0;">Invoice #1042</div><div style="font-size:7px;color:#64748b;">2 days ago</div></div></div>
+                                <span style="font-size:9px;font-weight:600;color:#22c55e;">+₹32,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider">Finance</span></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6"><h3 class="text-lg font-bold text-zinc-100 mb-1">Smart Ledger Application</h3><p class="text-xs text-zinc-400 leading-relaxed">Income and expense tracking solution for businesses.</p></div>
+                </div>
+            </div>
+
+            <!-- 2. Weather Monitoring Application -->
+            <div class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <div class="app-mockup">
+                        <div class="app-header">
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#3b82f6,#22d3ee);display:flex;align-items:center;justify-content:center;">
+                                    <svg width="14" height="14" fill="none" stroke="white" stroke-width="2"><circle cx="7" cy="7" r="3"/><path d="M7 1v2M7 11v2M1 7h2M11 7h2"/></svg>
+                                </div>
+                                <span style="font-size:11px;font-weight:600;color:#e2e8f0;">Weather Monitor</span>
+                            </div>
+                            <div style="font-size:7px;color:#64748b;">📍 Thiruvananthapuram</div>
+                        </div>
+                        <div class="app-body">
+                            <!-- Main Weather -->
+                            <div style="text-align:center;padding:16px 0 12px;">
+                                <div style="font-size:48px;margin-bottom:4px;">⛅</div>
+                                <div style="font-size:36px;font-weight:800;color:#e2e8f0;">29°C</div>
+                                <div style="font-size:10px;color:#94a3b8;">Partly Cloudy</div>
+                                <div style="font-size:8px;color:#64748b;margin-top:2px;">Feels like 32°C</div>
+                            </div>
+                            <!-- Stats Row -->
+                            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
+                                <div class="stat-card" style="text-align:center;">
+                                    <div style="font-size:7px;color:#94a3b8;">HUMIDITY</div>
+                                    <div style="font-size:12px;font-weight:700;color:#3b82f6;">78%</div>
+                                </div>
+                                <div class="stat-card" style="text-align:center;">
+                                    <div style="font-size:7px;color:#94a3b8;">WIND</div>
+                                    <div style="font-size:12px;font-weight:700;color:#22d3ee;">12 km/h</div>
+                                </div>
+                                <div class="stat-card" style="text-align:center;">
+                                    <div style="font-size:7px;color:#94a3b8;">RAIN</div>
+                                    <div style="font-size:12px;font-weight:700;color:#60a5fa;">65%</div>
+                                </div>
+                            </div>
+                            <!-- Hourly Forecast -->
+                            <div style="background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.1);border-radius:8px;padding:10px;margin-bottom:12px;">
+                                <div style="font-size:8px;color:#94a3b8;margin-bottom:8px;">HOURLY FORECAST</div>
+                                <div style="display:flex;justify-content:space-between;">
+                                    <div style="text-align:center;"><div style="font-size:7px;color:#64748b;">Now</div><div style="font-size:12px;">⛅</div><div style="font-size:8px;color:#e2e8f0;">29°</div></div>
+                                    <div style="text-align:center;"><div style="font-size:7px;color:#64748b;">1PM</div><div style="font-size:12px;">🌤️</div><div style="font-size:8px;color:#e2e8f0;">31°</div></div>
+                                    <div style="text-align:center;"><div style="font-size:7px;color:#64748b;">2PM</div><div style="font-size:12px;">☀️</div><div style="font-size:8px;color:#e2e8f0;">32°</div></div>
+                                    <div style="text-align:center;"><div style="font-size:7px;color:#64748b;">3PM</div><div style="font-size:12px;">🌧️</div><div style="font-size:8px;color:#e2e8f0;">27°</div></div>
+                                    <div style="text-align:center;"><div style="font-size:7px;color:#64748b;">4PM</div><div style="font-size:12px;">⛈️</div><div style="font-size:8px;color:#e2e8f0;">25°</div></div>
+                                </div>
+                            </div>
+                            <!-- 5-Day -->
+                            <div style="font-size:8px;color:#94a3b8;margin-bottom:6px;">5-DAY FORECAST</div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);"><span style="font-size:8px;color:#94a3b8;">Mon</span><span style="font-size:10px;">🌧️</span><span style="font-size:8px;color:#e2e8f0;">26° / 22°</span></div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);"><span style="font-size:8px;color:#94a3b8;">Tue</span><span style="font-size:10px;">⛅</span><span style="font-size:8px;color:#e2e8f0;">30° / 24°</span></div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);"><span style="font-size:8px;color:#94a3b8;">Wed</span><span style="font-size:10px;">☀️</span><span style="font-size:8px;color:#e2e8f0;">33° / 25°</span></div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);"><span style="font-size:8px;color:#94a3b8;">Thu</span><span style="font-size:10px;">🌤️</span><span style="font-size:8px;color:#e2e8f0;">31° / 23°</span></div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;"><span style="font-size:8px;color:#94a3b8;">Fri</span><span style="font-size:10px;">🌧️</span><span style="font-size:8px;color:#e2e8f0;">28° / 22°</span></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider">IoT</span></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6"><h3 class="text-lg font-bold text-zinc-100 mb-1">Weather Monitoring App</h3><p class="text-xs text-zinc-400 leading-relaxed">Real-time weather dashboard with location services.</p></div>
+                </div>
+            </div>
+
+            <!-- 3. Inventory Management System -->
+            <div class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <div class="app-mockup">
+                        <div class="app-header">
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#3b82f6,#22d3ee);display:flex;align-items:center;justify-content:center;">
+                                    <svg width="14" height="14" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="4" height="4"/><rect x="8" y="2" width="4" height="4"/><rect x="2" y="8" width="4" height="4"/><rect x="8" y="8" width="4" height="4"/></svg>
+                                </div>
+                                <span style="font-size:11px;font-weight:600;color:#e2e8f0;">Inventory Pro</span>
+                            </div>
+                            <div style="background:#22c55e20;border:1px solid #22c55e40;border-radius:4px;padding:1px 6px;font-size:7px;color:#22c55e;">LIVE</div>
+                        </div>
+                        <div class="app-body">
+                            <!-- Stats -->
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                                <div class="stat-card"><div style="font-size:7px;color:#94a3b8;">TOTAL ITEMS</div><div style="font-size:14px;font-weight:700;color:#3b82f6;">1,248</div></div>
+                                <div class="stat-card"><div style="font-size:7px;color:#94a3b8;">LOW STOCK</div><div style="font-size:14px;font-weight:700;color:#f59e0b;">23</div></div>
+                            </div>
+                            <!-- Stock Levels Chart -->
+                            <div style="background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.1);border-radius:8px;padding:10px;margin-bottom:12px;">
+                                <div style="font-size:8px;color:#94a3b8;margin-bottom:8px;">STOCK LEVELS BY CATEGORY</div>
+                                <div style="margin-bottom:6px;"><div style="display:flex;justify-content:space-between;font-size:7px;color:#94a3b8;margin-bottom:2px;"><span>Electronics</span><span>78%</span></div><div class="bar-gray" style="position:relative;"><div class="bar" style="width:78%;position:absolute;top:0;left:0;"></div></div></div>
+                                <div style="margin-bottom:6px;"><div style="display:flex;justify-content:space-between;font-size:7px;color:#94a3b8;margin-bottom:2px;"><span>Clothing</span><span>92%</span></div><div class="bar-gray" style="position:relative;"><div class="bar" style="width:92%;position:absolute;top:0;left:0;"></div></div></div>
+                                <div style="margin-bottom:6px;"><div style="display:flex;justify-content:space-between;font-size:7px;color:#94a3b8;margin-bottom:2px;"><span>Food & Bev</span><span>45%</span></div><div class="bar-gray" style="position:relative;"><div class="bar" style="width:45%;position:absolute;top:0;left:0;background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div></div></div>
+                                <div><div style="display:flex;justify-content:space-between;font-size:7px;color:#94a3b8;margin-bottom:2px;"><span>Hardware</span><span>63%</span></div><div class="bar-gray" style="position:relative;"><div class="bar" style="width:63%;position:absolute;top:0;left:0;"></div></div></div>
+                            </div>
+                            <!-- Product Table -->
+                            <div style="font-size:8px;color:#94a3b8;margin-bottom:6px;">RECENT STOCK UPDATES</div>
+                            <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:4px;font-size:7px;color:#64748b;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.06);"><span>Product</span><span style="text-align:right;">Qty</span><span style="text-align:right;">Status</span></div>
+                            <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:4px;font-size:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.03);"><span style="color:#e2e8f0;">Laptop Dell XPS</span><span style="text-align:right;color:#e2e8f0;">142</span><span style="text-align:right;color:#22c55e;">In Stock</span></div>
+                            <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:4px;font-size:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.03);"><span style="color:#e2e8f0;">USB-C Cable</span><span style="text-align:right;color:#e2e8f0;">8</span><span style="text-align:right;color:#f59e0b;">Low</span></div>
+                            <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:4px;font-size:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.03);"><span style="color:#e2e8f0;">Wireless Mouse</span><span style="text-align:right;color:#e2e8f0;">356</span><span style="text-align:right;color:#22c55e;">In Stock</span></div>
+                            <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:4px;font-size:8px;padding:5px 0;"><span style="color:#e2e8f0;">Monitor 27"</span><span style="text-align:right;color:#e2e8f0;">0</span><span style="text-align:right;color:#ef4444;">Out</span></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider">ERP</span></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6"><h3 class="text-lg font-bold text-zinc-100 mb-1">Inventory Management</h3><p class="text-xs text-zinc-400 leading-relaxed">Stock management and reporting solution.</p></div>
+                </div>
+            </div>
+
+            <!-- 4. Complaint Management Portal -->
+            <div class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <div class="app-mockup">
+                        <div class="app-header">
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#3b82f6,#22d3ee);display:flex;align-items:center;justify-content:center;">
+                                    <svg width="14" height="14" fill="none" stroke="white" stroke-width="2"><path d="M3 7h8M3 4h8M3 10h5"/></svg>
+                                </div>
+                                <span style="font-size:11px;font-weight:600;color:#e2e8f0;">Complaint Portal</span>
+                            </div>
+                            <div style="background:#3b82f620;border:1px solid #3b82f640;border-radius:4px;padding:1px 6px;font-size:7px;color:#60a5fa;">+3 NEW</div>
+                        </div>
+                        <div class="app-body">
+                            <!-- Ticket Stats -->
+                            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
+                                <div class="stat-card" style="text-align:center;"><div style="font-size:7px;color:#94a3b8;">OPEN</div><div style="font-size:14px;font-weight:700;color:#f59e0b;">12</div></div>
+                                <div class="stat-card" style="text-align:center;"><div style="font-size:7px;color:#94a3b8;">IN PROGRESS</div><div style="font-size:14px;font-weight:700;color:#3b82f6;">8</div></div>
+                                <div class="stat-card" style="text-align:center;"><div style="font-size:7px;color:#94a3b8;">RESOLVED</div><div style="font-size:14px;font-weight:700;color:#22c55e;">47</div></div>
+                            </div>
+                            <!-- Donut-like indicator -->
+                            <div style="background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.1);border-radius:8px;padding:10px;margin-bottom:12px;text-align:center;">
+                                <div style="font-size:8px;color:#94a3b8;margin-bottom:6px;">RESOLUTION RATE</div>
+                                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                                    <svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/><circle cx="30" cy="30" r="24" fill="none" stroke="url(#grad1)" stroke-width="6" stroke-dasharray="113 151" stroke-linecap="round" transform="rotate(-90 30 30)"/><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%"><stop offset="0%" style="stop-color:#3b82f6"/><stop offset="100%" style="stop-color:#22d3ee"/></linearGradient></defs></svg>
+                                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:14px;font-weight:700;color:#e2e8f0;">70%</div>
+                                </div>
+                            </div>
+                            <!-- Ticket List -->
+                            <div style="font-size:8px;color:#94a3b8;margin-bottom:6px;">RECENT TICKETS</div>
+                            <div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);"><div style="display:flex;justify-content:space-between;align-items:center;"><div><div style="font-size:8px;color:#e2e8f0;">#TK-1042 Street Light Out</div><div style="font-size:7px;color:#64748b;">Ward 12 · 2 hrs ago</div></div><div style="background:#f59e0b20;border:1px solid #f59e0b40;border-radius:3px;padding:1px 5px;font-size:6px;color:#f59e0b;">OPEN</div></div></div>
+                            <div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);"><div style="display:flex;justify-content:space-between;align-items:center;"><div><div style="font-size:8px;color:#e2e8f0;">#TK-1041 Water Leakage</div><div style="font-size:7px;color:#64748b;">Ward 5 · 5 hrs ago</div></div><div style="background:#3b82f620;border:1px solid #3b82f640;border-radius:3px;padding:1px 5px;font-size:6px;color:#60a5fa;">PROGRESS</div></div></div>
+                            <div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);"><div style="display:flex;justify-content:space-between;align-items:center;"><div><div style="font-size:8px;color:#e2e8f0;">#TK-1040 Road Damage</div><div style="font-size:7px;color:#64748b;">Ward 3 · 1 day ago</div></div><div style="background:#22c55e20;border:1px solid #22c55e40;border-radius:3px;padding:1px 5px;font-size:6px;color:#22c55e;">RESOLVED</div></div></div>
+                            <div style="padding:6px 0;"><div style="display:flex;justify-content:space-between;align-items:center;"><div><div style="font-size:8px;color:#e2e8f0;">#TK-1039 Garbage Overflow</div><div style="font-size:7px;color:#64748b;">Ward 8 · 2 days ago</div></div><div style="background:#22c55e20;border:1px solid #22c55e40;border-radius:3px;padding:1px 5px;font-size:6px;color:#22c55e;">RESOLVED</div></div></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider">Utility</span></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6"><h3 class="text-lg font-bold text-zinc-100 mb-1">Complaint Management</h3><p class="text-xs text-zinc-400 leading-relaxed">Service request and ticketing system.</p></div>
+                </div>
+            </div>
+
         </div>
+    </div>
+</section>
 
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          style="perspective: 1000px"
-        >
-          <!-- Smart Ledger -->
-          <div
-            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal depth-card"
-          >
-            <div class="relative aspect-[4/5] overflow-hidden">
-              <div class="app-mockup">
-                <div class="app-header">
-                  <div style="display: flex; align-items: center; gap: 8px">
-                    <div
-                      style="
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 6px;
-                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                      "
-                    >
-                      <svg
-                        width="14"
-                        height="14"
-                        fill="none"
-                        stroke="white"
-                        stroke-width="2"
-                      >
-                        <path d="M2 7h10M7 2v10" />
-                      </svg>
-                    </div>
-                    <span
-                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
-                      >Smart Ledger</span
-                    >
-                  </div>
-                  <div style="display: flex; gap: 4px">
-                    <div
-                      style="
-                        width: 6px;
-                        height: 6px;
-                        border-radius: 50%;
-                        background: #22c55e;
-                      "
-                    ></div>
-                    <div
-                      style="
-                        width: 6px;
-                        height: 6px;
-                        border-radius: 50%;
-                        background: #f59e0b;
-                      "
-                    ></div>
-                  </div>
-                </div>
-                <!-- Body -->
-                <div class="app-body">
-                  <!-- Summary Cards -->
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 1fr 1fr;
-                      gap: 8px;
-                      margin-bottom: 12px;
-                    "
-                  >
-                    <div class="stat-card">
-                      <div
-                        style="
-                          font-size: 8px;
-                          color: #94a3b8;
-                          margin-bottom: 4px;
-                        "
-                      >
-                        INCOME
-                      </div>
-                      <div
-                        style="
-                          font-size: 14px;
-                          font-weight: 700;
-                          color: #22c55e;
-                        "
-                      >
-                        ₹4,52,300
-                      </div>
-                      <div
-                        style="font-size: 7px; color: #22c55e; margin-top: 2px"
-                      >
-                        ▲ 12.5%
-                      </div>
-                    </div>
-                    <div class="stat-card">
-                      <div
-                        style="
-                          font-size: 8px;
-                          color: #94a3b8;
-                          margin-bottom: 4px;
-                        "
-                      >
-                        EXPENSE
-                      </div>
-                      <div
-                        style="
-                          font-size: 14px;
-                          font-weight: 700;
-                          color: #ef4444;
-                        "
-                      >
-                        ₹2,18,400
-                      </div>
-                      <div
-                        style="font-size: 7px; color: #ef4444; margin-top: 2px"
-                      >
-                        ▼ 3.2%
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Chart -->
-                  <div
-                    style="
-                      background: rgba(59, 130, 246, 0.06);
-                      border: 1px solid rgba(59, 130, 246, 0.1);
-                      border-radius: 8px;
-                      padding: 10px;
-                      margin-bottom: 12px;
-                    "
-                  >
-                    <div
-                      style="font-size: 8px; color: #94a3b8; margin-bottom: 8px"
-                    >
-                      MONTHLY OVERVIEW
-                    </div>
-                    <div
-                      style="
-                        display: flex;
-                        align-items: end;
-                        gap: 4px;
-                        height: 60px;
-                      "
-                    >
-                      <div
-                        class="chart-bar"
-                        style="
-                          flex: 1;
-                          background: linear-gradient(to top, #3b82f6, #60a5fa);
-                          border-radius: 3px 3px 0 0;
-                          height: 40%;
-                          animation-delay: 0s;
-                        "
-                      ></div>
-                      <div
-                        class="chart-bar"
-                        style="
-                          flex: 1;
-                          background: linear-gradient(to top, #3b82f6, #60a5fa);
-                          border-radius: 3px 3px 0 0;
-                          height: 65%;
-                          animation-delay: 0.1s;
-                        "
-                      ></div>
-                      <div
-                        class="chart-bar"
-                        style="
-                          flex: 1;
-                          background: linear-gradient(to top, #3b82f6, #60a5fa);
-                          border-radius: 3px 3px 0 0;
-                          height: 45%;
-                          animation-delay: 0.2s;
-                        "
-                      ></div>
-                      <div
-                        class="chart-bar"
-                        style="
-                          flex: 1;
-                          background: linear-gradient(to top, #3b82f6, #60a5fa);
-                          border-radius: 3px 3px 0 0;
-                          height: 80%;
-                          animation-delay: 0.3s;
-                        "
-                      ></div>
-                      <div
-                        class="chart-bar"
-                        style="
-                          flex: 1;
-                          background: linear-gradient(to top, #3b82f6, #22d3ee);
-                          border-radius: 3px 3px 0 0;
-                          height: 55%;
-                          animation-delay: 0.4s;
-                        "
-                      ></div>
-                      <div
-                        class="chart-bar"
-                        style="
-                          flex: 1;
-                          background: linear-gradient(to top, #3b82f6, #60a5fa);
-                          border-radius: 3px 3px 0 0;
-                          height: 70%;
-                          animation-delay: 0.5s;
-                        "
-                      ></div>
-                      <div
-                        class="chart-bar"
-                        style="
-                          flex: 1;
-                          background: rgba(255, 255, 255, 0.06);
-                          border-radius: 3px 3px 0 0;
-                          height: 30%;
-                          animation-delay: 0.6s;
-                        "
-                      ></div>
-                    </div>
-                    <div
-                      style="
-                        display: flex;
-                        justify-content: space-between;
-                        margin-top: 4px;
-                      "
-                    >
-                      <span style="font-size: 6px; color: #475569">Jan</span
-                      ><span style="font-size: 6px; color: #475569">Feb</span
-                      ><span style="font-size: 6px; color: #475569">Mar</span
-                      ><span style="font-size: 6px; color: #475569">Apr</span
-                      ><span style="font-size: 6px; color: #475569">May</span
-                      ><span style="font-size: 6px; color: #475569">Jun</span
-                      ><span style="font-size: 6px; color: #475569">Jul</span>
-                    </div>
-                  </div>
-                  <!-- Recent Transactions -->
-                  <div
-                    style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
-                  >
-                    RECENT TRANSACTIONS
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 6px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-                    "
-                  >
-                    <div style="display: flex; align-items: center; gap: 6px">
-                      <div
-                        style="
-                          width: 18px;
-                          height: 18px;
-                          border-radius: 50%;
-                          background: rgba(34, 197, 94, 0.15);
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <span style="font-size: 8px; color: #22c55e">↑</span>
-                      </div>
-                      <div>
-                        <div style="font-size: 9px; color: #e2e8f0">
-                          Client Payment
-                        </div>
-                        <div style="font-size: 7px; color: #64748b">Today</div>
-                      </div>
-                    </div>
-                    <span
-                      style="font-size: 9px; font-weight: 600; color: #22c55e"
-                      >+₹45,000</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 6px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-                    "
-                  >
-                    <div style="display: flex; align-items: center; gap: 6px">
-                      <div
-                        style="
-                          width: 18px;
-                          height: 18px;
-                          border-radius: 50%;
-                          background: rgba(239, 68, 68, 0.15);
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <span style="font-size: 8px; color: #ef4444">↓</span>
-                      </div>
-                      <div>
-                        <div style="font-size: 9px; color: #e2e8f0">
-                          Office Rent
-                        </div>
-                        <div style="font-size: 7px; color: #64748b">
-                          Yesterday
-                        </div>
-                      </div>
-                    </div>
-                    <span
-                      style="font-size: 9px; font-weight: 600; color: #ef4444"
-                      >-₹18,500</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 6px 0;
-                    "
-                  >
-                    <div style="display: flex; align-items: center; gap: 6px">
-                      <div
-                        style="
-                          width: 18px;
-                          height: 18px;
-                          border-radius: 50%;
-                          background: rgba(34, 197, 94, 0.15);
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <span style="font-size: 8px; color: #22c55e">↑</span>
-                      </div>
-                      <div>
-                        <div style="font-size: 9px; color: #e2e8f0">
-                          Invoice #1042
-                        </div>
-                        <div style="font-size: 7px; color: #64748b">
-                          2 days ago
-                        </div>
-                      </div>
-                    </div>
-                    <span
-                      style="font-size: 9px; font-weight: 600; color: #22c55e"
-                      >+₹32,000</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
-              ></div>
-              <div class="absolute top-4 left-4">
-                <span
-                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
-                  >Finance</span
-                >
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-6">
-                <h3 class="text-lg font-bold text-zinc-100 mb-1">
-                  Smart Ledger Application
-                </h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">
-                  Income and expense tracking solution for businesses.
-                </p>
-              </div>
-            </div>
-          </div>
+<div class="section-divider"></div>
 
-          <!-- Weather Monitoring -->
-          <div
-            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal depth-card"
-          >
-            <div class="relative aspect-[4/5] overflow-hidden">
-              <div class="app-mockup">
-                <div class="app-header">
-                  <div style="display: flex; align-items: center; gap: 8px">
-                    <div
-                      style="
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 6px;
-                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                      "
-                    >
-                      <svg
-                        width="14"
-                        height="14"
-                        fill="none"
-                        stroke="white"
-                        stroke-width="2"
-                      >
-                        <circle cx="7" cy="7" r="3" />
-                        <path d="M7 1v2M7 11v2M1 7h2M11 7h2" />
-                      </svg>
-                    </div>
-                    <span
-                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
-                      >Weather Monitor</span
-                    >
-                  </div>
-                  <div style="font-size: 7px; color: #64748b">
-                    📍 Thiruvananthapuram
-                  </div>
-                </div>
-                <div class="app-body">
-                  <!-- Main Weather -->
-                  <div style="text-align: center; padding: 16px 0 12px">
-                    <div style="font-size: 48px; margin-bottom: 4px">⛅</div>
-                    <div
-                      style="font-size: 36px; font-weight: 800; color: #e2e8f0"
-                    >
-                      29°C
-                    </div>
-                    <div style="font-size: 10px; color: #94a3b8">
-                      Partly Cloudy
-                    </div>
-                    <div
-                      style="font-size: 8px; color: #64748b; margin-top: 2px"
-                    >
-                      Feels like 32°C
-                    </div>
-                  </div>
-                  <!-- Stats Row -->
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 1fr 1fr 1fr;
-                      gap: 6px;
-                      margin-bottom: 12px;
-                    "
-                  >
-                    <div class="stat-card" style="text-align: center">
-                      <div style="font-size: 7px; color: #94a3b8">HUMIDITY</div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          font-weight: 700;
-                          color: #3b82f6;
-                        "
-                      >
-                        78%
-                      </div>
-                    </div>
-                    <div class="stat-card" style="text-align: center">
-                      <div style="font-size: 7px; color: #94a3b8">WIND</div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          font-weight: 700;
-                          color: #22d3ee;
-                        "
-                      >
-                        12 km/h
-                      </div>
-                    </div>
-                    <div class="stat-card" style="text-align: center">
-                      <div style="font-size: 7px; color: #94a3b8">RAIN</div>
-                      <div
-                        style="
-                          font-size: 12px;
-                          font-weight: 700;
-                          color: #60a5fa;
-                        "
-                      >
-                        65%
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Hourly Forecast -->
-                  <div
-                    style="
-                      background: rgba(59, 130, 246, 0.06);
-                      border: 1px solid rgba(59, 130, 246, 0.1);
-                      border-radius: 8px;
-                      padding: 10px;
-                      margin-bottom: 12px;
-                    "
-                  >
-                    <div
-                      style="font-size: 8px; color: #94a3b8; margin-bottom: 8px"
-                    >
-                      HOURLY FORECAST
-                    </div>
-                    <div style="display: flex; justify-content: space-between">
-                      <div style="text-align: center">
-                        <div style="font-size: 7px; color: #64748b">Now</div>
-                        <div style="font-size: 12px">⛅</div>
-                        <div style="font-size: 8px; color: #e2e8f0">29°</div>
-                      </div>
-                      <div style="text-align: center">
-                        <div style="font-size: 7px; color: #64748b">1PM</div>
-                        <div style="font-size: 12px">🌤️</div>
-                        <div style="font-size: 8px; color: #e2e8f0">31°</div>
-                      </div>
-                      <div style="text-align: center">
-                        <div style="font-size: 7px; color: #64748b">2PM</div>
-                        <div style="font-size: 12px">☀️</div>
-                        <div style="font-size: 8px; color: #e2e8f0">32°</div>
-                      </div>
-                      <div style="text-align: center">
-                        <div style="font-size: 7px; color: #64748b">3PM</div>
-                        <div style="font-size: 12px">🌧️</div>
-                        <div style="font-size: 8px; color: #e2e8f0">27°</div>
-                      </div>
-                      <div style="text-align: center">
-                        <div style="font-size: 7px; color: #64748b">4PM</div>
-                        <div style="font-size: 12px">⛈️</div>
-                        <div style="font-size: 8px; color: #e2e8f0">25°</div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- 5-Day -->
-                  <div
-                    style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
-                  >
-                    5-DAY FORECAST
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 5px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-                    "
-                  >
-                    <span style="font-size: 8px; color: #94a3b8">Mon</span
-                    ><span style="font-size: 10px">🌧️</span
-                    ><span style="font-size: 8px; color: #e2e8f0"
-                      >26° / 22°</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 5px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-                    "
-                  >
-                    <span style="font-size: 8px; color: #94a3b8">Tue</span
-                    ><span style="font-size: 10px">⛅</span
-                    ><span style="font-size: 8px; color: #e2e8f0"
-                      >30° / 24°</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 5px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-                    "
-                  >
-                    <span style="font-size: 8px; color: #94a3b8">Wed</span
-                    ><span style="font-size: 10px">☀️</span
-                    ><span style="font-size: 8px; color: #e2e8f0"
-                      >33° / 25°</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 5px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-                    "
-                  >
-                    <span style="font-size: 8px; color: #94a3b8">Thu</span
-                    ><span style="font-size: 10px">🌤️</span
-                    ><span style="font-size: 8px; color: #e2e8f0"
-                      >31° / 23°</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 5px 0;
-                    "
-                  >
-                    <span style="font-size: 8px; color: #94a3b8">Fri</span
-                    ><span style="font-size: 10px">🌧️</span
-                    ><span style="font-size: 8px; color: #e2e8f0"
-                      >28° / 22°</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
-              ></div>
-              <div class="absolute top-4 left-4">
-                <span
-                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
-                  >IoT</span
-                >
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-6">
-                <h3 class="text-lg font-bold text-zinc-100 mb-1">
-                  Weather Monitoring App
-                </h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">
-                  Real-time weather dashboard with location services.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Inventory Management -->
-          <div
-            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal depth-card"
-          >
-            <div class="relative aspect-[4/5] overflow-hidden">
-              <div class="app-mockup">
-                <div class="app-header">
-                  <div style="display: flex; align-items: center; gap: 8px">
-                    <div
-                      style="
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 6px;
-                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                      "
-                    >
-                      <svg
-                        width="14"
-                        height="14"
-                        fill="none"
-                        stroke="white"
-                        stroke-width="2"
-                      >
-                        <rect x="2" y="2" width="4" height="4" />
-                        <rect x="8" y="2" width="4" height="4" />
-                        <rect x="2" y="8" width="4" height="4" />
-                        <rect x="8" y="8" width="4" height="4" />
-                      </svg>
-                    </div>
-                    <span
-                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
-                      >Inventory Pro</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      background: #22c55e20;
-                      border: 1px solid #22c55e40;
-                      border-radius: 4px;
-                      padding: 1px 6px;
-                      font-size: 7px;
-                      color: #22c55e;
-                    "
-                  >
-                    LIVE
-                  </div>
-                </div>
-
-                <div class="app-body">
-                  <!-- Stats -->
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 1fr 1fr;
-                      gap: 8px;
-                      margin-bottom: 12px;
-                    "
-                  >
-                    <div class="stat-card">
-                      <div style="font-size: 7px; color: #94a3b8">
-                        TOTAL ITEMS
-                      </div>
-                      <div
-                        style="
-                          font-size: 14px;
-                          font-weight: 700;
-                          color: #3b82f6;
-                        "
-                      >
-                        1,248
-                      </div>
-                    </div>
-                    <div class="stat-card">
-                      <div style="font-size: 7px; color: #94a3b8">
-                        LOW STOCK
-                      </div>
-                      <div
-                        style="
-                          font-size: 14px;
-                          font-weight: 700;
-                          color: #f59e0b;
-                        "
-                      >
-                        23
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Stock Levels Chart -->
-                  <div
-                    style="
-                      background: rgba(59, 130, 246, 0.06);
-                      border: 1px solid rgba(59, 130, 246, 0.1);
-                      border-radius: 8px;
-                      padding: 10px;
-                      margin-bottom: 12px;
-                    "
-                  >
-                    <div
-                      style="font-size: 8px; color: #94a3b8; margin-bottom: 8px"
-                    >
-                      STOCK LEVELS BY CATEGORY
-                    </div>
-                    <div style="margin-bottom: 6px">
-                      <div
-                        style="
-                          display: flex;
-                          justify-content: space-between;
-                          font-size: 7px;
-                          color: #94a3b8;
-                          margin-bottom: 2px;
-                        "
-                      >
-                        <span>Electronics</span><span>78%</span>
-                      </div>
-                      <div class="bar-gray" style="position: relative">
-                        <div
-                          class="bar"
-                          style="
-                            width: 78%;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                          "
-                        ></div>
-                      </div>
-                    </div>
-                    <div style="margin-bottom: 6px">
-                      <div
-                        style="
-                          display: flex;
-                          justify-content: space-between;
-                          font-size: 7px;
-                          color: #94a3b8;
-                          margin-bottom: 2px;
-                        "
-                      >
-                        <span>Clothing</span><span>92%</span>
-                      </div>
-                      <div class="bar-gray" style="position: relative">
-                        <div
-                          class="bar"
-                          style="
-                            width: 92%;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                          "
-                        ></div>
-                      </div>
-                    </div>
-                    <div style="margin-bottom: 6px">
-                      <div
-                        style="
-                          display: flex;
-                          justify-content: space-between;
-                          font-size: 7px;
-                          color: #94a3b8;
-                          margin-bottom: 2px;
-                        "
-                      >
-                        <span>Food & Bev</span><span>45%</span>
-                      </div>
-                      <div class="bar-gray" style="position: relative">
-                        <div
-                          class="bar"
-                          style="
-                            width: 45%;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            background: linear-gradient(
-                              90deg,
-                              #f59e0b,
-                              #fbbf24
-                            );
-                          "
-                        ></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        style="
-                          display: flex;
-                          justify-content: space-between;
-                          font-size: 7px;
-                          color: #94a3b8;
-                          margin-bottom: 2px;
-                        "
-                      >
-                        <span>Hardware</span><span>63%</span>
-                      </div>
-                      <div class="bar-gray" style="position: relative">
-                        <div
-                          class="bar"
-                          style="
-                            width: 63%;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                          "
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Product Table -->
-                  <div
-                    style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
-                  >
-                    RECENT STOCK UPDATES
-                  </div>
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 2fr 1fr 1fr;
-                      gap: 4px;
-                      font-size: 7px;
-                      color: #64748b;
-                      padding: 4px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-                    "
-                  >
-                    <span>Product</span
-                    ><span style="text-align: right">Qty</span
-                    ><span style="text-align: right">Status</span>
-                  </div>
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 2fr 1fr 1fr;
-                      gap: 4px;
-                      font-size: 8px;
-                      padding: 5px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-                    "
-                  >
-                    <span style="color: #e2e8f0">Laptop Dell XPS</span
-                    ><span style="text-align: right; color: #e2e8f0">142</span
-                    ><span style="text-align: right; color: #22c55e"
-                      >In Stock</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 2fr 1fr 1fr;
-                      gap: 4px;
-                      font-size: 8px;
-                      padding: 5px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-                    "
-                  >
-                    <span style="color: #e2e8f0">USB-C Cable</span
-                    ><span style="text-align: right; color: #e2e8f0">8</span
-                    ><span style="text-align: right; color: #f59e0b">Low</span>
-                  </div>
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 2fr 1fr 1fr;
-                      gap: 4px;
-                      font-size: 8px;
-                      padding: 5px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-                    "
-                  >
-                    <span style="color: #e2e8f0">Wireless Mouse</span
-                    ><span style="text-align: right; color: #e2e8f0">356</span
-                    ><span style="text-align: right; color: #22c55e"
-                      >In Stock</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 2fr 1fr 1fr;
-                      gap: 4px;
-                      font-size: 8px;
-                      padding: 5px 0;
-                    "
-                  >
-                    <span style="color: #e2e8f0">Monitor 27"</span
-                    ><span style="text-align: right; color: #e2e8f0">0</span
-                    ><span style="text-align: right; color: #ef4444">Out</span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
-              ></div>
-              <div class="absolute top-4 left-4">
-                <span
-                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
-                  >ERP</span
-                >
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-6">
-                <h3 class="text-lg font-bold text-zinc-100 mb-1">
-                  Inventory Management
-                </h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">
-                  Stock management and reporting solution.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Complaint Management -->
-          <div
-            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal depth-card"
-          >
-            <div class="relative aspect-[4/5] overflow-hidden">
-              <div class="app-mockup">
-                <div class="app-header">
-                  <div style="display: flex; align-items: center; gap: 8px">
-                    <div
-                      style="
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 6px;
-                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                      "
-                    >
-                      <svg
-                        width="14"
-                        height="14"
-                        fill="none"
-                        stroke="white"
-                        stroke-width="2"
-                      >
-                        <path d="M3 7h8M3 4h8M3 10h5" />
-                      </svg>
-                    </div>
-                    <span
-                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
-                      >Complaint Portal</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      background: #3b82f620;
-                      border: 1px solid #3b82f640;
-                      border-radius: 4px;
-                      padding: 1px 6px;
-                      font-size: 7px;
-                      color: #60a5fa;
-                    "
-                  >
-                    +3 NEW
-                  </div>
-                </div>
-
-                <div class="app-body">
-                  <!-- Ticket Stats -->
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 1fr 1fr 1fr;
-                      gap: 6px;
-                      margin-bottom: 12px;
-                    "
-                  >
-                    <div class="stat-card" style="text-align: center">
-                      <div style="font-size: 7px; color: #94a3b8">OPEN</div>
-                      <div
-                        style="
-                          font-size: 14px;
-                          font-weight: 700;
-                          color: #f59e0b;
-                        "
-                      >
-                        12
-                      </div>
-                    </div>
-                    <div class="stat-card" style="text-align: center">
-                      <div style="font-size: 7px; color: #94a3b8">
-                        IN PROGRESS
-                      </div>
-                      <div
-                        style="
-                          font-size: 14px;
-                          font-weight: 700;
-                          color: #3b82f6;
-                        "
-                      >
-                        8
-                      </div>
-                    </div>
-                    <div class="stat-card" style="text-align: center">
-                      <div style="font-size: 7px; color: #94a3b8">RESOLVED</div>
-                      <div
-                        style="
-                          font-size: 14px;
-                          font-weight: 700;
-                          color: #22c55e;
-                        "
-                      >
-                        47
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Donut-like indicator -->
-                  <div
-                    style="
-                      background: rgba(59, 130, 246, 0.06);
-                      border: 1px solid rgba(59, 130, 246, 0.1);
-                      border-radius: 8px;
-                      padding: 10px;
-                      margin-bottom: 12px;
-                      text-align: center;
-                    "
-                  >
-                    <div
-                      style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
-                    >
-                      RESOLUTION RATE
-                    </div>
-                    <div
-                      style="
-                        position: relative;
-                        width: 60px;
-                        height: 60px;
-                        margin: 0 auto;
-                      "
-                    >
-                      <svg width="60" height="60" viewBox="0 0 60 60">
-                        <circle
-                          cx="30"
-                          cy="30"
-                          r="24"
-                          fill="none"
-                          stroke="rgba(255,255,255,0.06)"
-                          stroke-width="6"
-                        />
-                        <circle
-                          cx="30"
-                          cy="30"
-                          r="24"
-                          fill="none"
-                          stroke="url(#grad1)"
-                          stroke-width="6"
-                          stroke-dasharray="113 151"
-                          stroke-linecap="round"
-                          transform="rotate(-90 30 30)"
-                        />
-                        <defs>
-                          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%">
-                            <stop offset="0%" style="stop-color: #3b82f6" />
-                            <stop offset="100%" style="stop-color: #22d3ee" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <div
-                        style="
-                          position: absolute;
-                          top: 50%;
-                          left: 50%;
-                          transform: translate(-50%, -50%);
-                          font-size: 14px;
-                          font-weight: 700;
-                          color: #e2e8f0;
-                        "
-                      >
-                        70%
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Ticket List -->
-                  <div
-                    style="font-size: 8px; color: #94a3b8; margin-bottom: 6px"
-                  >
-                    RECENT TICKETS
-                  </div>
-                  <div
-                    style="
-                      padding: 6px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                      "
-                    >
-                      <div>
-                        <div style="font-size: 8px; color: #e2e8f0">
-                          #TK-1042 Street Light Out
-                        </div>
-                        <div style="font-size: 7px; color: #64748b">
-                          Ward 12 · 2 hrs ago
-                        </div>
-                      </div>
-                      <div
-                        style="
-                          background: #f59e0b20;
-                          border: 1px solid #f59e0b40;
-                          border-radius: 3px;
-                          padding: 1px 5px;
-                          font-size: 6px;
-                          color: #f59e0b;
-                        "
-                      >
-                        OPEN
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    style="
-                      padding: 6px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                      "
-                    >
-                      <div>
-                        <div style="font-size: 8px; color: #e2e8f0">
-                          #TK-1041 Water Leakage
-                        </div>
-                        <div style="font-size: 7px; color: #64748b">
-                          Ward 5 · 5 hrs ago
-                        </div>
-                      </div>
-                      <div
-                        style="
-                          background: #3b82f620;
-                          border: 1px solid #3b82f640;
-                          border-radius: 3px;
-                          padding: 1px 5px;
-                          font-size: 6px;
-                          color: #60a5fa;
-                        "
-                      >
-                        PROGRESS
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    style="
-                      padding: 6px 0;
-                      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                      "
-                    >
-                      <div>
-                        <div style="font-size: 8px; color: #e2e8f0">
-                          #TK-1040 Road Damage
-                        </div>
-                        <div style="font-size: 7px; color: #64748b">
-                          Ward 3 · 1 day ago
-                        </div>
-                      </div>
-                      <div
-                        style="
-                          background: #22c55e20;
-                          border: 1px solid #22c55e40;
-                          border-radius: 3px;
-                          padding: 1px 5px;
-                          font-size: 6px;
-                          color: #22c55e;
-                        "
-                      >
-                        RESOLVED
-                      </div>
-                    </div>
-                  </div>
-                  <div style="padding: 6px 0">
-                    <div
-                      style="
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                      "
-                    >
-                      <div>
-                        <div style="font-size: 8px; color: #e2e8f0">
-                          #TK-1039 Garbage Overflow
-                        </div>
-                        <div style="font-size: 7px; color: #64748b">
-                          Ward 8 · 2 days ago
-                        </div>
-                      </div>
-                      <div
-                        style="
-                          background: #22c55e20;
-                          border: 1px solid #22c55e40;
-                          border-radius: 3px;
-                          padding: 1px 5px;
-                          font-size: 6px;
-                          color: #22c55e;
-                        "
-                      >
-                        RESOLVED
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
-              ></div>
-              <div class="absolute top-4 left-4">
-                <span
-                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
-                  >Utility</span
-                >
-              </div>
-              <div class="absolute bottom-0 left-0 right-0 p-6">
-                <h3 class="text-lg font-bold text-zinc-100 mb-1">
-                  Complaint Management
-                </h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">
-                  Service request and ticketing system.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
 
     <!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
-    <section class="py-24 md:py-32 relative wave-section">
+    <section class="py-24 md:py-32 relative">
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
       ></div>
@@ -3232,7 +1904,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
-            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal depth-card"
+            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div class="flex items-center gap-1 mb-5">
@@ -3240,23 +1912,23 @@
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
@@ -3282,7 +1954,7 @@
             </div>
           </div>
           <div
-            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal depth-card"
+            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div class="flex items-center gap-1 mb-5">
@@ -3290,23 +1962,23 @@
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
@@ -3329,7 +2001,7 @@
             </div>
           </div>
           <div
-            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal depth-card"
+            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div class="flex items-center gap-1 mb-5">
@@ -3337,23 +2009,23 @@
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
@@ -3384,7 +2056,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ ABOUT US ═══════════════════ -->
-    <section id="about" class="py-24 md:py-32 relative wave-section">
+    <section id="about" class="py-24 md:py-32 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
@@ -3395,9 +2067,9 @@
               style="perspective: 1000px"
             >
               <img
-                src="https://z-cdn-media.chatglm.cn/files/d655eea2-e76b-4ddd-935e-1006cf8b9869.jpeg?auth_key=1881972773-68044d6054ef44089bf24b918dc1dbbe-0-04017483afe08a2809db2bd5b212eeec"
-                alt="ShanNextGenTechnologies Logo"
-                class="w-full h-full object-cover opacity-60 transition-all duration-700 group-hover:scale-105"
+                src="https://picsum.photos/seed/shanoffice3d/800/600.jpg"
+                alt="ShanNextGen Office"
+                class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-all duration-700 group-hover:scale-105"
               />
               <div
                 class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"
@@ -3414,6 +2086,14 @@
               <div class="text-xs text-zinc-400 mt-0.5">
                 Years of<br />Excellence
               </div>
+            </div>
+            <div
+              class="absolute -top-8 -left-8 w-24 h-24 pointer-events-none"
+              style="perspective: 200px"
+            >
+              <div
+                class="w-full h-full rounded-full border border-blue-500/20 spin-ring"
+              ></div>
             </div>
           </div>
           <div class="reveal-right">
@@ -3442,7 +2122,7 @@
             </p>
             <div class="space-y-5">
               <div
-                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50 depth-card"
+                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div class="flex items-center gap-3 mb-2">
@@ -3459,7 +2139,7 @@
                 </p>
               </div>
               <div
-                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50 depth-card"
+                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div class="flex items-center gap-3 mb-2">
@@ -3484,7 +2164,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ SEO LINKS ═══════════════════ -->
-    <section class="py-16 relative wave-section">
+    <section class="py-16 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-10 reveal">
           <h2 class="text-xl font-bold text-zinc-300">
@@ -3492,9 +2172,9 @@
           </h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3513,11 +2193,11 @@
                   Website Development Kerala
                 </p>
               </div>
-            </div>
-          </a>
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3536,11 +2216,11 @@
                   Mobile App Development Kerala
                 </p>
               </div>
-            </div>
-          </a>
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3559,11 +2239,11 @@
                   ERP Software Kerala
                 </p>
               </div>
-            </div>
-          </a>
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3582,11 +2262,11 @@
                   IT Consulting Kerala
                 </p>
               </div>
-            </div>
-          </a>
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3605,8 +2285,8 @@
                   Custom Software Development India
                 </p>
               </div>
-            </div>
-          </a>
+            </div></a
+          >
         </div>
       </div>
     </section>
@@ -3614,7 +2294,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ CONTACT ═══════════════════ -->
-    <section id="contact" class="py-24 md:py-32 relative wave-section">
+    <section id="contact" class="py-24 md:py-32 relative">
       <div
         class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
       ></div>
@@ -3639,7 +2319,7 @@
             </p>
             <div class="space-y-6">
               <div
-                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card"
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div
@@ -3657,13 +2337,11 @@
                   >
                     Phone
                   </p>
-                  <p class="text-sm text-zinc-200">
-                    +91 9995203714, +91 8075259097
-                  </p>
+                  <p class="text-sm text-zinc-200">+91 9995203714, +91 8075259097</p>
                 </div>
               </div>
               <div
-                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card"
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div
@@ -3685,7 +2363,7 @@
                 </div>
               </div>
               <div
-                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card"
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div
@@ -3713,7 +2391,7 @@
           <div class="reveal-right">
             <form
               id="contactForm"
-              class="p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 relative overflow-hidden depth-card"
+              class="p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 relative overflow-hidden"
               style="backdrop-filter: blur(10px)"
             >
               <div
@@ -3727,8 +2405,7 @@
                   <label
                     class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                     >Full Name <span class="text-blue-400">*</span></label
-                  >
-                  <input
+                  ><input
                     type="text"
                     name="fullName"
                     required
@@ -3740,8 +2417,7 @@
                   <label
                     class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                     >Company Name</label
-                  >
-                  <input
+                  ><input
                     type="text"
                     name="companyName"
                     placeholder="Your company name"
@@ -3753,8 +2429,7 @@
                     <label
                       class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                       >Email <span class="text-blue-400">*</span></label
-                    >
-                    <input
+                    ><input
                       type="email"
                       name="email"
                       required
@@ -3766,8 +2441,7 @@
                     <label
                       class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                       >Phone</label
-                    >
-                    <input
+                    ><input
                       type="tel"
                       name="phone"
                       placeholder="+91 XXXXX XXXXX"
@@ -3780,8 +2454,7 @@
                     class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                     >Service Required
                     <span class="text-blue-400">*</span></label
-                  >
-                  <select
+                  ><select
                     name="service"
                     required
                     class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-400 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 appearance-none"
@@ -3820,8 +2493,7 @@
                   <label
                     class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                     >Message <span class="text-blue-400">*</span></label
-                  >
-                  <textarea
+                  ><textarea
                     name="message"
                     required
                     rows="4"
@@ -3861,12 +2533,12 @@
                   alt="ShanNextGen"
                 />
               </div>
-              <div class="logo-brand-text">
-                <div class="brand-top">
-                  <span class="brand-shan">Shan</span>
-                  <span class="brand-nextgen">NextGen</span>
-                </div>
-                <span class="brand-technologies">Technologies</span>
+              <div>
+                <span class="font-semibold text-zinc-100 tracking-tight"
+                  >Shan</span
+                ><span class="font-semibold text-blue-400 tracking-tight"
+                  >NextGen</span
+                >
               </div>
             </a>
             <p class="text-sm text-zinc-500 leading-relaxed mb-5">
@@ -3877,33 +2549,30 @@
               <a
                 href="#"
                 class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
-              >
-                <span
+                ><span
                   class="iconify text-zinc-400"
                   data-icon="lucide:linkedin"
                   data-width="16"
-                ></span>
-              </a>
+                ></span
+              ></a>
               <a
                 href="#"
                 class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
-              >
-                <span
+                ><span
                   class="iconify text-zinc-400"
                   data-icon="lucide:facebook"
                   data-width="16"
-                ></span>
-              </a>
+                ></span
+              ></a>
               <a
                 href="#"
                 class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
-              >
-                <span
+                ><span
                   class="iconify text-zinc-400"
                   data-icon="lucide:instagram"
                   data-width="16"
-                ></span>
-              </a>
+                ></span
+              ></a>
             </div>
           </div>
           <div>
@@ -3994,16 +2663,16 @@
                   class="iconify text-zinc-600"
                   data-icon="lucide:phone"
                   data-width="14"
-                ></span>
-                <span class="text-sm text-zinc-500">+91 9995203714</span>
+                ></span
+                ><span class="text-sm text-zinc-500">+91 9995203714</span>
               </div>
               <div class="flex items-center gap-2">
                 <span
                   class="iconify text-zinc-600"
                   data-icon="lucide:mail"
                   data-width="14"
-                ></span>
-                <span class="text-sm text-zinc-500"
+                ></span
+                ><span class="text-sm text-zinc-500"
                   >info@shannextgentech.com</span
                 >
               </div>
@@ -4012,8 +2681,8 @@
                   class="iconify text-zinc-600"
                   data-icon="lucide:map-pin"
                   data-width="14"
-                ></span>
-                <span class="text-sm text-zinc-500"
+                ></span
+                ><span class="text-sm text-zinc-500"
                   >Thiruvananthapuram, Kerala</span
                 >
               </div>
@@ -4031,8 +2700,7 @@
               href="#"
               class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
               >Privacy Policy</a
-            >
-            <a
+            ><a
               href="#"
               class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
               >Terms of Service</a
@@ -4069,30 +2737,6 @@
     </button>
 
     <script>
-      // Enhanced Cursor Glow Effect
-      (function () {
-        const glow = document.getElementById("cursorGlow");
-        let mouseX = 0,
-          mouseY = 0;
-        let glowX = 0,
-          glowY = 0;
-
-        document.addEventListener("mousemove", (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        });
-
-        function animateGlow() {
-          glowX += (mouseX - glowX) * 0.1;
-          glowY += (mouseY - glowY) * 0.1;
-          glow.style.left = glowX + "px";
-          glow.style.top = glowY + "px";
-          requestAnimationFrame(animateGlow);
-        }
-        animateGlow();
-      })();
-
-      // Enhanced Hero 3D Scene
       (function () {
         const c = document.getElementById("hero-canvas"),
           s = new THREE.Scene(),
@@ -4109,181 +2753,86 @@
           });
         r.setSize(innerWidth, innerHeight);
         r.setPixelRatio(Math.min(devicePixelRatio, 2));
-
-        // Enhanced Particle System
-        const p = 2500;
-        const ps = new Float32Array(p * 3);
-        const cs = new Float32Array(p * 3);
-        const sizes = new Float32Array(p);
-
+        const p = 1500,
+          ps = new Float32Array(p * 3),
+          cs = new Float32Array(p * 3);
         for (let i = 0; i < p; i++) {
-          ps[i * 3] = (Math.random() - 0.5) * 25;
-          ps[i * 3 + 1] = (Math.random() - 0.5) * 25;
-          ps[i * 3 + 2] = (Math.random() - 0.5) * 25;
-
-          const colorType = Math.random();
-          if (colorType > 0.8) {
-            cs[i * 3] = 0.23;
-            cs[i * 3 + 1] = 0.51;
-            cs[i * 3 + 2] = 0.96; // Blue
-          } else if (colorType > 0.6) {
-            cs[i * 3] = 0.13;
-            cs[i * 3 + 1] = 0.83;
-            cs[i * 3 + 2] = 0.93; // Cyan
-          } else if (colorType > 0.4) {
-            cs[i * 3] = 0.45;
-            cs[i * 3 + 1] = 0.55;
-            cs[i * 3 + 2] = 0.98; // Light Blue
-          } else {
-            cs[i * 3] = 0.6;
-            cs[i * 3 + 1] = 0.7;
-            cs[i * 3 + 2] = 0.98;
-          }
-
-          sizes[i] = Math.random() * 0.06 + 0.02;
+          ps[i * 3] = (Math.random() - 0.5) * 20;
+          ps[i * 3 + 1] = (Math.random() - 0.5) * 20;
+          ps[i * 3 + 2] = (Math.random() - 0.5) * 20;
+          const b = Math.random() > 0.7;
+          cs[i * 3] = b ? 0.231 : 0.4;
+          cs[i * 3 + 1] = b ? 0.51 : 0.4;
+          cs[i * 3 + 2] = b ? 0.965 : 0.45;
         }
-
         const pg = new THREE.BufferGeometry();
         pg.setAttribute("position", new THREE.BufferAttribute(ps, 3));
         pg.setAttribute("color", new THREE.BufferAttribute(cs, 3));
-
         const pm = new THREE.PointsMaterial({
-          size: 0.05,
+          size: 0.04,
           vertexColors: true,
           transparent: true,
-          opacity: 0.8,
+          opacity: 0.6,
           blending: THREE.AdditiveBlending,
           sizeAttenuation: true,
         });
-
         const pts = new THREE.Points(pg, pm);
         s.add(pts);
-
-        // Wireframe Icosahedron
-        const ig = new THREE.IcosahedronGeometry(3, 1),
+        const ig = new THREE.IcosahedronGeometry(2.5, 1),
           im = new THREE.MeshBasicMaterial({
             color: 0x3b82f6,
             wireframe: true,
             transparent: true,
-            opacity: 0.12,
+            opacity: 0.08,
           }),
           ic = new THREE.Mesh(ig, im);
         s.add(ic);
-
-        // Inner Icosahedron
-        const ig2 = new THREE.IcosahedronGeometry(2, 0),
-          im2 = new THREE.MeshBasicMaterial({
-            color: 0x22d3ee,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.08,
-          }),
-          ic2 = new THREE.Mesh(ig2, im2);
-        s.add(ic2);
-
-        // Torus Rings
-        const tg = new THREE.TorusGeometry(2, 0.015, 16, 100),
+        const tg = new THREE.TorusGeometry(1.5, 0.02, 16, 100),
           tm = new THREE.MeshBasicMaterial({
             color: 0x3b82f6,
             transparent: true,
-            opacity: 0.2,
+            opacity: 0.15,
           }),
           t = new THREE.Mesh(tg, tm);
         t.rotation.x = Math.PI / 2;
         s.add(t);
-
-        const t2g = new THREE.TorusGeometry(3.5, 0.01, 16, 100),
+        const t2g = new THREE.TorusGeometry(3, 0.01, 16, 100),
           t2m = new THREE.MeshBasicMaterial({
             color: 0x22d3ee,
             transparent: true,
-            opacity: 0.1,
-          }),
-          t2 = new THREE.Mesh(t2g, t2m);
-        t2.rotation.x = Math.PI / 3;
-        t2.rotation.y = Math.PI / 6;
-        s.add(t2);
-
-        // Outer Ring
-        const t3g = new THREE.TorusGeometry(4.5, 0.008, 16, 100),
-          t3m = new THREE.MeshBasicMaterial({
-            color: 0x60a5fa,
-            transparent: true,
             opacity: 0.06,
           }),
-          t3 = new THREE.Mesh(t3g, t3m);
-        t3.rotation.x = Math.PI / 4;
-        t3.rotation.z = Math.PI / 4;
-        s.add(t3);
-
-        // Octahedron
-        const og = new THREE.OctahedronGeometry(1.5, 0),
-          om = new THREE.MeshBasicMaterial({
-            color: 0x3b82f6,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.1,
-          }),
-          oc = new THREE.Mesh(og, om);
-        s.add(oc);
-
-        cm.position.z = 6;
+          t2 = new THREE.Mesh(t2g, t2m);
+        s.add(t2);
+        cm.position.z = 5;
         let mx = 0,
           my = 0;
-        let targetRotX = 0,
-          targetRotY = 0;
-
         document.addEventListener("mousemove", (e) => {
           mx = (e.clientX / innerWidth - 0.5) * 2;
           my = (e.clientY / innerHeight - 0.5) * 2;
         });
-
         function a() {
           requestAnimationFrame(a);
           const d = Date.now() * 0.001;
-
-          // Smooth particle rotation
-          pts.rotation.y += 0.0004;
-          pts.rotation.x += 0.0002;
-
-          // Geometric shapes rotation
-          ic.rotation.x = d * 0.15;
-          ic.rotation.y = d * 0.2;
-          ic.rotation.z = d * 0.1;
-
-          ic2.rotation.x = -d * 0.2;
-          ic2.rotation.y = d * 0.25;
-          ic2.rotation.z = d * 0.15;
-
-          oc.rotation.x = d * 0.3;
-          oc.rotation.y = d * 0.4;
-          oc.position.y = Math.sin(d) * 0.5;
-
-          // Ring rotations
-          t.rotation.z = d * 0.3;
-          t2.rotation.z = -d * 0.15;
-          t2.rotation.x = d * 0.08;
-          t3.rotation.z = d * 0.1;
-          t3.rotation.y = -d * 0.12;
-
-          // Camera parallax
-          targetRotX += (my * 0.3 - targetRotX) * 0.02;
-          targetRotY += (mx * 0.3 - targetRotY) * 0.02;
-          cm.position.x = mx * 0.8;
-          cm.position.y = -my * 0.5;
+          pts.rotation.y += 0.0003;
+          pts.rotation.x += 0.0001;
+          ic.rotation.x = d * 0.1;
+          ic.rotation.y = d * 0.15;
+          t.rotation.z = d * 0.2;
+          t2.rotation.z = -d * 0.1;
+          t2.rotation.x = d * 0.05;
+          cm.position.x += (mx * 0.5 - cm.position.x) * 0.02;
+          cm.position.y += (-my * 0.5 - cm.position.y) * 0.02;
           cm.lookAt(s.position);
-
           r.render(s, cm);
         }
         a();
-
         addEventListener("resize", () => {
           cm.aspect = innerWidth / innerHeight;
           cm.updateProjectionMatrix();
           r.setSize(innerWidth, innerHeight);
         });
       })();
-
-      // Enhanced Background Particles
       (function () {
         const c = document.getElementById("bg-canvas"),
           s = new THREE.Scene(),
@@ -4300,75 +2849,46 @@
           });
         r.setSize(innerWidth, innerHeight);
         r.setPixelRatio(Math.min(devicePixelRatio, 2));
-
-        const p = 500;
-        const ps = new Float32Array(p * 3);
-        const cs = new Float32Array(p * 3);
-
+        const p = 300,
+          ps = new Float32Array(p * 3);
         for (let i = 0; i < p; i++) {
-          ps[i * 3] = (Math.random() - 0.5) * 40;
-          ps[i * 3 + 1] = (Math.random() - 0.5) * 40;
-          ps[i * 3 + 2] = (Math.random() - 0.5) * 40;
-
-          const intensity = Math.random();
-          cs[i * 3] = 0.23 * (0.5 + intensity * 0.5);
-          cs[i * 3 + 1] = 0.51 * (0.5 + intensity * 0.5);
-          cs[i * 3 + 2] = 0.96 * (0.5 + intensity * 0.5);
+          ps[i * 3] = (Math.random() - 0.5) * 30;
+          ps[i * 3 + 1] = (Math.random() - 0.5) * 30;
+          ps[i * 3 + 2] = (Math.random() - 0.5) * 30;
         }
-
         const g = new THREE.BufferGeometry();
         g.setAttribute("position", new THREE.BufferAttribute(ps, 3));
-        g.setAttribute("color", new THREE.BufferAttribute(cs, 3));
-
         const m = new THREE.PointsMaterial({
           color: 0x3b82f6,
-          size: 0.03,
-          vertexColors: true,
+          size: 0.02,
           transparent: true,
-          opacity: 0.4,
+          opacity: 0.3,
           blending: THREE.AdditiveBlending,
         });
-
         const pts = new THREE.Points(g, m);
         s.add(pts);
-
-        cm.position.z = 12;
-
-        let scrollY = 0;
-        addEventListener("scroll", () => {
-          scrollY = window.scrollY;
-        });
-
+        cm.position.z = 10;
         function a() {
           requestAnimationFrame(a);
-          const d = Date.now() * 0.0005;
-          pts.rotation.y = d * 0.5;
-          pts.rotation.x = d * 0.3;
-          pts.position.y = -scrollY * 0.002;
-
+          pts.rotation.y += 0.0002;
           r.render(s, cm);
         }
         a();
-
         addEventListener("resize", () => {
           cm.aspect = innerWidth / innerHeight;
           cm.updateProjectionMatrix();
           r.setSize(innerWidth, innerHeight);
         });
       })();
-
-      // GSAP ScrollTrigger Animations
       gsap.registerPlugin(ScrollTrigger);
-
       gsap.utils.toArray(".reveal").forEach((el, i) => {
         gsap.fromTo(
           el,
-          { opacity: 0, y: 60, rotateX: 10, scale: 0.95 },
+          { opacity: 0, y: 60, rotateX: 10 },
           {
             opacity: 1,
             y: 0,
             rotateX: 0,
-            scale: 1,
             duration: 0.8,
             ease: "power3.out",
             scrollTrigger: {
@@ -4380,7 +2900,6 @@
           },
         );
       });
-
       gsap.utils.toArray(".reveal-left").forEach((el) => {
         gsap.fromTo(
           el,
@@ -4399,7 +2918,6 @@
           },
         );
       });
-
       gsap.utils.toArray(".reveal-right").forEach((el) => {
         gsap.fromTo(
           el,
@@ -4418,28 +2936,12 @@
           },
         );
       });
-
-      // Enhanced parallax effect on scroll
-      gsap.utils.toArray(".parallax-layer").forEach((el) => {
-        gsap.to(el, {
-          y: -100,
-          ease: "none",
-          scrollTrigger: {
-            trigger: el,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-          },
-        });
-      });
-
-      // 3D Card Tilt Effect
       document.querySelectorAll(".tilt-card").forEach((c) => {
         const i = c.querySelector(".tilt-inner");
         c.addEventListener("mousemove", (e) => {
           const r = c.getBoundingClientRect(),
-            rx = ((e.clientY - r.top - r.height / 2) / (r.height / 2)) * -10,
-            ry = ((e.clientX - r.left - r.width / 2) / (r.width / 2)) * 10;
+            rx = ((e.clientY - r.top - r.height / 2) / (r.height / 2)) * -8,
+            ry = ((e.clientX - r.left - r.width / 2) / (r.width / 2)) * 8;
           i.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02,1.02,1.02)`;
         });
         c.addEventListener("mouseleave", () => {
@@ -4447,19 +2949,15 @@
             "perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)";
         });
       });
-
-      // Magnetic Button Effect
       document.querySelectorAll(".magnetic-btn").forEach((b) => {
         b.addEventListener("mousemove", (e) => {
           const r = b.getBoundingClientRect();
-          b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.25}px,${(e.clientY - r.top - r.height / 2) * 0.25}px)`;
+          b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.2}px,${(e.clientY - r.top - r.height / 2) * 0.2}px)`;
         });
         b.addEventListener("mouseleave", () => {
           b.style.transform = "translate(0,0)";
         });
       });
-
-      // Counter Animation
       const cts = document.querySelectorAll(".counter-value[data-target]"),
         co = new IntersectionObserver(
           (e) => {
@@ -4485,14 +2983,10 @@
           { threshold: 0.5 },
         );
       cts.forEach((c) => co.observe(c));
-
-      // Navbar Scroll Effect
       const nb = document.getElementById("navbar");
       addEventListener("scroll", () =>
         nb.classList.toggle("scrolled", scrollY > 50),
       );
-
-      // Mobile Menu
       const mm = document.getElementById("mobileMenu"),
         mb = document.getElementById("mobileMenuBtn");
       mb.addEventListener("click", () => mm.classList.toggle("hidden"));
@@ -4501,8 +2995,6 @@
         .forEach((l) =>
           l.addEventListener("click", () => mm.classList.add("hidden")),
         );
-
-      // Active Nav Link
       const ss = document.querySelectorAll("section[id]");
       addEventListener("scroll", () => {
         let cu = "";
@@ -4520,8 +3012,6 @@
           );
         });
       });
-
-      // Back to Top Button
       const bt = document.getElementById("backToTop");
       addEventListener("scroll", () => {
         bt.style.opacity = scrollY > 500 ? "1" : "0";
@@ -4530,90 +3020,21 @@
       bt.addEventListener("click", () =>
         scrollTo({ top: 0, behavior: "smooth" }),
       );
-
-      // Contact Form
       document.getElementById("contactForm").addEventListener("submit", (e) => {
         e.preventDefault();
         const t = document.getElementById("toast");
         t.classList.add("show");
-        setTimeout(() => t.classList.remove("show"), 4000);
+        setTimeout(() => t.classList.remove("show"), 4e3);
         e.target.reset();
       });
-
-      // Hero Parallax
       addEventListener("scroll", () => {
         const s = pageYOffset,
           h = document.querySelector("#home .relative.z-10");
         if (h && s < innerHeight) {
-          h.style.transform = `translateY(${s * 0.2}px)`;
+          h.style.transform = `translateY(${s * 0.15}px)`;
           h.style.opacity = 1 - s / (innerHeight * 0.8);
         }
       });
-
-      // Floating Shapes Parallax
-      gsap.utils.toArray(".geo-shape").forEach((shape, i) => {
-        gsap.to(shape, {
-          y: -150 + Math.sin(i) * 50,
-          rotation: "+=360",
-          ease: "none",
-          scrollTrigger: {
-            trigger: "#home",
-            start: "top top",
-            end: "bottom top",
-            scrub: 2,
-          },
-        });
-      });
-
-      // Grid Floor Animation
-      gsap.to(".grid-floor", {
-        backgroundPosition: "0px 50px",
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#home",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
-
-      // Portfolio Cards 3D Effect
-      document.querySelectorAll(".portfolio-3d").forEach((card) => {
-        card.addEventListener("mousemove", (e) => {
-          const r = card.getBoundingClientRect(),
-            x = e.clientX - r.left,
-            y = e.clientY - r.top,
-            centerX = r.width / 2,
-            centerY = r.height / 2,
-            rotateX = (y - centerY) / 20,
-            rotateY = (centerX - x) / 20;
-
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
-        });
-
-        card.addEventListener("mouseleave", () => {
-          card.style.transform =
-            "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
-        });
-      });
-
-      // Add hover glow effect to depth cards
-      document.querySelectorAll(".depth-card").forEach((card) => {
-        card.addEventListener("mouseenter", () => {
-          gsap.to(card, {
-            boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.25)",
-            duration: 0.3,
-          });
-        });
-        card.addEventListener("mouseleave", () => {
-          gsap.to(card, {
-            boxShadow: "0 0px 0px 0px rgba(59, 130, 246, 0)",
-            duration: 0.3,
-          });
-        });
-      });
-
-      console.log("🎮 ShanNextGen 3D Animated Website Loaded!");
     </script>
   </body>
 </html>

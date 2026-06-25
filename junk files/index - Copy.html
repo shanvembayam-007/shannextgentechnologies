@@ -54,13 +54,6 @@
         z-index: -1;
         pointer-events: none;
       }
-      .floating-shape {
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.15;
-        filter: blur(1px);
-      }
 
       /* ── Logo Styles ── */
       .logo-icon-wrap {
@@ -88,12 +81,42 @@
         box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
       }
 
+      /* Navbar Logo Image */
       .logo-icon-wrap img {
-        height: 40px;
-        width: 40px;
+        height: 40px; /* Increased from 40px to 50px */
+        width: 40px; /* Increased from 40px to 50px */
         object-fit: cover;
         display: block;
       }
+
+      /* .logo-brand {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .logo-brand-text .brand-shan {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #f4f4f5;
+        letter-spacing: -0.025em;
+      }
+      .logo-brand-text .brand-nextgen {
+        font-weight: 700;
+        font-size: 1.2rem;
+        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.025em;
+      }
+
+     .brand-technologies {
+  font-size: 13px;
+  font-weight: 400;
+  color: #a1a1aa;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+  align-items: center
+} */
 
       .logo-brand {
         display: flex;
@@ -164,6 +187,7 @@
         width: 40px;
         object-fit: cover;
       }
+
       .tilt-card {
         transform-style: preserve-3d;
         perspective: 1000px;
@@ -399,192 +423,9 @@
           transform: translateY(8px);
         }
       }
-
-      /* NEW 3D ANIMATION STYLES */
-      .parallax-layer {
-        transition: transform 0.1s ease-out;
-        will-change: transform;
-      }
-
-      @keyframes orbit3d {
-        from {
-          transform: rotateX(60deg) rotateZ(0deg) translateY(0);
-        }
-        to {
-          transform: rotateX(60deg) rotateZ(360deg) translateY(0);
-        }
-      }
-      .orbit-ring {
-        animation: orbit3d 30s linear infinite;
-        transform-style: preserve-3d;
-      }
-
-      @keyframes floatVertical {
-        0%,
-        100% {
-          transform: translateY(0px) rotateZ(0deg);
-        }
-        50% {
-          transform: translateY(-30px) rotateZ(5deg);
-        }
-      }
-      .float-vertical {
-        animation: floatVertical 4s ease-in-out infinite;
-      }
-
-      @keyframes pulse3d {
-        0%,
-        100% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        40%,
-        60% {
-          opacity: 0.1;
-        }
-        50% {
-          transform: scale(1.1);
-          opacity: 0.3;
-        }
-      }
-      .pulse-3d {
-        animation: pulse3d 1.6s ease-in-out infinite;
-        transform-style: preserve-3d;
-      }
-
-      .scene-3d {
-        perspective: 1500px;
-        transform-style: preserve-3d;
-      }
-      .depth-card {
-        transform-style: preserve-3d;
-        transition:
-          transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-          box-shadow 0.4s ease;
-      }
-      .depth-card:hover {
-        transform: translateY(-10px) rotateX(5deg) rotateY(-5deg) scale(1.02);
-      }
-
-      /* Floating particles */
-      .particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(59, 130, 246, 0.6);
-        border-radius: 50%;
-        pointer-events: none;
-        animation: particleFloat 10s linear infinite;
-      }
-      @keyframes particleFloat {
-        0% {
-          transform: translateY(100vh) rotate(0deg);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-100vh) rotate(720deg);
-          opacity: 0;
-        }
-      }
-
-      /* 3D Geometric shapes */
-      .geo-shape {
-        position: absolute;
-        opacity: 0.1;
-        filter: blur(1px);
-        animation: geoFloat 15s ease-in-out infinite;
-      }
-      @keyframes geoFloat {
-        0%,
-        100% {
-          transform: translateY(0) rotateX(0) rotateY(0);
-        }
-        25% {
-          transform: translateY(-50px) rotateX(90deg) rotateY(45deg);
-        }
-        50% {
-          transform: translateY(-20px) rotateX(180deg) rotateY(90deg);
-        }
-        75% {
-          transform: translateY(-60px) rotateX(270deg) rotateY(135deg);
-        }
-      }
-
-      /* Scroll wave effect */
-      .wave-section {
-        position: relative;
-        overflow: hidden;
-      }
-      .wave-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 300%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(59, 130, 246, 0.03),
-          transparent
-        );
-        animation: waveMove 8s linear infinite;
-      }
-      @keyframes waveMove {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(33.33%);
-        }
-      }
-
-      /* Mouse follower glow */
-      .cursor-glow {
-        position: fixed;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(59, 130, 246, 0.15),
-          transparent 70%
-        );
-        pointer-events: none;
-        z-index: 0;
-        transform: translate(-50%, -50%);
-        transition: opacity 0.3s;
-      }
-
-      /* 3D Grid floor effect */
-      .grid-floor {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%) rotateX(80deg);
-        width: 200%;
-        height: 50vh;
-        background-image:
-          linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-        background-size: 50px 50px;
-        mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
-        -webkit-mask-image: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.3),
-          transparent
-        );
-      }
     </style>
   </head>
   <body>
-    <div class="cursor-glow" id="cursorGlow"></div>
     <canvas id="bg-canvas"></canvas>
 
     <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
@@ -729,92 +570,16 @@
       class="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <canvas id="hero-canvas"></canvas>
-
-      <!-- 3D Grid Floor -->
-      <div class="grid-floor"></div>
-
-      <!-- Animated floating shapes -->
-      <div class="geo-shape" style="top: 10%; left: 5%; animation-delay: 0s">
-        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-          <polygon
-            points="40,5 75,65 5,65"
-            stroke="#3b82f6"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 20%; right: 10%; animation-delay: 2s">
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-          <rect
-            x="10"
-            y="10"
-            width="40"
-            height="40"
-            stroke="#22d3ee"
-            stroke-width="1"
-            fill="none"
-            transform="rotate(45 30 30)"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 60%; left: 8%; animation-delay: 4s">
-        <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-          <circle
-            cx="25"
-            cy="25"
-            r="20"
-            stroke="#3b82f6"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 70%; right: 5%; animation-delay: 1s">
-        <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
-          <polygon
-            points="35,5 65,25 65,55 35,70 5,55 5,25"
-            stroke="#22d3ee"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 40%; left: 3%; animation-delay: 3s">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <polygon
-            points="20,2 38,12 38,28 20,38 2,28 2,12"
-            stroke="#3b82f6"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-      <div class="geo-shape" style="top: 85%; left: 15%; animation-delay: 5s">
-        <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
-          <polygon
-            points="27.5,2 52,20 52,45 27.5,55 3,45 3,20"
-            stroke="#60a5fa"
-            stroke-width="1"
-            fill="none"
-          />
-        </svg>
-      </div>
-
       <div
         class="absolute inset-0 flex items-center justify-center pointer-events-none"
         style="perspective: 800px"
       >
         <div
-          class="orbit-ring w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full border border-blue-500/10 absolute"
+          class="spin-ring w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full border border-blue-500/10 absolute"
         ></div>
         <div
-          class="orbit-ring w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full border border-cyan-400/5 absolute"
-          style="animation-duration: 25s; animation-direction: reverse"
-        ></div>
-        <div
-          class="orbit-ring w-[600px] h-[600px] md:w-[900px] md:h-[900px] rounded-full border border-blue-500/5 absolute"
-          style="animation-duration: 40s"
+          class="spin-ring w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full border border-cyan-400/5 absolute"
+          style="animation-duration: 15s; animation-direction: reverse"
         ></div>
       </div>
       <div
@@ -828,11 +593,14 @@
           class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-8"
           style="animation: fadeInUp 0.8s ease-out 0.2s both"
         >
-          <span class="w-2 h-2 rounded-full bg-green-500 pulse-3d"></span>
+          <span
+            class="w-2 h-2 rounded-full bg-blue-500"
+            style="animation: glowPulse 2s infinite"
+          ></span>
           <span
             class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
-            >Trusted IT Partner
-          </span>
+            >Trusted IT Partner in Kerala</span
+          >
         </div>
         <h1
           class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight mb-8"
@@ -885,7 +653,7 @@
           class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
           style="animation: fadeInUp 0.8s ease-out 1s both"
         >
-          <div class="text-center depth-card p-4 rounded-2xl">
+          <div class="text-center">
             <div
               class="text-3xl md:text-4xl font-bold gradient-text counter-value"
               data-target="50"
@@ -896,7 +664,7 @@
               Projects Delivered
             </div>
           </div>
-          <div class="text-center depth-card p-4 rounded-2xl">
+          <div class="text-center">
             <div
               class="text-3xl md:text-4xl font-bold gradient-text counter-value"
               data-target="40"
@@ -907,7 +675,7 @@
               Happy Clients
             </div>
           </div>
-          <div class="text-center depth-card p-4 rounded-2xl">
+          <div class="text-center">
             <div
               class="text-3xl md:text-4xl font-bold gradient-text counter-value"
               data-target="6"
@@ -918,7 +686,7 @@
               Industries Served
             </div>
           </div>
-          <div class="text-center depth-card p-4 rounded-2xl">
+          <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold gradient-text">24/7</div>
             <div class="text-xs text-zinc-500 mt-2 uppercase tracking-wider">
               Technical Support
@@ -944,7 +712,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ WHY CHOOSE US ═══════════════════ -->
-    <section class="py-24 md:py-32 relative wave-section">
+    <section class="py-24 md:py-32 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-20 reveal">
           <div
@@ -1180,7 +948,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ SERVICES ═══════════════════ -->
-    <section id="services" class="py-24 md:py-32 relative wave-section">
+    <section id="services" class="py-24 md:py-32 relative">
       <div
         class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
       ></div>
@@ -1206,7 +974,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1247,7 +1015,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1286,7 +1054,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1325,7 +1093,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1364,7 +1132,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1403,7 +1171,7 @@
             </div>
           </div>
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1448,7 +1216,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ INDUSTRIES ═══════════════════ -->
-    <section id="industries" class="py-24 md:py-32 relative wave-section">
+    <section id="industries" class="py-24 md:py-32 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-20 reveal">
           <div
@@ -1643,7 +1411,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ FEATURED SOLUTIONS ═══════════════════ -->
-    <section id="solutions" class="py-24 md:py-32 relative wave-section">
+    <section id="solutions" class="py-24 md:py-32 relative">
       <div
         class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
       ></div>
@@ -1665,7 +1433,7 @@
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div
-            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-left depth-card"
+            class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-left"
             style="backdrop-filter: blur(10px)"
           >
             <div
@@ -1787,7 +1555,7 @@
           </div>
           <div class="space-y-8">
             <div
-              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right depth-card"
+              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right"
               style="backdrop-filter: blur(10px)"
             >
               <div
@@ -1866,7 +1634,7 @@
               </div>
             </div>
             <div
-              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right depth-card"
+              class="service-3d rounded-2xl bg-zinc-900/60 border border-zinc-800/50 p-8 relative overflow-hidden reveal-right"
               style="backdrop-filter: blur(10px)"
             >
               <div
@@ -1937,8 +1705,8 @@
 
     <div class="section-divider"></div>
 
-    <!-- ═══════════════════ PORTFOLIO ═══════════════════ -->
-    <section id="portfolio" class="py-24 md:py-32 relative wave-section">
+    <!-- ═══════════════════ PORTFOLIO — CUSTOM APP MOCKUPS ═══════════════════ -->
+    <section id="portfolio" class="py-24 md:py-32 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-20 reveal">
           <div
@@ -1960,12 +1728,13 @@
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           style="perspective: 1000px"
         >
-          <!-- Smart Ledger -->
+          <!-- 1. Smart Ledger Application -->
           <div
-            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal depth-card"
+            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal"
           >
             <div class="relative aspect-[4/5] overflow-hidden">
               <div class="app-mockup">
+                <!-- Header -->
                 <div class="app-header">
                   <div style="display: flex; align-items: center; gap: 8px">
                     <div
@@ -2321,9 +2090,9 @@
             </div>
           </div>
 
-          <!-- Weather Monitoring -->
+          <!-- 2. Weather Monitoring Application -->
           <div
-            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal depth-card"
+            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal"
           >
             <div class="relative aspect-[4/5] overflow-hidden">
               <div class="app-mockup">
@@ -2569,9 +2338,9 @@
             </div>
           </div>
 
-          <!-- Inventory Management -->
+          <!-- 3. Inventory Management System -->
           <div
-            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal depth-card"
+            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal"
           >
             <div class="relative aspect-[4/5] overflow-hidden">
               <div class="app-mockup">
@@ -2619,7 +2388,6 @@
                     LIVE
                   </div>
                 </div>
-
                 <div class="app-body">
                   <!-- Stats -->
                   <div
@@ -2878,9 +2646,9 @@
             </div>
           </div>
 
-          <!-- Complaint Management -->
+          <!-- 4. Complaint Management Portal -->
           <div
-            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal depth-card"
+            class="portfolio-3d rounded-2xl overflow-hidden border border-zinc-800/50 bg-zinc-900/40 cursor-pointer reveal"
           >
             <div class="relative aspect-[4/5] overflow-hidden">
               <div class="app-mockup">
@@ -2925,7 +2693,6 @@
                     +3 NEW
                   </div>
                 </div>
-
                 <div class="app-body">
                   <!-- Ticket Stats -->
                   <div
@@ -3210,7 +2977,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
-    <section class="py-24 md:py-32 relative wave-section">
+    <section class="py-24 md:py-32 relative">
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
       ></div>
@@ -3232,7 +2999,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
-            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal depth-card"
+            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div class="flex items-center gap-1 mb-5">
@@ -3240,23 +3007,23 @@
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
@@ -3282,7 +3049,7 @@
             </div>
           </div>
           <div
-            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal depth-card"
+            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div class="flex items-center gap-1 mb-5">
@@ -3290,23 +3057,23 @@
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
@@ -3329,7 +3096,7 @@
             </div>
           </div>
           <div
-            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal depth-card"
+            class="service-3d p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 reveal"
             style="backdrop-filter: blur(10px)"
           >
             <div class="flex items-center gap-1 mb-5">
@@ -3337,23 +3104,23 @@
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
-              ></span>
-              <span
+              ></span
+              ><span
                 class="iconify text-blue-400"
                 data-icon="lucide:star"
                 data-width="16"
@@ -3384,7 +3151,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ ABOUT US ═══════════════════ -->
-    <section id="about" class="py-24 md:py-32 relative wave-section">
+    <section id="about" class="py-24 md:py-32 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
@@ -3399,10 +3166,12 @@
                 alt="ShanNextGenTechnologies Logo"
                 class="w-full h-full object-cover opacity-60 transition-all duration-700 group-hover:scale-105"
               />
+
               <div
                 class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"
               ></div>
             </div>
+
             <div
               class="absolute -bottom-6 -right-4 md:right-8 bg-zinc-900/90 border border-blue-500/20 rounded-2xl p-5 shadow-2xl float-3d"
               style="
@@ -3414,6 +3183,14 @@
               <div class="text-xs text-zinc-400 mt-0.5">
                 Years of<br />Excellence
               </div>
+            </div>
+            <div
+              class="absolute -top-8 -left-8 w-24 h-24 pointer-events-none"
+              style="perspective: 200px"
+            >
+              <div
+                class="w-full h-full rounded-full border border-blue-500/20 spin-ring"
+              ></div>
             </div>
           </div>
           <div class="reveal-right">
@@ -3442,7 +3219,7 @@
             </p>
             <div class="space-y-5">
               <div
-                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50 depth-card"
+                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div class="flex items-center gap-3 mb-2">
@@ -3459,7 +3236,7 @@
                 </p>
               </div>
               <div
-                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50 depth-card"
+                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div class="flex items-center gap-3 mb-2">
@@ -3484,7 +3261,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ SEO LINKS ═══════════════════ -->
-    <section class="py-16 relative wave-section">
+    <section class="py-16 relative">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-10 reveal">
           <h2 class="text-xl font-bold text-zinc-300">
@@ -3492,9 +3269,9 @@
           </h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3513,11 +3290,11 @@
                   Website Development Kerala
                 </p>
               </div>
-            </div>
-          </a>
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3536,11 +3313,11 @@
                   Mobile App Development Kerala
                 </p>
               </div>
-            </div>
-          </a>
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3559,11 +3336,11 @@
                   ERP Software Kerala
                 </p>
               </div>
-            </div>
-          </a>
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3582,11 +3359,11 @@
                   IT Consulting Kerala
                 </p>
               </div>
-            </div>
-          </a>
-          <a href="#" class="tilt-card reveal">
-            <div
-              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+            </div></a
+          >
+          <a href="#" class="tilt-card reveal"
+            ><div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center"
               style="backdrop-filter: blur(10px)"
             >
               <div class="tilt-shine rounded-xl"></div>
@@ -3605,8 +3382,8 @@
                   Custom Software Development India
                 </p>
               </div>
-            </div>
-          </a>
+            </div></a
+          >
         </div>
       </div>
     </section>
@@ -3614,7 +3391,7 @@
     <div class="section-divider"></div>
 
     <!-- ═══════════════════ CONTACT ═══════════════════ -->
-    <section id="contact" class="py-24 md:py-32 relative wave-section">
+    <section id="contact" class="py-24 md:py-32 relative">
       <div
         class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/3 rounded-full blur-[150px] pointer-events-none"
       ></div>
@@ -3639,7 +3416,7 @@
             </p>
             <div class="space-y-6">
               <div
-                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card"
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div
@@ -3663,7 +3440,7 @@
                 </div>
               </div>
               <div
-                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card"
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div
@@ -3685,7 +3462,7 @@
                 </div>
               </div>
               <div
-                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card"
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50"
                 style="backdrop-filter: blur(10px)"
               >
                 <div
@@ -3713,7 +3490,7 @@
           <div class="reveal-right">
             <form
               id="contactForm"
-              class="p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 relative overflow-hidden depth-card"
+              class="p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 relative overflow-hidden"
               style="backdrop-filter: blur(10px)"
             >
               <div
@@ -3727,8 +3504,7 @@
                   <label
                     class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                     >Full Name <span class="text-blue-400">*</span></label
-                  >
-                  <input
+                  ><input
                     type="text"
                     name="fullName"
                     required
@@ -3740,8 +3516,7 @@
                   <label
                     class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                     >Company Name</label
-                  >
-                  <input
+                  ><input
                     type="text"
                     name="companyName"
                     placeholder="Your company name"
@@ -3753,8 +3528,7 @@
                     <label
                       class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                       >Email <span class="text-blue-400">*</span></label
-                    >
-                    <input
+                    ><input
                       type="email"
                       name="email"
                       required
@@ -3766,8 +3540,7 @@
                     <label
                       class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                       >Phone</label
-                    >
-                    <input
+                    ><input
                       type="tel"
                       name="phone"
                       placeholder="+91 XXXXX XXXXX"
@@ -3780,8 +3553,7 @@
                     class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                     >Service Required
                     <span class="text-blue-400">*</span></label
-                  >
-                  <select
+                  ><select
                     name="service"
                     required
                     class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-400 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 appearance-none"
@@ -3820,8 +3592,7 @@
                   <label
                     class="block text-xs text-zinc-400 mb-1.5 font-semibold"
                     >Message <span class="text-blue-400">*</span></label
-                  >
-                  <textarea
+                  ><textarea
                     name="message"
                     required
                     rows="4"
@@ -3861,6 +3632,7 @@
                   alt="ShanNextGen"
                 />
               </div>
+
               <div class="logo-brand-text">
                 <div class="brand-top">
                   <span class="brand-shan">Shan</span>
@@ -3877,33 +3649,30 @@
               <a
                 href="#"
                 class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
-              >
-                <span
+                ><span
                   class="iconify text-zinc-400"
                   data-icon="lucide:linkedin"
                   data-width="16"
-                ></span>
-              </a>
+                ></span
+              ></a>
               <a
                 href="#"
                 class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
-              >
-                <span
+                ><span
                   class="iconify text-zinc-400"
                   data-icon="lucide:facebook"
                   data-width="16"
-                ></span>
-              </a>
+                ></span
+              ></a>
               <a
                 href="#"
                 class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
-              >
-                <span
+                ><span
                   class="iconify text-zinc-400"
                   data-icon="lucide:instagram"
                   data-width="16"
-                ></span>
-              </a>
+                ></span
+              ></a>
             </div>
           </div>
           <div>
@@ -3994,16 +3763,16 @@
                   class="iconify text-zinc-600"
                   data-icon="lucide:phone"
                   data-width="14"
-                ></span>
-                <span class="text-sm text-zinc-500">+91 9995203714</span>
+                ></span
+                ><span class="text-sm text-zinc-500">+91 9995203714</span>
               </div>
               <div class="flex items-center gap-2">
                 <span
                   class="iconify text-zinc-600"
                   data-icon="lucide:mail"
                   data-width="14"
-                ></span>
-                <span class="text-sm text-zinc-500"
+                ></span
+                ><span class="text-sm text-zinc-500"
                   >info@shannextgentech.com</span
                 >
               </div>
@@ -4012,8 +3781,8 @@
                   class="iconify text-zinc-600"
                   data-icon="lucide:map-pin"
                   data-width="14"
-                ></span>
-                <span class="text-sm text-zinc-500"
+                ></span
+                ><span class="text-sm text-zinc-500"
                   >Thiruvananthapuram, Kerala</span
                 >
               </div>
@@ -4031,8 +3800,7 @@
               href="#"
               class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
               >Privacy Policy</a
-            >
-            <a
+            ><a
               href="#"
               class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
               >Terms of Service</a
@@ -4069,30 +3837,6 @@
     </button>
 
     <script>
-      // Enhanced Cursor Glow Effect
-      (function () {
-        const glow = document.getElementById("cursorGlow");
-        let mouseX = 0,
-          mouseY = 0;
-        let glowX = 0,
-          glowY = 0;
-
-        document.addEventListener("mousemove", (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        });
-
-        function animateGlow() {
-          glowX += (mouseX - glowX) * 0.1;
-          glowY += (mouseY - glowY) * 0.1;
-          glow.style.left = glowX + "px";
-          glow.style.top = glowY + "px";
-          requestAnimationFrame(animateGlow);
-        }
-        animateGlow();
-      })();
-
-      // Enhanced Hero 3D Scene
       (function () {
         const c = document.getElementById("hero-canvas"),
           s = new THREE.Scene(),
@@ -4109,181 +3853,86 @@
           });
         r.setSize(innerWidth, innerHeight);
         r.setPixelRatio(Math.min(devicePixelRatio, 2));
-
-        // Enhanced Particle System
-        const p = 2500;
-        const ps = new Float32Array(p * 3);
-        const cs = new Float32Array(p * 3);
-        const sizes = new Float32Array(p);
-
+        const p = 1500,
+          ps = new Float32Array(p * 3),
+          cs = new Float32Array(p * 3);
         for (let i = 0; i < p; i++) {
-          ps[i * 3] = (Math.random() - 0.5) * 25;
-          ps[i * 3 + 1] = (Math.random() - 0.5) * 25;
-          ps[i * 3 + 2] = (Math.random() - 0.5) * 25;
-
-          const colorType = Math.random();
-          if (colorType > 0.8) {
-            cs[i * 3] = 0.23;
-            cs[i * 3 + 1] = 0.51;
-            cs[i * 3 + 2] = 0.96; // Blue
-          } else if (colorType > 0.6) {
-            cs[i * 3] = 0.13;
-            cs[i * 3 + 1] = 0.83;
-            cs[i * 3 + 2] = 0.93; // Cyan
-          } else if (colorType > 0.4) {
-            cs[i * 3] = 0.45;
-            cs[i * 3 + 1] = 0.55;
-            cs[i * 3 + 2] = 0.98; // Light Blue
-          } else {
-            cs[i * 3] = 0.6;
-            cs[i * 3 + 1] = 0.7;
-            cs[i * 3 + 2] = 0.98;
-          }
-
-          sizes[i] = Math.random() * 0.06 + 0.02;
+          ps[i * 3] = (Math.random() - 0.5) * 20;
+          ps[i * 3 + 1] = (Math.random() - 0.5) * 20;
+          ps[i * 3 + 2] = (Math.random() - 0.5) * 20;
+          const b = Math.random() > 0.7;
+          cs[i * 3] = b ? 0.231 : 0.4;
+          cs[i * 3 + 1] = b ? 0.51 : 0.4;
+          cs[i * 3 + 2] = b ? 0.965 : 0.45;
         }
-
         const pg = new THREE.BufferGeometry();
         pg.setAttribute("position", new THREE.BufferAttribute(ps, 3));
         pg.setAttribute("color", new THREE.BufferAttribute(cs, 3));
-
         const pm = new THREE.PointsMaterial({
-          size: 0.05,
+          size: 0.04,
           vertexColors: true,
           transparent: true,
-          opacity: 0.8,
+          opacity: 0.6,
           blending: THREE.AdditiveBlending,
           sizeAttenuation: true,
         });
-
         const pts = new THREE.Points(pg, pm);
         s.add(pts);
-
-        // Wireframe Icosahedron
-        const ig = new THREE.IcosahedronGeometry(3, 1),
+        const ig = new THREE.IcosahedronGeometry(2.5, 1),
           im = new THREE.MeshBasicMaterial({
             color: 0x3b82f6,
             wireframe: true,
             transparent: true,
-            opacity: 0.12,
+            opacity: 0.08,
           }),
           ic = new THREE.Mesh(ig, im);
         s.add(ic);
-
-        // Inner Icosahedron
-        const ig2 = new THREE.IcosahedronGeometry(2, 0),
-          im2 = new THREE.MeshBasicMaterial({
-            color: 0x22d3ee,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.08,
-          }),
-          ic2 = new THREE.Mesh(ig2, im2);
-        s.add(ic2);
-
-        // Torus Rings
-        const tg = new THREE.TorusGeometry(2, 0.015, 16, 100),
+        const tg = new THREE.TorusGeometry(1.5, 0.02, 16, 100),
           tm = new THREE.MeshBasicMaterial({
             color: 0x3b82f6,
             transparent: true,
-            opacity: 0.2,
+            opacity: 0.15,
           }),
           t = new THREE.Mesh(tg, tm);
         t.rotation.x = Math.PI / 2;
         s.add(t);
-
-        const t2g = new THREE.TorusGeometry(3.5, 0.01, 16, 100),
+        const t2g = new THREE.TorusGeometry(3, 0.01, 16, 100),
           t2m = new THREE.MeshBasicMaterial({
             color: 0x22d3ee,
             transparent: true,
-            opacity: 0.1,
-          }),
-          t2 = new THREE.Mesh(t2g, t2m);
-        t2.rotation.x = Math.PI / 3;
-        t2.rotation.y = Math.PI / 6;
-        s.add(t2);
-
-        // Outer Ring
-        const t3g = new THREE.TorusGeometry(4.5, 0.008, 16, 100),
-          t3m = new THREE.MeshBasicMaterial({
-            color: 0x60a5fa,
-            transparent: true,
             opacity: 0.06,
           }),
-          t3 = new THREE.Mesh(t3g, t3m);
-        t3.rotation.x = Math.PI / 4;
-        t3.rotation.z = Math.PI / 4;
-        s.add(t3);
-
-        // Octahedron
-        const og = new THREE.OctahedronGeometry(1.5, 0),
-          om = new THREE.MeshBasicMaterial({
-            color: 0x3b82f6,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.1,
-          }),
-          oc = new THREE.Mesh(og, om);
-        s.add(oc);
-
-        cm.position.z = 6;
+          t2 = new THREE.Mesh(t2g, t2m);
+        s.add(t2);
+        cm.position.z = 5;
         let mx = 0,
           my = 0;
-        let targetRotX = 0,
-          targetRotY = 0;
-
         document.addEventListener("mousemove", (e) => {
           mx = (e.clientX / innerWidth - 0.5) * 2;
           my = (e.clientY / innerHeight - 0.5) * 2;
         });
-
         function a() {
           requestAnimationFrame(a);
           const d = Date.now() * 0.001;
-
-          // Smooth particle rotation
-          pts.rotation.y += 0.0004;
-          pts.rotation.x += 0.0002;
-
-          // Geometric shapes rotation
-          ic.rotation.x = d * 0.15;
-          ic.rotation.y = d * 0.2;
-          ic.rotation.z = d * 0.1;
-
-          ic2.rotation.x = -d * 0.2;
-          ic2.rotation.y = d * 0.25;
-          ic2.rotation.z = d * 0.15;
-
-          oc.rotation.x = d * 0.3;
-          oc.rotation.y = d * 0.4;
-          oc.position.y = Math.sin(d) * 0.5;
-
-          // Ring rotations
-          t.rotation.z = d * 0.3;
-          t2.rotation.z = -d * 0.15;
-          t2.rotation.x = d * 0.08;
-          t3.rotation.z = d * 0.1;
-          t3.rotation.y = -d * 0.12;
-
-          // Camera parallax
-          targetRotX += (my * 0.3 - targetRotX) * 0.02;
-          targetRotY += (mx * 0.3 - targetRotY) * 0.02;
-          cm.position.x = mx * 0.8;
-          cm.position.y = -my * 0.5;
+          pts.rotation.y += 0.0003;
+          pts.rotation.x += 0.0001;
+          ic.rotation.x = d * 0.1;
+          ic.rotation.y = d * 0.15;
+          t.rotation.z = d * 0.2;
+          t2.rotation.z = -d * 0.1;
+          t2.rotation.x = d * 0.05;
+          cm.position.x += (mx * 0.5 - cm.position.x) * 0.02;
+          cm.position.y += (-my * 0.5 - cm.position.y) * 0.02;
           cm.lookAt(s.position);
-
           r.render(s, cm);
         }
         a();
-
         addEventListener("resize", () => {
           cm.aspect = innerWidth / innerHeight;
           cm.updateProjectionMatrix();
           r.setSize(innerWidth, innerHeight);
         });
       })();
-
-      // Enhanced Background Particles
       (function () {
         const c = document.getElementById("bg-canvas"),
           s = new THREE.Scene(),
@@ -4300,75 +3949,46 @@
           });
         r.setSize(innerWidth, innerHeight);
         r.setPixelRatio(Math.min(devicePixelRatio, 2));
-
-        const p = 500;
-        const ps = new Float32Array(p * 3);
-        const cs = new Float32Array(p * 3);
-
+        const p = 300,
+          ps = new Float32Array(p * 3);
         for (let i = 0; i < p; i++) {
-          ps[i * 3] = (Math.random() - 0.5) * 40;
-          ps[i * 3 + 1] = (Math.random() - 0.5) * 40;
-          ps[i * 3 + 2] = (Math.random() - 0.5) * 40;
-
-          const intensity = Math.random();
-          cs[i * 3] = 0.23 * (0.5 + intensity * 0.5);
-          cs[i * 3 + 1] = 0.51 * (0.5 + intensity * 0.5);
-          cs[i * 3 + 2] = 0.96 * (0.5 + intensity * 0.5);
+          ps[i * 3] = (Math.random() - 0.5) * 30;
+          ps[i * 3 + 1] = (Math.random() - 0.5) * 30;
+          ps[i * 3 + 2] = (Math.random() - 0.5) * 30;
         }
-
         const g = new THREE.BufferGeometry();
         g.setAttribute("position", new THREE.BufferAttribute(ps, 3));
-        g.setAttribute("color", new THREE.BufferAttribute(cs, 3));
-
         const m = new THREE.PointsMaterial({
           color: 0x3b82f6,
-          size: 0.03,
-          vertexColors: true,
+          size: 0.02,
           transparent: true,
-          opacity: 0.4,
+          opacity: 0.3,
           blending: THREE.AdditiveBlending,
         });
-
         const pts = new THREE.Points(g, m);
         s.add(pts);
-
-        cm.position.z = 12;
-
-        let scrollY = 0;
-        addEventListener("scroll", () => {
-          scrollY = window.scrollY;
-        });
-
+        cm.position.z = 10;
         function a() {
           requestAnimationFrame(a);
-          const d = Date.now() * 0.0005;
-          pts.rotation.y = d * 0.5;
-          pts.rotation.x = d * 0.3;
-          pts.position.y = -scrollY * 0.002;
-
+          pts.rotation.y += 0.0002;
           r.render(s, cm);
         }
         a();
-
         addEventListener("resize", () => {
           cm.aspect = innerWidth / innerHeight;
           cm.updateProjectionMatrix();
           r.setSize(innerWidth, innerHeight);
         });
       })();
-
-      // GSAP ScrollTrigger Animations
       gsap.registerPlugin(ScrollTrigger);
-
       gsap.utils.toArray(".reveal").forEach((el, i) => {
         gsap.fromTo(
           el,
-          { opacity: 0, y: 60, rotateX: 10, scale: 0.95 },
+          { opacity: 0, y: 60, rotateX: 10 },
           {
             opacity: 1,
             y: 0,
             rotateX: 0,
-            scale: 1,
             duration: 0.8,
             ease: "power3.out",
             scrollTrigger: {
@@ -4380,7 +4000,6 @@
           },
         );
       });
-
       gsap.utils.toArray(".reveal-left").forEach((el) => {
         gsap.fromTo(
           el,
@@ -4399,7 +4018,6 @@
           },
         );
       });
-
       gsap.utils.toArray(".reveal-right").forEach((el) => {
         gsap.fromTo(
           el,
@@ -4418,28 +4036,12 @@
           },
         );
       });
-
-      // Enhanced parallax effect on scroll
-      gsap.utils.toArray(".parallax-layer").forEach((el) => {
-        gsap.to(el, {
-          y: -100,
-          ease: "none",
-          scrollTrigger: {
-            trigger: el,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-          },
-        });
-      });
-
-      // 3D Card Tilt Effect
       document.querySelectorAll(".tilt-card").forEach((c) => {
         const i = c.querySelector(".tilt-inner");
         c.addEventListener("mousemove", (e) => {
           const r = c.getBoundingClientRect(),
-            rx = ((e.clientY - r.top - r.height / 2) / (r.height / 2)) * -10,
-            ry = ((e.clientX - r.left - r.width / 2) / (r.width / 2)) * 10;
+            rx = ((e.clientY - r.top - r.height / 2) / (r.height / 2)) * -8,
+            ry = ((e.clientX - r.left - r.width / 2) / (r.width / 2)) * 8;
           i.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02,1.02,1.02)`;
         });
         c.addEventListener("mouseleave", () => {
@@ -4447,19 +4049,15 @@
             "perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)";
         });
       });
-
-      // Magnetic Button Effect
       document.querySelectorAll(".magnetic-btn").forEach((b) => {
         b.addEventListener("mousemove", (e) => {
           const r = b.getBoundingClientRect();
-          b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.25}px,${(e.clientY - r.top - r.height / 2) * 0.25}px)`;
+          b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.2}px,${(e.clientY - r.top - r.height / 2) * 0.2}px)`;
         });
         b.addEventListener("mouseleave", () => {
           b.style.transform = "translate(0,0)";
         });
       });
-
-      // Counter Animation
       const cts = document.querySelectorAll(".counter-value[data-target]"),
         co = new IntersectionObserver(
           (e) => {
@@ -4485,14 +4083,10 @@
           { threshold: 0.5 },
         );
       cts.forEach((c) => co.observe(c));
-
-      // Navbar Scroll Effect
       const nb = document.getElementById("navbar");
       addEventListener("scroll", () =>
         nb.classList.toggle("scrolled", scrollY > 50),
       );
-
-      // Mobile Menu
       const mm = document.getElementById("mobileMenu"),
         mb = document.getElementById("mobileMenuBtn");
       mb.addEventListener("click", () => mm.classList.toggle("hidden"));
@@ -4501,8 +4095,6 @@
         .forEach((l) =>
           l.addEventListener("click", () => mm.classList.add("hidden")),
         );
-
-      // Active Nav Link
       const ss = document.querySelectorAll("section[id]");
       addEventListener("scroll", () => {
         let cu = "";
@@ -4520,8 +4112,6 @@
           );
         });
       });
-
-      // Back to Top Button
       const bt = document.getElementById("backToTop");
       addEventListener("scroll", () => {
         bt.style.opacity = scrollY > 500 ? "1" : "0";
@@ -4530,90 +4120,21 @@
       bt.addEventListener("click", () =>
         scrollTo({ top: 0, behavior: "smooth" }),
       );
-
-      // Contact Form
       document.getElementById("contactForm").addEventListener("submit", (e) => {
         e.preventDefault();
         const t = document.getElementById("toast");
         t.classList.add("show");
-        setTimeout(() => t.classList.remove("show"), 4000);
+        setTimeout(() => t.classList.remove("show"), 4e3);
         e.target.reset();
       });
-
-      // Hero Parallax
       addEventListener("scroll", () => {
         const s = pageYOffset,
           h = document.querySelector("#home .relative.z-10");
         if (h && s < innerHeight) {
-          h.style.transform = `translateY(${s * 0.2}px)`;
+          h.style.transform = `translateY(${s * 0.15}px)`;
           h.style.opacity = 1 - s / (innerHeight * 0.8);
         }
       });
-
-      // Floating Shapes Parallax
-      gsap.utils.toArray(".geo-shape").forEach((shape, i) => {
-        gsap.to(shape, {
-          y: -150 + Math.sin(i) * 50,
-          rotation: "+=360",
-          ease: "none",
-          scrollTrigger: {
-            trigger: "#home",
-            start: "top top",
-            end: "bottom top",
-            scrub: 2,
-          },
-        });
-      });
-
-      // Grid Floor Animation
-      gsap.to(".grid-floor", {
-        backgroundPosition: "0px 50px",
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#home",
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
-
-      // Portfolio Cards 3D Effect
-      document.querySelectorAll(".portfolio-3d").forEach((card) => {
-        card.addEventListener("mousemove", (e) => {
-          const r = card.getBoundingClientRect(),
-            x = e.clientX - r.left,
-            y = e.clientY - r.top,
-            centerX = r.width / 2,
-            centerY = r.height / 2,
-            rotateX = (y - centerY) / 20,
-            rotateY = (centerX - x) / 20;
-
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
-        });
-
-        card.addEventListener("mouseleave", () => {
-          card.style.transform =
-            "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
-        });
-      });
-
-      // Add hover glow effect to depth cards
-      document.querySelectorAll(".depth-card").forEach((card) => {
-        card.addEventListener("mouseenter", () => {
-          gsap.to(card, {
-            boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.25)",
-            duration: 0.3,
-          });
-        });
-        card.addEventListener("mouseleave", () => {
-          gsap.to(card, {
-            boxShadow: "0 0px 0px 0px rgba(59, 130, 246, 0)",
-            duration: 0.3,
-          });
-        });
-      });
-
-      console.log("🎮 ShanNextGen 3D Animated Website Loaded!");
     </script>
   </body>
 </html>
