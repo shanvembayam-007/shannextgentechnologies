@@ -420,7 +420,8 @@
       }
 
       @keyframes floatVertical {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0px) rotateZ(0deg);
         }
         50% {
@@ -432,11 +433,13 @@
       }
 
       @keyframes pulse3d {
-        0%, 100% {
+        0%,
+        100% {
           transform: scale(1);
           opacity: 1;
         }
-        40%, 60% {
+        40%,
+        60% {
           opacity: 0.1;
         }
         50% {
@@ -453,11 +456,11 @@
         perspective: 1500px;
         transform-style: preserve-3d;
       }
-
       .depth-card {
         transform-style: preserve-3d;
-        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-                    box-shadow 0.4s ease;
+        transition:
+          transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+          box-shadow 0.4s ease;
       }
       .depth-card:hover {
         transform: translateY(-10px) rotateX(5deg) rotateY(-5deg) scale(1.02);
@@ -498,7 +501,8 @@
         animation: geoFloat 15s ease-in-out infinite;
       }
       @keyframes geoFloat {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0) rotateX(0) rotateY(0);
         }
         25% {
@@ -518,13 +522,18 @@
         overflow: hidden;
       }
       .wave-section::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 300%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.03), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(59, 130, 246, 0.03),
+          transparent
+        );
         animation: waveMove 8s linear infinite;
       }
       @keyframes waveMove {
@@ -542,7 +551,11 @@
         width: 300px;
         height: 300px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent 70%);
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.15),
+          transparent 70%
+        );
         pointer-events: none;
         z-index: 0;
         transform: translate(-50%, -50%);
@@ -557,12 +570,16 @@
         transform: translateX(-50%) rotateX(80deg);
         width: 200%;
         height: 50vh;
-        background-image: 
+        background-image:
           linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
           linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
         background-size: 50px 50px;
-        mask-image: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
-        -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+        -webkit-mask-image: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.3),
+          transparent
+        );
       }
     </style>
   </head>
@@ -712,39 +729,75 @@
       class="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <canvas id="hero-canvas"></canvas>
-      
+
       <!-- 3D Grid Floor -->
       <div class="grid-floor"></div>
-      
+
       <!-- Animated floating shapes -->
-      <div class="geo-shape" style="top: 10%; left: 5%; animation-delay: 0s;">
+      <div class="geo-shape" style="top: 10%; left: 5%; animation-delay: 0s">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-          <polygon points="40,5 75,65 5,65" stroke="#3b82f6" stroke-width="1" fill="none"/>
+          <polygon
+            points="40,5 75,65 5,65"
+            stroke="#3b82f6"
+            stroke-width="1"
+            fill="none"
+          />
         </svg>
       </div>
-      <div class="geo-shape" style="top: 20%; right: 10%; animation-delay: 2s;">
+      <div class="geo-shape" style="top: 20%; right: 10%; animation-delay: 2s">
         <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-          <rect x="10" y="10" width="40" height="40" stroke="#22d3ee" stroke-width="1" fill="none" transform="rotate(45 30 30)"/>
+          <rect
+            x="10"
+            y="10"
+            width="40"
+            height="40"
+            stroke="#22d3ee"
+            stroke-width="1"
+            fill="none"
+            transform="rotate(45 30 30)"
+          />
         </svg>
       </div>
-      <div class="geo-shape" style="top: 60%; left: 8%; animation-delay: 4s;">
+      <div class="geo-shape" style="top: 60%; left: 8%; animation-delay: 4s">
         <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-          <circle cx="25" cy="25" r="20" stroke="#3b82f6" stroke-width="1" fill="none"/>
+          <circle
+            cx="25"
+            cy="25"
+            r="20"
+            stroke="#3b82f6"
+            stroke-width="1"
+            fill="none"
+          />
         </svg>
       </div>
-      <div class="geo-shape" style="top: 70%; right: 5%; animation-delay: 1s;">
+      <div class="geo-shape" style="top: 70%; right: 5%; animation-delay: 1s">
         <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
-          <polygon points="35,5 65,25 65,55 35,70 5,55 5,25" stroke="#22d3ee" stroke-width="1" fill="none"/>
+          <polygon
+            points="35,5 65,25 65,55 35,70 5,55 5,25"
+            stroke="#22d3ee"
+            stroke-width="1"
+            fill="none"
+          />
         </svg>
       </div>
-      <div class="geo-shape" style="top: 40%; left: 3%; animation-delay: 3s;">
+      <div class="geo-shape" style="top: 40%; left: 3%; animation-delay: 3s">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" stroke="#3b82f6" stroke-width="1" fill="none"/>
+          <polygon
+            points="20,2 38,12 38,28 20,38 2,28 2,12"
+            stroke="#3b82f6"
+            stroke-width="1"
+            fill="none"
+          />
         </svg>
       </div>
-      <div class="geo-shape" style="top: 85%; left: 15%; animation-delay: 5s;">
+      <div class="geo-shape" style="top: 85%; left: 15%; animation-delay: 5s">
         <svg width="55" height="55" viewBox="0 0 55 55" fill="none">
-          <polygon points="27.5,2 52,20 52,45 27.5,55 3,45 3,20" stroke="#60a5fa" stroke-width="1" fill="none"/>
+          <polygon
+            points="27.5,2 52,20 52,45 27.5,55 3,45 3,20"
+            stroke="#60a5fa"
+            stroke-width="1"
+            fill="none"
+          />
         </svg>
       </div>
 
@@ -761,7 +814,7 @@
         ></div>
         <div
           class="orbit-ring w-[600px] h-[600px] md:w-[900px] md:h-[900px] rounded-full border border-blue-500/5 absolute"
-          style="animation-duration: 40s;"
+          style="animation-duration: 40s"
         ></div>
       </div>
       <div
@@ -775,13 +828,11 @@
           class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-8"
           style="animation: fadeInUp 0.8s ease-out 0.2s both"
         >
-          <span
-            class="w-2 h-2 rounded-full bg-green-500 pulse-3d"
-          ></span>
+          <span class="w-2 h-2 rounded-full bg-green-500 pulse-3d"></span>
           <span
             class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
-            >Trusted IT Partner </span
-          >
+            >Trusted IT Partner
+          </span>
         </div>
         <h1
           class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight mb-8"
@@ -1917,10 +1968,31 @@
               <div class="app-mockup">
                 <div class="app-header">
                   <div style="display: flex; align-items: center; gap: 8px">
-                    <div style="width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg, #3b82f6, #22d3ee); display: flex; align-items: center; justify-content: center;">
-                      <svg width="14" height="14" fill="none" stroke="white" stroke-width="2"><path d="M2 7h10M7 2v10"/></svg>
+                    <div
+                      style="
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 6px;
+                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                      >
+                        <path d="M2 7h10M7 2v10" />
+                      </svg>
                     </div>
-                    <span style="font-size: 11px; font-weight: 600; color: #e2e8f0;">Smart Ledger</span>
+                    <span
+                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
+                      >Smart Ledger</span
+                    >
                   </div>
                   <div style="display: flex; gap: 4px">
                     <div
@@ -2229,16 +2301,25 @@
                   </div>
                 </div>
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
+              ></div>
               <div class="absolute top-4 left-4">
-                <span class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider">Finance</span>
+                <span
+                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
+                  >Finance</span
+                >
               </div>
               <div class="absolute bottom-0 left-0 right-0 p-6">
-                <h3 class="text-lg font-bold text-zinc-100 mb-1">Smart Ledger Application</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">Income and expense tracking solution for businesses.</p>
+                <h3 class="text-lg font-bold text-zinc-100 mb-1">
+                  Smart Ledger Application
+                </h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Income and expense tracking solution for businesses.
+                </p>
               </div>
             </div>
-          </div> 
+          </div>
 
           <!-- Weather Monitoring -->
           <div
@@ -2248,12 +2329,34 @@
               <div class="app-mockup">
                 <div class="app-header">
                   <div style="display: flex; align-items: center; gap: 8px">
-                    <div style="width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg, #3b82f6, #22d3ee); display: flex; align-items: center; justify-content: center;">
-                      <svg width="14" height="14" fill="none" stroke="white" stroke-width="2"><circle cx="7" cy="7" r="3"/><path d="M7 1v2M7 11v2M1 7h2M11 7h2"/></svg>
+                    <div
+                      style="
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 6px;
+                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                      >
+                        <circle cx="7" cy="7" r="3" />
+                        <path d="M7 1v2M7 11v2M1 7h2M11 7h2" />
+                      </svg>
                     </div>
-                    <span style="font-size: 11px; font-weight: 600; color: #e2e8f0;">Weather Monitor</span>
+                    <span
+                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
+                      >Weather Monitor</span
+                    >
                   </div>
-                    <div style="font-size: 7px; color: #64748b">
+                  <div style="font-size: 7px; color: #64748b">
                     📍 Thiruvananthapuram
                   </div>
                 </div>
@@ -2445,15 +2548,23 @@
                     >
                   </div>
                 </div>
-
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
+              ></div>
               <div class="absolute top-4 left-4">
-                <span class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider">IoT</span>
+                <span
+                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
+                  >IoT</span
+                >
               </div>
               <div class="absolute bottom-0 left-0 right-0 p-6">
-                <h3 class="text-lg font-bold text-zinc-100 mb-1">Weather Monitoring App</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">Real-time weather dashboard with location services.</p>
+                <h3 class="text-lg font-bold text-zinc-100 mb-1">
+                  Weather Monitoring App
+                </h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Real-time weather dashboard with location services.
+                </p>
               </div>
             </div>
           </div>
@@ -2466,12 +2577,36 @@
               <div class="app-mockup">
                 <div class="app-header">
                   <div style="display: flex; align-items: center; gap: 8px">
-                    <div style="width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg, #3b82f6, #22d3ee); display: flex; align-items: center; justify-content: center;">
-                      <svg width="14" height="14" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="4" height="4"/><rect x="8" y="2" width="4" height="4"/><rect x="2" y="8" width="4" height="4"/><rect x="8" y="8" width="4" height="4"/></svg>
+                    <div
+                      style="
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 6px;
+                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                      >
+                        <rect x="2" y="2" width="4" height="4" />
+                        <rect x="8" y="2" width="4" height="4" />
+                        <rect x="2" y="8" width="4" height="4" />
+                        <rect x="8" y="8" width="4" height="4" />
+                      </svg>
                     </div>
-                    <span style="font-size: 11px; font-weight: 600; color: #e2e8f0;">Inventory Pro</span>
+                    <span
+                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
+                      >Inventory Pro</span
+                    >
                   </div>
-                                    <div
+                  <div
                     style="
                       background: #22c55e20;
                       border: 1px solid #22c55e40;
@@ -2722,15 +2857,23 @@
                     ><span style="text-align: right; color: #ef4444">Out</span>
                   </div>
                 </div>
-
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
+              ></div>
               <div class="absolute top-4 left-4">
-                <span class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider">ERP</span>
+                <span
+                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
+                  >ERP</span
+                >
               </div>
               <div class="absolute bottom-0 left-0 right-0 p-6">
-                <h3 class="text-lg font-bold text-zinc-100 mb-1">Inventory Management</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">Stock management and reporting solution.</p>
+                <h3 class="text-lg font-bold text-zinc-100 mb-1">
+                  Inventory Management
+                </h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Stock management and reporting solution.
+                </p>
               </div>
             </div>
           </div>
@@ -2743,10 +2886,31 @@
               <div class="app-mockup">
                 <div class="app-header">
                   <div style="display: flex; align-items: center; gap: 8px">
-                    <div style="width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg, #3b82f6, #22d3ee); display: flex; align-items: center; justify-content: center;">
-                      <svg width="14" height="14" fill="none" stroke="white" stroke-width="2"><path d="M3 7h8M3 4h8M3 10h5"/></svg>
+                    <div
+                      style="
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 6px;
+                        background: linear-gradient(135deg, #3b82f6, #22d3ee);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                      >
+                        <path d="M3 7h8M3 4h8M3 10h5" />
+                      </svg>
                     </div>
-                    <span style="font-size: 11px; font-weight: 600; color: #e2e8f0;">Complaint Portal</span>
+                    <span
+                      style="font-size: 11px; font-weight: 600; color: #e2e8f0"
+                      >Complaint Portal</span
+                    >
                   </div>
                   <div
                     style="
@@ -2761,7 +2925,7 @@
                     +3 NEW
                   </div>
                 </div>
-               
+
                 <div class="app-body">
                   <!-- Ticket Stats -->
                   <div
@@ -3020,13 +3184,22 @@
                   </div>
                 </div>
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none"
+              ></div>
               <div class="absolute top-4 left-4">
-                <span class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider">Utility</span>
+                <span
+                  class="px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[10px] text-blue-400 font-semibold uppercase tracking-wider"
+                  >Utility</span
+                >
               </div>
               <div class="absolute bottom-0 left-0 right-0 p-6">
-                <h3 class="text-lg font-bold text-zinc-100 mb-1">Complaint Management</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">Service request and ticketing system.</p>
+                <h3 class="text-lg font-bold text-zinc-100 mb-1">
+                  Complaint Management
+                </h3>
+                <p class="text-xs text-zinc-400 leading-relaxed">
+                  Service request and ticketing system.
+                </p>
               </div>
             </div>
           </div>
@@ -3063,21 +3236,47 @@
             style="backdrop-filter: blur(10px)"
           >
             <div class="flex items-center gap-1 mb-5">
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
             </div>
             <p class="text-sm text-zinc-300 leading-relaxed mb-6 italic">
-              "ShanNextGen Technologies transformed our manual process into a fully digital system. Their support and expertise exceeded expectations."
+              "ShanNextGen Technologies transformed our manual process into a
+              fully digital system. Their support and expertise exceeded
+              expectations."
             </p>
             <div class="flex items-center gap-3">
-              <div class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center">
+              <div
+                class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center"
+              >
                 <span class="text-blue-400 text-sm font-bold">B</span>
               </div>
               <div>
-                <p class="text-sm font-semibold text-zinc-200">Business Owner</p>
+                <p class="text-sm font-semibold text-zinc-200">
+                  Business Owner
+                </p>
                 <p class="text-xs text-zinc-500">Digital Transformation</p>
               </div>
             </div>
@@ -3087,17 +3286,40 @@
             style="backdrop-filter: blur(10px)"
           >
             <div class="flex items-center gap-1 mb-5">
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
             </div>
             <p class="text-sm text-zinc-300 leading-relaxed mb-6 italic">
-              "The ERP solution significantly improved our inventory management and reporting accuracy."
+              "The ERP solution significantly improved our inventory management
+              and reporting accuracy."
             </p>
             <div class="flex items-center gap-3">
-              <div class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center">
+              <div
+                class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center"
+              >
                 <span class="text-blue-400 text-sm font-bold">R</span>
               </div>
               <div>
@@ -3111,21 +3333,46 @@
             style="backdrop-filter: blur(10px)"
           >
             <div class="flex items-center gap-1 mb-5">
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
-              <span class="iconify text-blue-400" data-icon="lucide:star" data-width="16"></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
+              <span
+                class="iconify text-blue-400"
+                data-icon="lucide:star"
+                data-width="16"
+              ></span>
             </div>
             <p class="text-sm text-zinc-300 leading-relaxed mb-6 italic">
-              "The ordering and delivery system helped us streamline operations and improve customer satisfaction."
+              "The ordering and delivery system helped us streamline operations
+              and improve customer satisfaction."
             </p>
             <div class="flex items-center gap-3">
-              <div class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center">
+              <div
+                class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/10 border border-blue-500/20 flex items-center justify-center"
+              >
                 <span class="text-blue-400 text-sm font-bold">O</span>
               </div>
               <div>
-                <p class="text-sm font-semibold text-zinc-200">Restaurant Owner</p>
+                <p class="text-sm font-semibold text-zinc-200">
+                  Restaurant Owner
+                </p>
                 <p class="text-xs text-zinc-500">Delivery Management</p>
               </div>
             </div>
@@ -3139,7 +3386,9 @@
     <!-- ═══════════════════ ABOUT US ═══════════════════ -->
     <section id="about" class="py-24 md:py-32 relative wave-section">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+        >
           <div class="reveal-left relative">
             <div
               class="aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-800/50 relative group"
@@ -3150,46 +3399,80 @@
                 alt="ShanNextGenTechnologies Logo"
                 class="w-full h-full object-cover opacity-60 transition-all duration-700 group-hover:scale-105"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"
+              ></div>
             </div>
             <div
               class="absolute -bottom-6 -right-4 md:right-8 bg-zinc-900/90 border border-blue-500/20 rounded-2xl p-5 shadow-2xl float-3d"
-              style="backdrop-filter: blur(20px); box-shadow: 0 20px 60px rgba(59, 130, 246, 0.1);"
+              style="
+                backdrop-filter: blur(20px);
+                box-shadow: 0 20px 60px rgba(59, 130, 246, 0.1);
+              "
             >
               <div class="text-3xl font-bold gradient-text">6+</div>
-              <div class="text-xs text-zinc-400 mt-0.5">Years of<br/>Excellence</div>
+              <div class="text-xs text-zinc-400 mt-0.5">
+                Years of<br />Excellence
+              </div>
             </div>
           </div>
           <div class="reveal-right">
-            <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6">
-              <span class="text-blue-400 text-xs font-semibold uppercase tracking-widest">About Us</span>
+            <div
+              class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+            >
+              <span
+                class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+                >About Us</span
+              >
             </div>
-            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-100 leading-[1.15] mb-6">
+            <h2
+              class="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-100 leading-[1.15] mb-6"
+            >
               Who <span class="gradient-text">We Are</span>
             </h2>
             <p class="text-base text-zinc-400 leading-relaxed mb-4">
-              ShanNextGen Technologies is a Kerala-based IT company dedicated to delivering innovative digital solutions that help businesses grow, automate operations, and achieve their goals.
+              ShanNextGen Technologies is a Kerala-based IT company dedicated to
+              delivering innovative digital solutions that help businesses grow,
+              automate operations, and achieve their goals.
             </p>
             <p class="text-base text-zinc-400 leading-relaxed mb-8">
-              Our expertise spans software development, web development, mobile applications, cloud technologies, ERP systems, CRM solutions, and IT consulting.
+              Our expertise spans software development, web development, mobile
+              applications, cloud technologies, ERP systems, CRM solutions, and
+              IT consulting.
             </p>
             <div class="space-y-5">
-              <div class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50 depth-card" style="backdrop-filter: blur(10px)">
+              <div
+                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50 depth-card"
+                style="backdrop-filter: blur(10px)"
+              >
                 <div class="flex items-center gap-3 mb-2">
-                  <span class="iconify text-blue-400" data-icon="lucide:target" data-width="18"></span>
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:target"
+                    data-width="18"
+                  ></span>
                   <h3 class="text-sm font-bold text-zinc-100">Our Mission</h3>
                 </div>
                 <p class="text-sm text-zinc-400 leading-relaxed">
-                  To empower businesses through reliable, scalable, and cost-effective technology solutions.
+                  To empower businesses through reliable, scalable, and
+                  cost-effective technology solutions.
                 </p>
               </div>
-              <div class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50 depth-card" style="backdrop-filter: blur(10px)">
+              <div
+                class="service-3d p-5 rounded-xl bg-zinc-900/50 border border-zinc-800/50 depth-card"
+                style="backdrop-filter: blur(10px)"
+              >
                 <div class="flex items-center gap-3 mb-2">
-                  <span class="iconify text-blue-400" data-icon="lucide:eye" data-width="18"></span>
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:eye"
+                    data-width="18"
+                  ></span>
                   <h3 class="text-sm font-bold text-zinc-100">Our Vision</h3>
                 </div>
                 <p class="text-sm text-zinc-400 leading-relaxed">
-                  To become a trusted technology partner for businesses across Kerala, India, and beyond.
+                  To become a trusted technology partner for businesses across
+                  Kerala, India, and beyond.
                 </p>
               </div>
             </div>
@@ -3204,56 +3487,123 @@
     <section class="py-16 relative wave-section">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-10 reveal">
-          <h2 class="text-xl font-bold text-zinc-300">Our Specialized Services</h2>
+          <h2 class="text-xl font-bold text-zinc-300">
+            Our Specialized Services
+          </h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           <a href="#" class="tilt-card reveal">
-            <div class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card" style="backdrop-filter: blur(10px)">
+            <div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+              style="backdrop-filter: blur(10px)"
+            >
               <div class="tilt-shine rounded-xl"></div>
               <div class="tilt-content relative z-10">
-                <span class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto" data-icon="lucide:globe" data-width="24"></span>
-                <h3 class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1">Website Development in Kerala</h3>
-                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">Website Development Kerala</p>
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:globe"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  Website Development in Kerala
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  Website Development Kerala
+                </p>
               </div>
             </div>
           </a>
           <a href="#" class="tilt-card reveal">
-            <div class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card" style="backdrop-filter: blur(10px)">
+            <div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+              style="backdrop-filter: blur(10px)"
+            >
               <div class="tilt-shine rounded-xl"></div>
               <div class="tilt-content relative z-10">
-                <span class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto" data-icon="lucide:smartphone" data-width="24"></span>
-                <h3 class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1">Mobile App Development Kerala</h3>
-                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">Mobile App Development Kerala</p>
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:smartphone"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  Mobile App Development Kerala
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  Mobile App Development Kerala
+                </p>
               </div>
             </div>
           </a>
           <a href="#" class="tilt-card reveal">
-            <div class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card" style="backdrop-filter: blur(10px)">
+            <div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+              style="backdrop-filter: blur(10px)"
+            >
               <div class="tilt-shine rounded-xl"></div>
               <div class="tilt-content relative z-10">
-                <span class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto" data-icon="lucide:boxes" data-width="24"></span>
-                <h3 class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1">ERP Software Solutions Kerala</h3>
-                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">ERP Software Kerala</p>
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:boxes"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  ERP Software Solutions Kerala
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  ERP Software Kerala
+                </p>
               </div>
             </div>
           </a>
           <a href="#" class="tilt-card reveal">
-            <div class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card" style="backdrop-filter: blur(10px)">
+            <div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+              style="backdrop-filter: blur(10px)"
+            >
               <div class="tilt-shine rounded-xl"></div>
               <div class="tilt-content relative z-10">
-                <span class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto" data-icon="lucide:lightbulb" data-width="24"></span>
-                <h3 class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1">IT Consulting Services Kerala</h3>
-                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">IT Consulting Kerala</p>
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:lightbulb"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  IT Consulting Services Kerala
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  IT Consulting Kerala
+                </p>
               </div>
             </div>
           </a>
           <a href="#" class="tilt-card reveal">
-            <div class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card" style="backdrop-filter: blur(10px)">
+            <div
+              class="tilt-inner group p-5 rounded-xl bg-zinc-900/30 border border-zinc-800/40 hover:border-blue-500/20 transition-all duration-300 text-center depth-card"
+              style="backdrop-filter: blur(10px)"
+            >
               <div class="tilt-shine rounded-xl"></div>
               <div class="tilt-content relative z-10">
-                <span class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto" data-icon="lucide:code-2" data-width="24"></span>
-                <h3 class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1">Custom Software Development India</h3>
-                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">Custom Software Development India</p>
+                <span
+                  class="iconify text-blue-400/60 group-hover:text-blue-400 transition-colors mb-3 mx-auto"
+                  data-icon="lucide:code-2"
+                  data-width="24"
+                ></span>
+                <h3
+                  class="text-sm font-semibold text-zinc-300 group-hover:text-zinc-100 transition-colors mb-1"
+                >
+                  Custom Software Development India
+                </h3>
+                <p class="text-[10px] text-zinc-600 uppercase tracking-wider">
+                  Custom Software Development India
+                </p>
               </div>
             </div>
           </a>
@@ -3271,41 +3621,91 @@
       <div class="max-w-7xl mx-auto px-6 relative">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <div class="reveal-left">
-            <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6">
-              <span class="text-blue-400 text-xs font-semibold uppercase tracking-widest">Contact Us</span>
+            <div
+              class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-5 py-2 mb-6"
+            >
+              <span
+                class="text-blue-400 text-xs font-semibold uppercase tracking-widest"
+                >Contact Us</span
+              >
             </div>
-            <h2 class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1] mb-4">
+            <h2
+              class="text-3xl md:text-6xl font-extrabold tracking-tight text-zinc-100 leading-[1.1] mb-4"
+            >
               Get In <span class="gradient-text">Touch</span>
             </h2>
             <p class="text-zinc-400 text-lg mb-10">
               Ready to transform your business? Let's start a conversation.
             </p>
             <div class="space-y-6">
-              <div class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card" style="backdrop-filter: blur(10px)">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
-                  <span class="iconify text-blue-400" data-icon="lucide:phone" data-width="20"></span>
+              <div
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card"
+                style="backdrop-filter: blur(10px)"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center flex-shrink-0"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:phone"
+                    data-width="20"
+                  ></span>
                 </div>
                 <div>
-                  <p class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Phone</p>
-                  <p class="text-sm text-zinc-200">+91 9995203714, +91 8075259097</p>
+                  <p
+                    class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1"
+                  >
+                    Phone
+                  </p>
+                  <p class="text-sm text-zinc-200">
+                    +91 9995203714, +91 8075259097
+                  </p>
                 </div>
               </div>
-              <div class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card" style="backdrop-filter: blur(10px)">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
-                  <span class="iconify text-blue-400" data-icon="lucide:mail" data-width="20"></span>
+              <div
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card"
+                style="backdrop-filter: blur(10px)"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center flex-shrink-0"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:mail"
+                    data-width="20"
+                  ></span>
                 </div>
                 <div>
-                  <p class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Email</p>
+                  <p
+                    class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1"
+                  >
+                    Email
+                  </p>
                   <p class="text-sm text-zinc-200">info@shannextgentech.com</p>
                 </div>
               </div>
-              <div class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card" style="backdrop-filter: blur(10px)">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
-                  <span class="iconify text-blue-400" data-icon="lucide:map-pin" data-width="20"></span>
+              <div
+                class="service-3d flex items-start gap-4 p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 depth-card"
+                style="backdrop-filter: blur(10px)"
+              >
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/15 to-cyan-400/5 border border-blue-500/20 flex items-center justify-center flex-shrink-0"
+                >
+                  <span
+                    class="iconify text-blue-400"
+                    data-icon="lucide:map-pin"
+                    data-width="20"
+                  ></span>
                 </div>
                 <div>
-                  <p class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Location</p>
-                  <p class="text-sm text-zinc-200">Thiruvananthapuram, Kerala</p>
+                  <p
+                    class="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1"
+                  >
+                    Location
+                  </p>
+                  <p class="text-sm text-zinc-200">
+                    Thiruvananthapuram, Kerala
+                  </p>
                 </div>
               </div>
             </div>
@@ -3316,48 +3716,130 @@
               class="p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/50 relative overflow-hidden depth-card"
               style="backdrop-filter: blur(10px)"
             >
-              <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/5 to-transparent rounded-bl-full pointer-events-none"></div>
-              <h3 class="text-xl font-bold text-zinc-100 mb-8 relative z-10">Send Us a Message</h3>
+              <div
+                class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/5 to-transparent rounded-bl-full pointer-events-none"
+              ></div>
+              <h3 class="text-xl font-bold text-zinc-100 mb-8 relative z-10">
+                Send Us a Message
+              </h3>
               <div class="space-y-5 relative z-10">
                 <div>
-                  <label class="block text-xs text-zinc-400 mb-1.5 font-semibold">Full Name <span class="text-blue-400">*</span></label>
-                  <input type="text" name="fullName" required placeholder="Your full name" class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"/>
+                  <label
+                    class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                    >Full Name <span class="text-blue-400">*</span></label
+                  >
+                  <input
+                    type="text"
+                    name="fullName"
+                    required
+                    placeholder="Your full name"
+                    class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                  />
                 </div>
                 <div>
-                  <label class="block text-xs text-zinc-400 mb-1.5 font-semibold">Company Name</label>
-                  <input type="text" name="companyName" placeholder="Your company name" class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"/>
+                  <label
+                    class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                    >Company Name</label
+                  >
+                  <input
+                    type="text"
+                    name="companyName"
+                    placeholder="Your company name"
+                    class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                  />
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label class="block text-xs text-zinc-400 mb-1.5 font-semibold">Email <span class="text-blue-400">*</span></label>
-                    <input type="email" name="email" required placeholder="you@example.com" class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"/>
+                    <label
+                      class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                      >Email <span class="text-blue-400">*</span></label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="you@example.com"
+                      class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                    />
                   </div>
                   <div>
-                    <label class="block text-xs text-zinc-400 mb-1.5 font-semibold">Phone</label>
-                    <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"/>
+                    <label
+                      class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                      >Phone</label
+                    >
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="+91 XXXXX XXXXX"
+                      class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+                    />
                   </div>
                 </div>
                 <div>
-                  <label class="block text-xs text-zinc-400 mb-1.5 font-semibold">Service Required <span class="text-blue-400">*</span></label>
-                  <select name="service" required class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-400 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 appearance-none" style="background-image: url(&quot;data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22m6 9 6 6 6-6%22/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 16px center;">
+                  <label
+                    class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                    >Service Required
+                    <span class="text-blue-400">*</span></label
+                  >
+                  <select
+                    name="service"
+                    required
+                    class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-400 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 appearance-none"
+                    style="
+                      background-image: url(&quot;data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22m6 9 6 6 6-6%22/%3E%3C/svg%3E&quot;);
+                      background-repeat: no-repeat;
+                      background-position: right 16px center;
+                    "
+                  >
                     <option value="" disabled selected>Select a service</option>
-                    <option value="website" class="bg-zinc-900">Website Development</option>
-                    <option value="mobile" class="bg-zinc-900">Mobile App Development</option>
-                    <option value="custom-software" class="bg-zinc-900">Custom Software Development</option>
-                    <option value="erp" class="bg-zinc-900">ERP Solutions</option>
-                    <option value="crm" class="bg-zinc-900">CRM Solutions</option>
-                    <option value="cloud" class="bg-zinc-900">Cloud Solutions</option>
-                    <option value="consulting" class="bg-zinc-900">IT Consulting</option>
+                    <option value="website" class="bg-zinc-900">
+                      Website Development
+                    </option>
+                    <option value="mobile" class="bg-zinc-900">
+                      Mobile App Development
+                    </option>
+                    <option value="custom-software" class="bg-zinc-900">
+                      Custom Software Development
+                    </option>
+                    <option value="erp" class="bg-zinc-900">
+                      ERP Solutions
+                    </option>
+                    <option value="crm" class="bg-zinc-900">
+                      CRM Solutions
+                    </option>
+                    <option value="cloud" class="bg-zinc-900">
+                      Cloud Solutions
+                    </option>
+                    <option value="consulting" class="bg-zinc-900">
+                      IT Consulting
+                    </option>
                     <option value="other" class="bg-zinc-900">Other</option>
                   </select>
                 </div>
                 <div>
-                  <label class="block text-xs text-zinc-400 mb-1.5 font-semibold">Message <span class="text-blue-400">*</span></label>
-                  <textarea name="message" required rows="4" placeholder="Tell us about your project or requirements..." class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 resize-none"></textarea>
+                  <label
+                    class="block text-xs text-zinc-400 mb-1.5 font-semibold"
+                    >Message <span class="text-blue-400">*</span></label
+                  >
+                  <textarea
+                    name="message"
+                    required
+                    rows="4"
+                    placeholder="Tell us about your project or requirements..."
+                    class="w-full bg-zinc-800/50 border border-zinc-700/50 rounded-xl px-4 py-3 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-blue-500/50 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300 resize-none"
+                  ></textarea>
                 </div>
               </div>
-              <button type="submit" class="w-full mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-sm font-bold px-8 py-4 rounded-full hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 relative z-10">
-                <span class="iconify" data-icon="lucide:send" data-width="16"></span>Send Inquiry
+              <button
+                type="submit"
+                class="w-full mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-sm font-bold px-8 py-4 rounded-full hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 relative z-10"
+              >
+                <span
+                  class="iconify"
+                  data-icon="lucide:send"
+                  data-width="16"
+                ></span
+                >Send Inquiry
               </button>
             </form>
           </div>
@@ -3368,11 +3850,16 @@
     <!-- ═══════════════════ FOOTER ═══════════════════ -->
     <footer class="border-t border-zinc-800/30 pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
+        >
           <div>
             <a href="#" class="inline-flex items-center gap-2.5 mb-5">
               <div class="footer-logo-icon">
-                <img src="https://z-cdn-media.chatglm.cn/files/813ecd16-93f3-422f-9257-126d0c4b5601.png?auth_key=1881201546-4f70b5275369432992b938e88d089daa-0-fe30012e69aab0792b6ecc960dad44f2" alt="ShanNextGen"/>
+                <img
+                  src="https://z-cdn-media.chatglm.cn/files/813ecd16-93f3-422f-9257-126d0c4b5601.png?auth_key=1881201546-4f70b5275369432992b938e88d089daa-0-fe30012e69aab0792b6ecc960dad44f2"
+                  alt="ShanNextGen"
+                />
               </div>
               <div class="logo-brand-text">
                 <div class="brand-top">
@@ -3383,63 +3870,173 @@
               </div>
             </a>
             <p class="text-sm text-zinc-500 leading-relaxed mb-5">
-              Empowering businesses through innovative IT solutions, software development, and digital transformation services.
+              Empowering businesses through innovative IT solutions, software
+              development, and digital transformation services.
             </p>
             <div class="flex items-center gap-3">
-              <a href="#" class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300">
-                <span class="iconify text-zinc-400" data-icon="lucide:linkedin" data-width="16"></span>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+              >
+                <span
+                  class="iconify text-zinc-400"
+                  data-icon="lucide:linkedin"
+                  data-width="16"
+                ></span>
               </a>
-              <a href="#" class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300">
-                <span class="iconify text-zinc-400" data-icon="lucide:facebook" data-width="16"></span>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+              >
+                <span
+                  class="iconify text-zinc-400"
+                  data-icon="lucide:facebook"
+                  data-width="16"
+                ></span>
               </a>
-              <a href="#" class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300">
-                <span class="iconify text-zinc-400" data-icon="lucide:instagram" data-width="16"></span>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center hover:border-blue-500/30 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all duration-300"
+              >
+                <span
+                  class="iconify text-zinc-400"
+                  data-icon="lucide:instagram"
+                  data-width="16"
+                ></span>
               </a>
             </div>
           </div>
           <div>
             <h4 class="text-sm font-bold text-zinc-200 mb-5">Quick Links</h4>
             <ul class="space-y-3">
-              <li><a href="#home" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">Home</a></li>
-              <li><a href="#services" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">Services</a></li>
-              <li><a href="#portfolio" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">Portfolio</a></li>
-              <li><a href="#about" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">About Us</a></li>
-              <li><a href="#contact" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">Contact Us</a></li>
+              <li>
+                <a
+                  href="#home"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#portfolio"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Contact Us</a
+                >
+              </li>
             </ul>
           </div>
           <div>
             <h4 class="text-sm font-bold text-zinc-200 mb-5">Services</h4>
             <ul class="space-y-3">
-              <li><a href="#services" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">Website Development</a></li>
-              <li><a href="#services" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">Mobile App Development</a></li>
-              <li><a href="#services" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">ERP Solutions</a></li>
-              <li><a href="#services" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">CRM Solutions</a></li>
-              <li><a href="#services" class="text-sm text-zinc-500 hover:text-blue-400 transition-colors">Cloud Services</a></li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Website Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Mobile App Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >ERP Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >CRM Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-sm text-zinc-500 hover:text-blue-400 transition-colors"
+                  >Cloud Services</a
+                >
+              </li>
             </ul>
           </div>
           <div>
             <h4 class="text-sm font-bold text-zinc-200 mb-5">Contact</h4>
             <div class="space-y-3">
               <div class="flex items-center gap-2">
-                <span class="iconify text-zinc-600" data-icon="lucide:phone" data-width="14"></span>
+                <span
+                  class="iconify text-zinc-600"
+                  data-icon="lucide:phone"
+                  data-width="14"
+                ></span>
                 <span class="text-sm text-zinc-500">+91 9995203714</span>
               </div>
               <div class="flex items-center gap-2">
-                <span class="iconify text-zinc-600" data-icon="lucide:mail" data-width="14"></span>
-                <span class="text-sm text-zinc-500">info@shannextgentech.com</span>
+                <span
+                  class="iconify text-zinc-600"
+                  data-icon="lucide:mail"
+                  data-width="14"
+                ></span>
+                <span class="text-sm text-zinc-500"
+                  >info@shannextgentech.com</span
+                >
               </div>
               <div class="flex items-center gap-2">
-                <span class="iconify text-zinc-600" data-icon="lucide:map-pin" data-width="14"></span>
-                <span class="text-sm text-zinc-500">Thiruvananthapuram, Kerala</span>
+                <span
+                  class="iconify text-zinc-600"
+                  data-icon="lucide:map-pin"
+                  data-width="14"
+                ></span>
+                <span class="text-sm text-zinc-500"
+                  >Thiruvananthapuram, Kerala</span
+                >
               </div>
             </div>
           </div>
         </div>
-        <div class="border-t border-zinc-800/30 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p class="text-xs text-zinc-600">© 2026 ShanNextGen Technologies. All rights reserved.</p>
+        <div
+          class="border-t border-zinc-800/30 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-xs text-zinc-600">
+            © 2026 ShanNextGen Technologies. All rights reserved.
+          </p>
           <div class="flex items-center gap-6">
-            <a href="#" class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">Privacy Policy</a>
-            <a href="#" class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">Terms of Service</a>
+            <a
+              href="#"
+              class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+              >Terms of Service</a
+            >
           </div>
         </div>
       </div>
@@ -3447,7 +4044,11 @@
 
     <div id="toast" class="toast-3d">
       <div class="flex items-center gap-3">
-        <span class="iconify text-emerald-400" data-icon="lucide:check-circle-2" data-width="20"></span>
+        <span
+          class="iconify text-emerald-400"
+          data-icon="lucide:check-circle-2"
+          data-width="20"
+        ></span>
         <div>
           <p class="text-sm font-semibold text-zinc-200">Message Sent!</p>
           <p class="text-xs text-zinc-500">We'll get back to you shortly.</p>
@@ -3460,26 +4061,32 @@
       class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-zinc-900/80 border border-zinc-700/50 flex items-center justify-center text-zinc-400 hover:text-blue-400 hover:border-blue-500/30 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all duration-300 opacity-0 pointer-events-none z-40"
       style="backdrop-filter: blur(10px)"
     >
-      <span class="iconify" data-icon="lucide:chevron-up" data-width="20"></span>
+      <span
+        class="iconify"
+        data-icon="lucide:chevron-up"
+        data-width="20"
+      ></span>
     </button>
 
     <script>
       // Enhanced Cursor Glow Effect
-      (function() {
-        const glow = document.getElementById('cursorGlow');
-        let mouseX = 0, mouseY = 0;
-        let glowX = 0, glowY = 0;
-        
-        document.addEventListener('mousemove', (e) => {
+      (function () {
+        const glow = document.getElementById("cursorGlow");
+        let mouseX = 0,
+          mouseY = 0;
+        let glowX = 0,
+          glowY = 0;
+
+        document.addEventListener("mousemove", (e) => {
           mouseX = e.clientX;
           mouseY = e.clientY;
         });
-        
+
         function animateGlow() {
           glowX += (mouseX - glowX) * 0.1;
           glowY += (mouseY - glowY) * 0.1;
-          glow.style.left = glowX + 'px';
-          glow.style.top = glowY + 'px';
+          glow.style.left = glowX + "px";
+          glow.style.top = glowY + "px";
           requestAnimationFrame(animateGlow);
         }
         animateGlow();
@@ -3489,40 +4096,57 @@
       (function () {
         const c = document.getElementById("hero-canvas"),
           s = new THREE.Scene(),
-          cm = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1e3),
-          r = new THREE.WebGLRenderer({ canvas: c, alpha: true, antialias: true });
+          cm = new THREE.PerspectiveCamera(
+            75,
+            innerWidth / innerHeight,
+            0.1,
+            1e3,
+          ),
+          r = new THREE.WebGLRenderer({
+            canvas: c,
+            alpha: true,
+            antialias: true,
+          });
         r.setSize(innerWidth, innerHeight);
         r.setPixelRatio(Math.min(devicePixelRatio, 2));
-        
+
         // Enhanced Particle System
         const p = 2500;
         const ps = new Float32Array(p * 3);
         const cs = new Float32Array(p * 3);
         const sizes = new Float32Array(p);
-        
+
         for (let i = 0; i < p; i++) {
           ps[i * 3] = (Math.random() - 0.5) * 25;
           ps[i * 3 + 1] = (Math.random() - 0.5) * 25;
           ps[i * 3 + 2] = (Math.random() - 0.5) * 25;
-          
+
           const colorType = Math.random();
           if (colorType > 0.8) {
-            cs[i * 3] = 0.23; cs[i * 3 + 1] = 0.51; cs[i * 3 + 2] = 0.96; // Blue
+            cs[i * 3] = 0.23;
+            cs[i * 3 + 1] = 0.51;
+            cs[i * 3 + 2] = 0.96; // Blue
           } else if (colorType > 0.6) {
-            cs[i * 3] = 0.13; cs[i * 3 + 1] = 0.83; cs[i * 3 + 2] = 0.93; // Cyan
+            cs[i * 3] = 0.13;
+            cs[i * 3 + 1] = 0.83;
+            cs[i * 3 + 2] = 0.93; // Cyan
           } else if (colorType > 0.4) {
-            cs[i * 3] = 0.45; cs[i * 3 + 1] = 0.55; cs[i * 3 + 2] = 0.98; // Light Blue
+            cs[i * 3] = 0.45;
+            cs[i * 3 + 1] = 0.55;
+            cs[i * 3 + 2] = 0.98; // Light Blue
           } else {
-            cs[i * 3] = 0.6; cs[i * 3 + 1] = 0.7; cs[i * 3 + 2] = 0.98;
+            cs[i * 3] = 0.6;
+            cs[i * 3 + 1] = 0.7;
+            cs[i * 3 + 2] = 0.98;
           }
-          
+
           sizes[i] = Math.random() * 0.06 + 0.02;
         }
-        
+
         const pg = new THREE.BufferGeometry();
         pg.setAttribute("position", new THREE.BufferAttribute(ps, 3));
         pg.setAttribute("color", new THREE.BufferAttribute(cs, 3));
-        
+
         const pm = new THREE.PointsMaterial({
           size: 0.05,
           vertexColors: true,
@@ -3531,10 +4155,10 @@
           blending: THREE.AdditiveBlending,
           sizeAttenuation: true,
         });
-        
+
         const pts = new THREE.Points(pg, pm);
         s.add(pts);
-        
+
         // Wireframe Icosahedron
         const ig = new THREE.IcosahedronGeometry(3, 1),
           im = new THREE.MeshBasicMaterial({
@@ -3545,7 +4169,7 @@
           }),
           ic = new THREE.Mesh(ig, im);
         s.add(ic);
-        
+
         // Inner Icosahedron
         const ig2 = new THREE.IcosahedronGeometry(2, 0),
           im2 = new THREE.MeshBasicMaterial({
@@ -3556,7 +4180,7 @@
           }),
           ic2 = new THREE.Mesh(ig2, im2);
         s.add(ic2);
-        
+
         // Torus Rings
         const tg = new THREE.TorusGeometry(2, 0.015, 16, 100),
           tm = new THREE.MeshBasicMaterial({
@@ -3567,7 +4191,7 @@
           t = new THREE.Mesh(tg, tm);
         t.rotation.x = Math.PI / 2;
         s.add(t);
-        
+
         const t2g = new THREE.TorusGeometry(3.5, 0.01, 16, 100),
           t2m = new THREE.MeshBasicMaterial({
             color: 0x22d3ee,
@@ -3578,7 +4202,7 @@
         t2.rotation.x = Math.PI / 3;
         t2.rotation.y = Math.PI / 6;
         s.add(t2);
-        
+
         // Outer Ring
         const t3g = new THREE.TorusGeometry(4.5, 0.008, 16, 100),
           t3m = new THREE.MeshBasicMaterial({
@@ -3590,7 +4214,7 @@
         t3.rotation.x = Math.PI / 4;
         t3.rotation.z = Math.PI / 4;
         s.add(t3);
-        
+
         // Octahedron
         const og = new THREE.OctahedronGeometry(1.5, 0),
           om = new THREE.MeshBasicMaterial({
@@ -3601,55 +4225,57 @@
           }),
           oc = new THREE.Mesh(og, om);
         s.add(oc);
-        
+
         cm.position.z = 6;
-        let mx = 0, my = 0;
-        let targetRotX = 0, targetRotY = 0;
-        
+        let mx = 0,
+          my = 0;
+        let targetRotX = 0,
+          targetRotY = 0;
+
         document.addEventListener("mousemove", (e) => {
           mx = (e.clientX / innerWidth - 0.5) * 2;
           my = (e.clientY / innerHeight - 0.5) * 2;
         });
-        
+
         function a() {
           requestAnimationFrame(a);
           const d = Date.now() * 0.001;
-          
+
           // Smooth particle rotation
           pts.rotation.y += 0.0004;
           pts.rotation.x += 0.0002;
-          
+
           // Geometric shapes rotation
           ic.rotation.x = d * 0.15;
           ic.rotation.y = d * 0.2;
           ic.rotation.z = d * 0.1;
-          
+
           ic2.rotation.x = -d * 0.2;
           ic2.rotation.y = d * 0.25;
           ic2.rotation.z = d * 0.15;
-          
+
           oc.rotation.x = d * 0.3;
           oc.rotation.y = d * 0.4;
           oc.position.y = Math.sin(d) * 0.5;
-          
+
           // Ring rotations
           t.rotation.z = d * 0.3;
           t2.rotation.z = -d * 0.15;
           t2.rotation.x = d * 0.08;
           t3.rotation.z = d * 0.1;
           t3.rotation.y = -d * 0.12;
-          
+
           // Camera parallax
           targetRotX += (my * 0.3 - targetRotX) * 0.02;
           targetRotY += (mx * 0.3 - targetRotY) * 0.02;
           cm.position.x = mx * 0.8;
           cm.position.y = -my * 0.5;
           cm.lookAt(s.position);
-          
+
           r.render(s, cm);
         }
         a();
-        
+
         addEventListener("resize", () => {
           cm.aspect = innerWidth / innerHeight;
           cm.updateProjectionMatrix();
@@ -3661,30 +4287,39 @@
       (function () {
         const c = document.getElementById("bg-canvas"),
           s = new THREE.Scene(),
-          cm = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1e3),
-          r = new THREE.WebGLRenderer({ canvas: c, alpha: true, antialias: true });
+          cm = new THREE.PerspectiveCamera(
+            75,
+            innerWidth / innerHeight,
+            0.1,
+            1e3,
+          ),
+          r = new THREE.WebGLRenderer({
+            canvas: c,
+            alpha: true,
+            antialias: true,
+          });
         r.setSize(innerWidth, innerHeight);
         r.setPixelRatio(Math.min(devicePixelRatio, 2));
-        
+
         const p = 500;
         const ps = new Float32Array(p * 3);
         const cs = new Float32Array(p * 3);
-        
+
         for (let i = 0; i < p; i++) {
           ps[i * 3] = (Math.random() - 0.5) * 40;
           ps[i * 3 + 1] = (Math.random() - 0.5) * 40;
           ps[i * 3 + 2] = (Math.random() - 0.5) * 40;
-          
+
           const intensity = Math.random();
           cs[i * 3] = 0.23 * (0.5 + intensity * 0.5);
           cs[i * 3 + 1] = 0.51 * (0.5 + intensity * 0.5);
           cs[i * 3 + 2] = 0.96 * (0.5 + intensity * 0.5);
         }
-        
+
         const g = new THREE.BufferGeometry();
         g.setAttribute("position", new THREE.BufferAttribute(ps, 3));
         g.setAttribute("color", new THREE.BufferAttribute(cs, 3));
-        
+
         const m = new THREE.PointsMaterial({
           color: 0x3b82f6,
           size: 0.03,
@@ -3693,28 +4328,28 @@
           opacity: 0.4,
           blending: THREE.AdditiveBlending,
         });
-        
+
         const pts = new THREE.Points(g, m);
         s.add(pts);
-        
+
         cm.position.z = 12;
-        
+
         let scrollY = 0;
         addEventListener("scroll", () => {
           scrollY = window.scrollY;
         });
-        
+
         function a() {
           requestAnimationFrame(a);
           const d = Date.now() * 0.0005;
           pts.rotation.y = d * 0.5;
           pts.rotation.x = d * 0.3;
           pts.position.y = -scrollY * 0.002;
-          
+
           r.render(s, cm);
         }
         a();
-        
+
         addEventListener("resize", () => {
           cm.aspect = innerWidth / innerHeight;
           cm.updateProjectionMatrix();
@@ -3724,7 +4359,7 @@
 
       // GSAP ScrollTrigger Animations
       gsap.registerPlugin(ScrollTrigger);
-      
+
       gsap.utils.toArray(".reveal").forEach((el, i) => {
         gsap.fromTo(
           el,
@@ -3742,10 +4377,10 @@
               toggleActions: "play none none none",
             },
             delay: (i % 4) * 0.1,
-          }
+          },
         );
       });
-      
+
       gsap.utils.toArray(".reveal-left").forEach((el) => {
         gsap.fromTo(
           el,
@@ -3761,10 +4396,10 @@
               start: "top 80%",
               toggleActions: "play none none none",
             },
-          }
+          },
         );
       });
-      
+
       gsap.utils.toArray(".reveal-right").forEach((el) => {
         gsap.fromTo(
           el,
@@ -3780,10 +4415,10 @@
               start: "top 80%",
               toggleActions: "play none none none",
             },
-          }
+          },
         );
       });
-      
+
       // Enhanced parallax effect on scroll
       gsap.utils.toArray(".parallax-layer").forEach((el) => {
         gsap.to(el, {
@@ -3797,7 +4432,7 @@
           },
         });
       });
-      
+
       // 3D Card Tilt Effect
       document.querySelectorAll(".tilt-card").forEach((c) => {
         const i = c.querySelector(".tilt-inner");
@@ -3808,10 +4443,11 @@
           i.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02,1.02,1.02)`;
         });
         c.addEventListener("mouseleave", () => {
-          i.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)";
+          i.style.transform =
+            "perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)";
         });
       });
-      
+
       // Magnetic Button Effect
       document.querySelectorAll(".magnetic-btn").forEach((b) => {
         b.addEventListener("mousemove", (e) => {
@@ -3822,7 +4458,7 @@
           b.style.transform = "translate(0,0)";
         });
       });
-      
+
       // Counter Animation
       const cts = document.querySelectorAll(".counter-value[data-target]"),
         co = new IntersectionObserver(
@@ -3840,30 +4476,32 @@
                     onUpdate: function () {
                       el.textContent = Math.round(this.targets()[0].val) + "+";
                     },
-                  }
+                  },
                 );
                 co.unobserve(el);
               }
             });
           },
-          { threshold: 0.5 }
+          { threshold: 0.5 },
         );
       cts.forEach((c) => co.observe(c));
-      
+
       // Navbar Scroll Effect
       const nb = document.getElementById("navbar");
       addEventListener("scroll", () =>
-        nb.classList.toggle("scrolled", scrollY > 50)
+        nb.classList.toggle("scrolled", scrollY > 50),
       );
-      
+
       // Mobile Menu
       const mm = document.getElementById("mobileMenu"),
         mb = document.getElementById("mobileMenuBtn");
       mb.addEventListener("click", () => mm.classList.toggle("hidden"));
-      document.querySelectorAll(".mobile-nav-link").forEach((l) =>
-        l.addEventListener("click", () => mm.classList.add("hidden"))
-      );
-      
+      document
+        .querySelectorAll(".mobile-nav-link")
+        .forEach((l) =>
+          l.addEventListener("click", () => mm.classList.add("hidden")),
+        );
+
       // Active Nav Link
       const ss = document.querySelectorAll("section[id]");
       addEventListener("scroll", () => {
@@ -3874,15 +4512,15 @@
         document.querySelectorAll(".nav-link").forEach((l) => {
           l.classList.toggle(
             "text-blue-400",
-            l.getAttribute("href") === `#${cu}`
+            l.getAttribute("href") === `#${cu}`,
           );
           l.classList.toggle(
             "text-zinc-400",
-            l.getAttribute("href") !== `#${cu}`
+            l.getAttribute("href") !== `#${cu}`,
           );
         });
       });
-      
+
       // Back to Top Button
       const bt = document.getElementById("backToTop");
       addEventListener("scroll", () => {
@@ -3890,9 +4528,9 @@
         bt.style.pointerEvents = scrollY > 500 ? "auto" : "none";
       });
       bt.addEventListener("click", () =>
-        scrollTo({ top: 0, behavior: "smooth" })
+        scrollTo({ top: 0, behavior: "smooth" }),
       );
-      
+
       // Contact Form
       document.getElementById("contactForm").addEventListener("submit", (e) => {
         e.preventDefault();
@@ -3901,7 +4539,7 @@
         setTimeout(() => t.classList.remove("show"), 4000);
         e.target.reset();
       });
-      
+
       // Hero Parallax
       addEventListener("scroll", () => {
         const s = pageYOffset,
@@ -3911,7 +4549,7 @@
           h.style.opacity = 1 - s / (innerHeight * 0.8);
         }
       });
-      
+
       // Floating Shapes Parallax
       gsap.utils.toArray(".geo-shape").forEach((shape, i) => {
         gsap.to(shape, {
@@ -3926,7 +4564,7 @@
           },
         });
       });
-      
+
       // Grid Floor Animation
       gsap.to(".grid-floor", {
         backgroundPosition: "0px 50px",
@@ -3938,7 +4576,7 @@
           scrub: 1,
         },
       });
-      
+
       // Portfolio Cards 3D Effect
       document.querySelectorAll(".portfolio-3d").forEach((card) => {
         card.addEventListener("mousemove", (e) => {
@@ -3949,15 +4587,16 @@
             centerY = r.height / 2,
             rotateX = (y - centerY) / 20,
             rotateY = (centerX - x) / 20;
-          
+
           card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
         });
-        
+
         card.addEventListener("mouseleave", () => {
-          card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+          card.style.transform =
+            "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
         });
       });
-      
+
       // Add hover glow effect to depth cards
       document.querySelectorAll(".depth-card").forEach((card) => {
         card.addEventListener("mouseenter", () => {
@@ -3973,7 +4612,7 @@
           });
         });
       });
-      
+
       console.log("🎮 ShanNextGen 3D Animated Website Loaded!");
     </script>
   </body>
