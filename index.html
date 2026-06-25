@@ -433,16 +433,19 @@
 
       @keyframes pulse3d {
         0%, 100% {
-          transform: scale(1) rotateY(0deg);
-          opacity: 0.6;
+          transform: scale(1);
+          opacity: 1;
+        }
+        40%, 60% {
+          opacity: 0.1;
         }
         50% {
-          transform: scale(1.1) rotateY(180deg);
-          opacity: 0.9;
+          transform: scale(1.1);
+          opacity: 0.3;
         }
       }
       .pulse-3d {
-        animation: pulse3d 5s ease-in-out infinite;
+        animation: pulse3d 1.5s ease-in-out infinite;
         transform-style: preserve-3d;
       }
 
